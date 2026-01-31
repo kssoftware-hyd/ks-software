@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KS Software Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6366f1; --secondary: #ec4899; --white: #ffffff;
+            --gray-50: #f8fafc; --gray-200: #e2e8f0; --gray-600: #475569; --gray-900: #0f172a;
+        }
+        body { font-family: 'DM Sans', sans-serif; line-height: 1.7; color: var(--gray-900); }
+        .navbar { position: fixed; width: 100%; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 45px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; }
+        .nav-menu { display: flex; list-style: none; gap: 40px; }
+        .nav-link { text-decoration: none; color: var(--gray-600); font-weight: 500; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 50px; }
+        .page-header { padding: 160px 24px 80px; background: var(--gray-50); text-align: center; }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        section { padding: 80px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+        .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+        
+        /* Team Layout */
+        .team-container { max-width: 900px; margin: 0 auto; }
+        .team-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; justify-items: center; }
+        .team-row:last-child { margin-bottom: 0; }
+        
+        /* Team Cards */
+        .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; width: 100%; max-width: 350px; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+        .team-photo { width: 120px; height: 120px; border-radius: 50%; margin: 32px auto 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; }
+        .team-content { padding: 0 32px 32px; }
+        .team-name { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+        .team-role { color: var(--primary); font-weight: 600; margin-bottom: 8px; }
+        .team-exp { color: var(--gray-600); font-size: 0.9rem; }
+        
+        /* Service Cards */
+        .service-card { background: white; padding: 32px; border-radius: 16px; border: 2px solid var(--gray-200); transition: 0.3s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(99,102,241,0.2); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .service-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+        .service-desc { color: var(--gray-600); line-height: 1.6; }
+        
+        .footer { background: var(--gray-900); color: white; padding: 60px 24px 24px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 40px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-logo img { height: 40px; }
+        
+        @media (max-width: 768px) { 
+            .grid-2, .grid-3, .footer-grid, .team-row { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+            .team-card { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/ks-logo.png" alt="KS Logo">
+                <span class="logo-text">KS SOFTWARE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About Us</a></li>
+                <li><a href="clients.html" class="nav-link">Clients & Blog</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Building the Future of<br><span class="gradient-text">Digital Innovation</span></h1>
+        <p style="font-size: 1.125rem; color: var(--gray-600); margin-top: 20px;">Passionate technologists dedicated to transforming businesses</p>
+    </div>
+
+    <!-- Our Story -->
+    <section style="background: white;">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title">Our Story</h2>
+                    <p style="font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 16px;">Founded in Hyderabad, KS Software Company began with a vision to empower businesses through innovative technology solutions.</p>
+                    <p style="font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 16px;">What started as a small team has grown into a trusted technology partner for businesses across industries.</p>
+                    <p style="font-size: 1.0625rem; color: var(--gray-600);">Every project is an opportunity to innovate, create, and push the boundaries of what's possible.</p>
+                </div>
+                <div class="grid-2" style="gap: 20px;">
+                    <div class="card" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">2021</h3>
+                        <p>Company Founded</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">150+</h3>
+                        <p>Projects Delivered</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">200+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Meet Our Expert Team</h2>
+            <p style="text-align: center; color: var(--gray-600); font-size: 1.125rem; margin-bottom: 60px;">Talented professionals dedicated to your success</p>
+            
+            <div class="team-container">
+                <!-- First Row: 2 Members -->
+                <div class="team-row">
+                    <div class="team-card">
+                        <div class="team-photo">SK</div>
+                        <div class="team-content">
+                            <h3 class="team-name">Sara K</h3>
+                            <p class="team-role">Senior Manager & CEO</p>
+                            <p class="team-exp">5+ years Experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">KR</div>
+                        <div class="team-content">
+                            <h3 class="team-name">K. Raheel</h3>
+                            <p class="team-role">Senior Software Engineer</p>
+                            <p class="team-exp">5+ years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Row: 2 Members -->
+                <div class="team-row">
+                    <div class="team-card">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">AS</div>
+                        <div class="team-content">
+                            <h3 class="team-name">A. Shoaib</h3>
+                            <p class="team-role">Senior Developer</p>
+                            <p class="team-exp">3+ years Experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">SS</div>
+                        <div class="team-content">
+                            <h3 class="team-name">S. Shubham</h3>
+                            <p class="team-role">Full Stack Developer</p>
+                            <p class="team-exp">3+ years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Our Core Values</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎯</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Excellence</h3>
+                    <p style="color: var(--gray-600);">We pursue perfection in every line of code and every client interaction.</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🚀</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Innovation</h3>
+                    <p style="color: var(--gray-600);">We embrace cutting-edge technologies and creative approaches.</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🤝</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Integrity</h3>
+                    <p style="color: var(--gray-600);">Transparency and ethical practices in everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Our Services</h2>
+            <p style="text-align: center; color: var(--gray-600); font-size: 1.125rem; margin-bottom: 60px;">Comprehensive solutions tailored to your needs</p>
+            
+            <div class="grid-3">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Professional Websites</h3>
+                    <p class="service-desc">Custom business websites, e-commerce platforms, and landing pages built with modern technologies for maximum impact and conversion.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3 class="service-title">College Projects</h3>
+                    <p class="service-desc">Expert guidance and development for academic projects, final year projects, and research implementations with documentation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">Company Portfolio Websites</h3>
+                    <p class="service-desc">Complete professional portfolio websites showcasing your company's work, services, and achievements with stunning design.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Real Estate Mobile Apps</h3>
+                    <p class="service-desc">Feature-rich mobile applications for real estate businesses with property listings, virtual tours, and advanced search capabilities.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3 class="service-title">School/College Exam Apps</h3>
+                    <p class="service-desc">Custom examination and learning management systems for educational institutions with online testing and result management.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-desc">Native and cross-platform mobile applications for iOS and Android with seamless user experience and robust functionality.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-desc">Scalable cloud infrastructure, migration services, and deployment on AWS, Azure, and Google Cloud Platform.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">AI & ML Integration</h3>
+                    <p class="service-desc">Smart automation, chatbots, predictive analytics, and machine learning solutions to enhance your business operations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-desc">Beautiful, intuitive interface design with user research, prototyping, and testing to ensure optimal user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Why Choose KS Software</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Client-Centric Approach</h3>
+                    <p style="color: var(--gray-600);">We listen to your needs and deliver customized solutions, not one-size-fits-all templates.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">On-Time Delivery</h3>
+                    <p style="color: var(--gray-600);">We respect deadlines and ensure your project is delivered on schedule without compromising quality.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Affordable Pricing</h3>
+                    <p style="color: var(--gray-600);">Competitive rates with transparent pricing. No hidden costs, just honest value for your investment.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Expert Team</h3>
+                    <p style="color: var(--gray-600);">Skilled professionals with years of experience in latest technologies and industry best practices.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">24/7 Support</h3>
+                    <p style="color: var(--gray-600);">Round-the-clock support and maintenance to ensure your business runs smoothly without interruption.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Quality Assurance</h3>
+                    <p style="color: var(--gray-600);">Rigorous testing and quality checks to deliver bug-free, high-performance solutions every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: var(--gray-900); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 16px;">Ready to Work With Us?</h2>
+            <p style="font-size: 1.125rem; color: rgba(255,255,255,0.8); margin-bottom: 32px;">Let's create something extraordinary together</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--primary); color: white; border-radius: 50px; font-weight: 600; text-decoration: none;">Get Started Now</a>
+                <a href="https://wa.me/917385522051" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25d366; color: white; border-radius: 50px; font-weight: 600; text-decoration: none;">💬 Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="images/ks-logo.png" alt="KS Logo">
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px;">KS SOFTWARE</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Transforming visions into digital excellence</p>
+                    <p style="color: rgba(255,255,255,0.7);">📍 Begumpet, Hyderabad, India</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a></li>
+                        <li style="margin-bottom: 8px;"><a href="clients.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Clients</a></li>
+                        <li><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Services</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Web Development</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Mobile Apps</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">College Projects</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">📞 <a href="tel:+917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 73855 22051</a></p>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">✉️ <a href="mailto:mrdeveloper1397@gmail.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">mrdeveloper1397@gmail.com</a></p>
+                    <p style="color: rgba(255,255,255,0.7);">💬 <a href="https://wa.me/917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">WhatsApp Chat</a></p>
+                </div>
+            </div>
+            <div style="padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: rgba(255,255,255,0.7);">
+                <p>&copy; 2026 KS Software Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

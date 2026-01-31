@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients & Blog - KS Software Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #6366f1; --secondary: #ec4899; --white: #ffffff; --gray-50: #f8fafc; --gray-200: #e2e8f0; --gray-600: #475569; --gray-900: #0f172a; }
+        body { font-family: 'DM Sans', sans-serif; line-height: 1.7; color: var(--gray-900); }
+        .navbar { position: fixed; width: 100%; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 45px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; }
+        .nav-menu { display: flex; list-style: none; gap: 40px; }
+        .nav-link { text-decoration: none; color: var(--gray-600); font-weight: 500; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-cta { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 50px; }
+        .page-header { padding: 160px 24px 80px; background: var(--gray-50); text-align: center; }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        section { padding: 80px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+        .card-img { height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-content { padding: 32px; }
+        .footer { background: var(--gray-900); color: white; padding: 60px 24px 24px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 40px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-logo img { height: 40px; }
+        @media (max-width: 768px) { .grid-3, .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/ks-logo.png" alt="KS Logo">
+                <span class="logo-text">KS SOFTWARE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="clients.html" class="nav-link active">Clients & Blog</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Our Work & <span class="gradient-text">Latest Thinking</span></h1>
+        <p style="font-size: 1.125rem; color: var(--gray-600); margin-top: 20px;">Explore our successful projects and industry insights</p>
+    </div>
+
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Client Projects</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase;">E-Commerce</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">ShopEase Platform</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">Complete e-commerce solution serving 50,000+ daily users with AI recommendations.</p>
+                        <div style="display: flex; gap: 8px;">
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">React</span>
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">Node.js</span>
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">AWS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase;">Healthcare</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">MediCare Pro</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">HIPAA-compliant hospital management with telemedicine integration.</p>
+                        <div style="display: flex; gap: 8px;">
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">Angular</span>
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase;">Real Estate</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">PropertyHub</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">Smart property platform with virtual tours and AI matching.</p>
+                        <div style="display: flex; gap: 8px;">
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">Vue.js</span>
+                            <span style="padding: 4px 12px; background: rgba(99,102,241,0.1); border-radius: 50px; font-size: 13px; color: var(--primary);">Laravel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Latest from Our Blog</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--gray-600); font-size: 14px;">January 25, 2026</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">The Future of Web Development</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">Exploring emerging trends in web technologies and AI-driven development.</p>
+                        <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--gray-600); font-size: 14px;">January 20, 2026</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">Optimizing App Performance</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">Best practices for building lightning-fast applications.</p>
+                        <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="card-content">
+                        <span style="color: var(--gray-600); font-size: 14px;">January 15, 2026</span>
+                        <h3 style="font-size: 1.5rem; margin: 12px 0;">Cloud Architecture Guide</h3>
+                        <p style="color: var(--gray-600); margin-bottom: 16px;">Choosing the right cloud infrastructure for startups.</p>
+                        <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="images/ks-logo.png" alt="KS Logo">
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px;">KS SOFTWARE</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Transforming visions into digital excellence</p>
+                    <p style="color: rgba(255,255,255,0.7);">📍 Begumpet, Hyderabad, India</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a></li>
+                        <li style="margin-bottom: 8px;"><a href="clients.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Clients</a></li>
+                        <li><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Services</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Web Development</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Mobile Apps</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">📞 <a href="tel:+917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 73855 22051</a></p>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">✉️ <a href="mailto:mrdeveloper1397@gmail.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">mrdeveloper1397@gmail.com</a></p>
+                    <p style="color: rgba(255,255,255,0.7);">💬 <a href="https://wa.me/917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">WhatsApp Chat</a></p>
+                </div>
+            </div>
+            <div style="padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: rgba(255,255,255,0.7);">
+                <p>&copy; 2026 KS Software Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
