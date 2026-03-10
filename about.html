@@ -3,115 +3,1183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - KS Software Company</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="About KS Software Company - Expert software development team in Hyderabad with 2+ years of experience. Meet our talented professionals delivering cutting-edge digital solutions.">
+    <meta name="keywords" content="about KS Software, software company Hyderabad, development team, expert developers, web development team">
+    <meta name="author" content="KS Software Company">
+    
+    <title>About Us - KS Software Company | Expert Development Team in Hyderabad</title>
+    <link rel="icon" type="image/png" href="KS.png">
+    <link rel="shortcut icon" type="image/png" href="KS.png">
+    <link rel="apple-touch-icon" href="KS.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
-            --primary: #6366f1; --secondary: #ec4899; --white: #ffffff;
-            --gray-50: #f8fafc; --gray-200: #e2e8f0; --gray-600: #475569; --gray-900: #0f172a;
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --primary-light: #3385FF;
+            --accent: #FF3366;
+            --accent-light: #FF6699;
+            --success: #00C853;
+            --warning: #FFB300;
+            
+            --white: #ffffff;
+            --black: #0A0B0D;
+            --gray-50: #F8F9FA;
+            --gray-100: #F1F3F5;
+            --gray-200: #E9ECEF;
+            --gray-300: #DEE2E6;
+            --gray-400: #CED4DA;
+            --gray-500: #ADB5BD;
+            --gray-600: #6C757D;
+            --gray-700: #495057;
+            --gray-800: #343A40;
+            --gray-900: #212529;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        body { font-family: 'DM Sans', sans-serif; line-height: 1.7; color: var(--gray-900); }
-        .navbar { position: fixed; width: 100%; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo img { height: 45px; }
-        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; }
-        .nav-menu { display: flex; list-style: none; gap: 40px; }
-        .nav-link { text-decoration: none; color: var(--gray-600); font-weight: 500; transition: 0.3s; }
+        
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            color: var(--gray-900); 
+            background: var(--white); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Utility Classes */
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+        .container-lg { max-width: 1440px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Navigation - Same as Homepage */
+        .navbar { 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 9999; 
+            background: rgba(255,255,255,0.85); 
+            backdrop-filter: blur(20px) saturate(180%); 
+            border-bottom: 1px solid rgba(0,0,0,0.06); 
+            transition: var(--transition);
+        }
+        .navbar.scrolled { 
+            background: rgba(255,255,255,0.95); 
+            box-shadow: var(--shadow-md);
+        }
+        .nav-container { 
+            max-width: 1440px; 
+            margin: 0 auto; 
+            padding: 16px 32px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo img { 
+            height: 48px; 
+            transition: transform 0.3s; 
+        }
+        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
+        .logo-text { 
+            font-family: 'Sora', sans-serif; 
+            font-weight: 800; 
+            font-size: 24px; 
+            letter-spacing: -0.5px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .nav-menu { 
+            display: flex; 
+            list-style: none; 
+            gap: 40px; 
+            align-items: center; 
+        }
+        .nav-link { 
+            text-decoration: none; 
+            color: var(--gray-700); 
+            font-weight: 600; 
+            font-size: 15px; 
+            position: relative; 
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+        .nav-link::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 0; 
+            height: 2px; 
+            background: var(--primary); 
+            transition: width 0.3s ease; 
+        }
         .nav-link:hover, .nav-link.active { color: var(--primary); }
-        .nav-cta { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 50px; }
-        .page-header { padding: 160px 24px 80px; background: var(--gray-50); text-align: center; }
-        .page-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; }
-        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        section { padding: 80px 24px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
-        .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-cta { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+            color: white !important; 
+            padding: 12px 28px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 16px rgba(0,102,255,0.25);
+            transition: var(--transition);
+        }
+        .nav-cta::after { display: none; }
+        .nav-cta:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 24px rgba(0,102,255,0.35);
+        }
         
-        /* Team Layout */
-        .team-container { max-width: 900px; margin: 0 auto; }
-        .team-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; justify-items: center; }
-        .team-row:last-child { margin-bottom: 0; }
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--gray-800);
+            transition: var(--transition);
+        }
         
-        /* Team Cards */
-        .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; width: 100%; max-width: 350px; }
-        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
-        .team-photo { width: 120px; height: 120px; border-radius: 50%; margin: 32px auto 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; }
-        .team-content { padding: 0 32px 32px; }
-        .team-name { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
-        .team-role { color: var(--primary); font-weight: 600; margin-bottom: 8px; }
-        .team-exp { color: var(--gray-600); font-size: 0.9rem; }
+        /* Page Header */
+        .page-header {
+            padding: 140px 32px 100px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
         
-        /* Service Cards */
-        .service-card { background: white; padding: 32px; border-radius: 16px; border: 2px solid var(--gray-200); transition: 0.3s; }
-        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(99,102,241,0.2); }
-        .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
-        .service-title { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
-        .service-desc { color: var(--gray-600); line-height: 1.6; }
+        .header-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0,102,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,51,102,0.06) 0%, transparent 50%);
+        }
         
-        .footer { background: var(--gray-900); color: white; padding: 60px 24px 24px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 40px; }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .footer-logo img { height: 40px; }
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .page-badge {
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 10px 20px; 
+            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
+            border: 1px solid rgba(0,102,255,0.15); 
+            border-radius: 100px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--primary); 
+            margin-bottom: 24px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+        }
+        
+        .page-title {
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2.5rem, 5vw, 4rem); 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 20px; 
+            letter-spacing: -1.5px;
+            color: var(--gray-900);
+        }
+        
+        .gradient-text { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block;
+        }
+        
+        .page-desc {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.75;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 32px;
+        }
+        
+        .section-header { 
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 72px; 
+        }
+        
+        .section-badge { 
+            display: inline-block; 
+            padding: 8px 18px; 
+            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
+            border-radius: 100px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-bottom: 16px; 
+        }
+        
+        .section-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 16px; 
+            letter-spacing: -1px;
+            color: var(--gray-900);
+        }
+        
+        .section-desc { 
+            font-size: 1.1rem; 
+            color: var(--gray-600); 
+            line-height: 1.7; 
+        }
+        
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .story-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+        
+        .story-content p {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .stat-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        
+        .stat-card p {
+            color: var(--gray-700);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        /* Team Section */
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 40px auto 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Sora', sans-serif;
+        }
+        
+        .team-content {
+            padding: 0 32px 40px;
+        }
+        
+        .team-name {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        
+        .team-exp {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .value-icon {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        
+        .value-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+        
+        .value-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: var(--gray-50);
+            padding: 36px 28px;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            background: white;
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+        
+        .service-desc {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 36px 28px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta { 
+            padding: 100px 32px; 
+            background: var(--gray-900); 
+            color: white; 
+            text-align: center; 
+        }
+        
+        .cta-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 800; 
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .cta-desc { 
+            font-size: 1.15rem; 
+            color: var(--gray-300); 
+            margin-bottom: 40px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        
+        .cta-buttons { 
+            display: flex; 
+            gap: 16px; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        
+        .btn-primary { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 16px 32px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+            color: white; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 15px; 
+            text-decoration: none; 
+            box-shadow: 0 8px 24px rgba(0,102,255,0.3); 
+            transition: var(--transition);
+            border: none; 
+            cursor: pointer; 
+        }
+        
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 32px rgba(0,102,255,0.4); 
+        }
+        
+        .btn-whatsapp { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 16px 32px; 
+            background: #25D366; 
+            color: white; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            box-shadow: 0 8px 24px rgba(37,211,102,0.3); 
+            transition: var(--transition);
+        }
+        
+        .btn-whatsapp:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 32px rgba(37,211,102,0.4); 
+        }
+        
+        /* Footer */
+        .footer { 
+            background: var(--black); 
+            color: var(--gray-400); 
+            padding: 80px 32px 32px; 
+        }
+        
+        .footer-grid { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1.5fr; 
+            gap: 60px; 
+            margin-bottom: 60px; 
+        }
+        
+        .footer-brand .footer-logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin-bottom: 20px; 
+        }
+        
+        .footer-logo img { height: 42px; }
+        
+        .footer-logo-text { 
+            font-family: 'Sora', sans-serif; 
+            font-weight: 800; 
+            font-size: 20px; 
+            color: white; 
+        }
+        
+        .footer-tagline { 
+            color: var(--gray-500); 
+            line-height: 1.75; 
+            margin-bottom: 24px; 
+            font-size: 0.95rem; 
+        }
+        
+        .footer h4 { 
+            color: white; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            font-size: 1.05rem; 
+        }
+        
+        .footer ul { list-style: none; }
+        
+        .footer ul li { margin-bottom: 12px; }
+        
+        .footer a { 
+            color: var(--gray-500); 
+            text-decoration: none; 
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer a:hover { color: white; }
+        
+        .footer-bottom { 
+            padding-top: 40px; 
+            border-top: 1px solid rgba(255,255,255,0.08); 
+            text-align: center; 
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 185px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(0,102,255,0.3);
+            transition: var(--transition);
+            z-index: 9998;
+        }
+        
+        .scroll-top.visible {
+            display: flex;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(0,102,255,0.4);
+        }
+        
+        /* WhatsApp Floating Button & Popup */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 32px;
+            z-index: 9999;
+        }
+        
+        .whatsapp-button {
+            width: 64px;
+            height: 64px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-button svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+        
+        .whatsapp-notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 24px;
+            height: 24px;
+            background: #FF3366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            border: 3px solid white;
+            animation: bounce-notification 1s infinite;
+        }
+        
+        @keyframes bounce-notification {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        
+        .whatsapp-popup {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 320px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+            transform-origin: bottom right;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .whatsapp-popup.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: all;
+        }
+        
+        .whatsapp-popup-header {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .whatsapp-popup-avatar {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .whatsapp-popup-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .whatsapp-popup-info p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-popup-close {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .whatsapp-popup-body {
+            padding: 20px;
+        }
+        
+        .whatsapp-message {
+            background: var(--gray-100);
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--gray-800);
+        }
+        
+        .whatsapp-message::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 0;
+            border-color: transparent var(--gray-100) transparent transparent;
+        }
+        
+        .whatsapp-timestamp {
+            font-size: 11px;
+            color: var(--gray-500);
+            margin-top: 6px;
+        }
+        
+        .whatsapp-quick-replies {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .quick-reply-btn {
+            background: white;
+            border: 1.5px solid var(--gray-300);
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .quick-reply-btn:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .whatsapp-chat-btn {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-chat-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .footer-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
         
         @media (max-width: 768px) { 
-            .grid-2, .grid-3, .footer-grid, .team-row { grid-template-columns: 1fr; }
-            .nav-menu { display: none; }
-            .team-card { max-width: 100%; }
+            .nav-menu { 
+                position: fixed;
+                top: 73px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                box-shadow: var(--shadow-lg);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+            
+            /* WhatsApp popup responsive */
+            .whatsapp-float {
+                right: 16px;
+                bottom: 80px;
+            }
+            
+            .whatsapp-popup {
+                width: calc(100vw - 32px);
+                right: -16px;
+                bottom: 80px;
+            }
+            
+            .whatsapp-button {
+                width: 56px;
+                height: 56px;
+            }
+            
+            .whatsapp-button svg {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .scroll-top {
+                bottom: 160px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        /* ═══ WhatsApp Floating Chatbot ═══ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 32px;
+            z-index: 9999;
+        }
+        .whatsapp-button {
+            width: 64px; height: 64px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: var(--transition);
+            border: none; position: relative;
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.1); }
+        }
+        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+        .whatsapp-button svg { width: 36px; height: 36px; fill: white; }
+        .wa-notif {
+            position: absolute; top: -5px; right: -5px;
+            width: 24px; height: 24px; background: #FF3366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 12px; font-weight: 700;
+            border: 3px solid white;
+            animation: bounce-notif 1s infinite;
+        }
+        @keyframes bounce-notif {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .whatsapp-popup {
+            position: absolute; bottom: 80px; right: 0;
+            width: 320px; background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            opacity: 0; transform: scale(0.8) translateY(20px);
+            transform-origin: bottom right;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .whatsapp-popup.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+        .wa-popup-head {
+            background: linear-gradient(135deg,#25D366,#20BA5A);
+            padding: 20px; color: white;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .wa-avatar {
+            width: 48px; height: 48px; background: white;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 24px;
+        }
+        .wa-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .wa-info p { font-size: 13px; opacity: 0.9; }
+        .wa-close-btn {
+            margin-left: auto; background: rgba(255,255,255,0.2);
+            border: none; color: white; width: 28px; height: 28px;
+            border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; transition: var(--transition);
+        }
+        .wa-close-btn:hover { background: rgba(255,255,255,0.3); }
+        .wa-popup-body { padding: 20px; }
+        .wa-msg {
+            background: var(--gray-100); padding: 12px 16px;
+            border-radius: 12px; margin-bottom: 16px;
+            position: relative; font-size: 14px; line-height: 1.6;
+            color: var(--gray-800);
+        }
+        .wa-msg::before {
+            content: ''; position: absolute; left: -8px; top: 10px;
+            width: 0; height: 0; border-style: solid;
+            border-width: 0 8px 8px 0;
+            border-color: transparent var(--gray-100) transparent transparent;
+        }
+        .wa-time { font-size: 11px; color: var(--gray-500); margin-top: 6px; }
+        .wa-quick-replies { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+        .wa-qbtn {
+            background: white; border: 1.5px solid var(--gray-300);
+            padding: 10px 14px; border-radius: 20px;
+            font-size: 13px; color: var(--gray-700);
+            cursor: pointer; transition: var(--transition);
+            text-align: left; font-weight: 500;
+        }
+        .wa-qbtn:hover { background: var(--gray-50); border-color: var(--primary); color: var(--primary); }
+        .wa-chat-btn {
+            width: 100%; background: #25D366; color: white;
+            border: none; padding: 14px; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; transition: var(--transition);
+        }
+        .wa-chat-btn:hover { background: #20BA5A; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+        @media (max-width: 768px) {
+            .whatsapp-float { right: 16px; bottom: 80px; }
+            .whatsapp-popup { width: calc(100vw - 32px); right: -16px; bottom: 80px; }
+            .whatsapp-button { width: 56px; height: 56px; }
+            .whatsapp-button svg { width: 32px; height: 32px; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <img src="images/ks-logo.png" alt="KS Logo">
+            <a href="index.html" class="logo">
+                <img src="KS.png" alt="KS Software Company Logo">
                 <span class="logo-text">KS SOFTWARE</span>
-            </div>
-            <ul class="nav-menu">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link active">About Us</a></li>
-                <li><a href="clients.html" class="nav-link">Clients & Blog</a></li>
+                <li><a href="clients.html" class="nav-link">Portfolio</a></li>
                 <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="page-header">
-        <h1 class="page-title">Building the Future of<br><span class="gradient-text">Digital Innovation</span></h1>
-        <p style="font-size: 1.125rem; color: var(--gray-600); margin-top: 20px;">Passionate technologists dedicated to transforming businesses</p>
+        <div class="header-bg-pattern"></div>
+        <div class="page-header-content">
+            <div class="page-badge">
+                <span>✨</span>
+                About KS Software
+            </div>
+            <h1 class="page-title">
+                Building the Future of
+                <span class="gradient-text">Digital Innovation</span>
+            </h1>
+            <p class="page-desc">
+                Passionate technologists with 2+ years of experience, dedicated to transforming businesses through cutting-edge digital solutions
+            </p>
+        </div>
     </div>
 
     <!-- Our Story -->
     <section style="background: white;">
         <div class="container">
-            <div class="grid-2">
-                <div>
-                    <h2 class="section-title">Our Story</h2>
-                    <p style="font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 16px;">Founded in Hyderabad, KS Software Company began with a vision to empower businesses through innovative technology solutions.</p>
-                    <p style="font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 16px;">What started as a small team has grown into a trusted technology partner for businesses across industries.</p>
-                    <p style="font-size: 1.0625rem; color: var(--gray-600);">Every project is an opportunity to innovate, create, and push the boundaries of what's possible.</p>
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>Our Story</h2>
+                    <p>Founded in Hyderabad in 2024, KS Software Company began with a vision to empower businesses through innovative technology solutions and exceptional customer service.</p>
+                    <p>What started as a small team has grown into a trusted technology partner for businesses across industries, delivering 50+ successful projects with 100% client satisfaction.</p>
+                    <p>Every project is an opportunity to innovate, create, and push the boundaries of what's possible in the digital landscape.</p>
                 </div>
-                <div class="grid-2" style="gap: 20px;">
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">2021</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>2024</h3>
                         <p>Company Founded</p>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">150+</h3>
+                    <div class="stat-card">
+                        <h3>50+</h3>
                         <p>Projects Delivered</p>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">200+</h3>
-                        <p>Happy Clients</p>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Client Satisfaction</p>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 2rem; color: var(--primary); font-weight: 800;">24/7</h3>
-                        <p>Support</p>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Support Available</p>
                     </div>
                 </div>
             </div>
@@ -120,50 +1188,47 @@
 
     <!-- Our Team -->
     <section style="background: var(--gray-50);">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Meet Our Expert Team</h2>
-            <p style="text-align: center; color: var(--gray-600); font-size: 1.125rem; margin-bottom: 60px;">Talented professionals dedicated to your success</p>
-            
-            <div class="team-container">
-                <!-- First Row: 2 Members -->
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-photo">SK</div>
-                        <div class="team-content">
-                            <h3 class="team-name">Sara K</h3>
-                            <p class="team-role">Senior Manager</p>
-                            <p class="team-exp">5+ years Experience</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-card">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">KR</div>
-                        <div class="team-content">
-                            <h3 class="team-name">K. Raheel</h3>
-                            <p class="team-role">Senior Software Engineer</p>
-                            <p class="team-exp">5+ years Experience</p>
-                        </div>
+        <div class="section-header">
+            <div class="section-badge">Our Team</div>
+            <h2 class="section-title">Meet Our Expert Team</h2>
+            <p class="section-desc">Talented professionals dedicated to your success</p>
+        </div>
+        
+        <div class="team-container">
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">SK</div>
+                    <div class="team-content">
+                        <h3 class="team-name">Sara K</h3>
+                        <p class="team-role">Senior Manager & CEO</p>
+                        <p class="team-exp">6+ years Experience</p>
                     </div>
                 </div>
                 
-                <!-- Second Row: 2 Members -->
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">AS</div>
-                        <div class="team-content">
-                            <h3 class="team-name">A. Shoaib</h3>
-                            <p class="team-role">Senior Developer</p>
-                            <p class="team-exp">3+ years Experience</p>
-                        </div>
+                <div class="team-card">
+                    <div class="team-photo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">KR</div>
+                    <div class="team-content">
+                        <h3 class="team-name">K. Raheel</h3>
+                        <p class="team-role">Senior Software Engineer</p>
+                        <p class="team-exp">6+ years Experience</p>
                     </div>
-                    
-                    <div class="team-card">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">SS</div>
-                        <div class="team-content">
-                            <h3 class="team-name">S. Shubham</h3>
-                            <p class="team-role">Full Stack Developer</p>
-                            <p class="team-exp">3+ years Experience</p>
-                        </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">AS</div>
+                    <div class="team-content">
+                        <h3 class="team-name">A. Shoaib</h3>
+                        <p class="team-role">Senior Developer</p>
+                        <p class="team-exp">4+ years Experience</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">SS</div>
+                    <div class="team-content">
+                        <h3 class="team-name">S. Shubham</h3>
+                        <p class="team-role">Full Stack Developer</p>
+                        <p class="team-exp">4+ years Experience</p>
                     </div>
                 </div>
             </div>
@@ -172,177 +1237,348 @@
 
     <!-- Our Values -->
     <section style="background: white;">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Our Core Values</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">🎯</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Excellence</h3>
-                    <p style="color: var(--gray-600);">We pursue perfection in every line of code and every client interaction.</p>
-                </div>
-                <div class="card">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">🚀</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Innovation</h3>
-                    <p style="color: var(--gray-600);">We embrace cutting-edge technologies and creative approaches.</p>
-                </div>
-                <div class="card">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">🤝</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Integrity</h3>
-                    <p style="color: var(--gray-600);">Transparency and ethical practices in everything we do.</p>
-                </div>
+        <div class="section-header">
+            <div class="section-badge">Core Values</div>
+            <h2 class="section-title">What Drives Us</h2>
+            <p class="section-desc">The principles that guide everything we do</p>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-icon">🎯</span>
+                <h3>Excellence</h3>
+                <p>We pursue perfection in every line of code and every client interaction, delivering nothing but the best.</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">🚀</span>
+                <h3>Innovation</h3>
+                <p>We embrace cutting-edge technologies and creative approaches to solve complex challenges.</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">🤝</span>
+                <h3>Integrity</h3>
+                <p>Transparency and ethical practices in everything we do, building trust with every interaction.</p>
             </div>
         </div>
     </section>
 
     <!-- Our Services -->
     <section style="background: var(--gray-50);">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Our Services</h2>
-            <p style="text-align: center; color: var(--gray-600); font-size: 1.125rem; margin-bottom: 60px;">Comprehensive solutions tailored to your needs</p>
+        <div class="section-header">
+            <div class="section-badge">What We Offer</div>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-desc">Comprehensive solutions tailored to your needs</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <h3 class="service-title">Professional Websites</h3>
+                <p class="service-desc">Custom business websites, e-commerce platforms, and landing pages built with modern technologies for maximum impact and conversion.</p>
+            </div>
             
-            <div class="grid-3">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3 class="service-title">Professional Websites</h3>
-                    <p class="service-desc">Custom business websites, e-commerce platforms, and landing pages built with modern technologies for maximum impact and conversion.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3 class="service-title">College Projects</h3>
-                    <p class="service-desc">Expert guidance and development for academic projects, final year projects, and research implementations with documentation.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3 class="service-title">Company Portfolio Websites</h3>
-                    <p class="service-desc">Complete professional portfolio websites showcasing your company's work, services, and achievements with stunning design.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3 class="service-title">Real Estate Mobile Apps</h3>
-                    <p class="service-desc">Feature-rich mobile applications for real estate businesses with property listings, virtual tours, and advanced search capabilities.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3 class="service-title">School/College Exam Apps</h3>
-                    <p class="service-desc">Custom examination and learning management systems for educational institutions with online testing and result management.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3 class="service-title">Mobile App Development</h3>
-                    <p class="service-desc">Native and cross-platform mobile applications for iOS and Android with seamless user experience and robust functionality.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3 class="service-title">Cloud Solutions</h3>
-                    <p class="service-desc">Scalable cloud infrastructure, migration services, and deployment on AWS, Azure, and Google Cloud Platform.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3 class="service-title">AI & ML Integration</h3>
-                    <p class="service-desc">Smart automation, chatbots, predictive analytics, and machine learning solutions to enhance your business operations.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-desc">Beautiful, intuitive interface design with user research, prototyping, and testing to ensure optimal user experience.</p>
-                </div>
+            <div class="service-card">
+                <span class="service-icon">🎓</span>
+                <h3 class="service-title">College Projects</h3>
+                <p class="service-desc">Expert guidance and development for academic projects, final year projects, and research implementations with complete documentation.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">💼</span>
+                <h3 class="service-title">Portfolio Websites</h3>
+                <p class="service-desc">Complete professional portfolio websites showcasing your company's work, services, and achievements with stunning design.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🏠</span>
+                <h3 class="service-title">Real Estate Apps</h3>
+                <p class="service-desc">Feature-rich mobile applications for real estate businesses with property listings, virtual tours, and advanced search capabilities.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">📚</span>
+                <h3 class="service-title">Exam Apps</h3>
+                <p class="service-desc">Custom examination and learning management systems for educational institutions with online testing and result management.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">📱</span>
+                <h3 class="service-title">Mobile Apps</h3>
+                <p class="service-desc">Native and cross-platform mobile applications for iOS and Android with seamless user experience and robust functionality.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">☁️</span>
+                <h3 class="service-title">Cloud Solutions</h3>
+                <p class="service-desc">Scalable cloud infrastructure, migration services, and deployment on AWS, Azure, and Google Cloud Platform.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🤖</span>
+                <h3 class="service-title">AI Integration</h3>
+                <p class="service-desc">Smart automation, chatbots, predictive analytics, and machine learning solutions to enhance your business operations.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">Beautiful, intuitive interface design with user research, prototyping, and testing to ensure optimal user experience.</p>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
     <section style="background: white;">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Why Choose KS Software</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Client-Centric Approach</h3>
-                    <p style="color: var(--gray-600);">We listen to your needs and deliver customized solutions, not one-size-fits-all templates.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">On-Time Delivery</h3>
-                    <p style="color: var(--gray-600);">We respect deadlines and ensure your project is delivered on schedule without compromising quality.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Affordable Pricing</h3>
-                    <p style="color: var(--gray-600);">Competitive rates with transparent pricing. No hidden costs, just honest value for your investment.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Expert Team</h3>
-                    <p style="color: var(--gray-600);">Skilled professionals with years of experience in latest technologies and industry best practices.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">24/7 Support</h3>
-                    <p style="color: var(--gray-600);">Round-the-clock support and maintenance to ensure your business runs smoothly without interruption.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Quality Assurance</h3>
-                    <p style="color: var(--gray-600);">Rigorous testing and quality checks to deliver bug-free, high-performance solutions every time.</p>
-                </div>
+        <div class="section-header">
+            <div class="section-badge">Why Choose Us</div>
+            <h2 class="section-title">What Makes Us Different</h2>
+            <p class="section-desc">Our commitment to excellence sets us apart</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Client-Centric Approach</h3>
+                <p>We listen to your needs and deliver customized solutions, not one-size-fits-all templates.</p>
+            </div>
+            <div class="feature-card">
+                <h3>On-Time Delivery</h3>
+                <p>We respect deadlines and ensure your project is delivered on schedule without compromising quality.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Affordable Pricing</h3>
+                <p>Competitive rates with transparent pricing. No hidden costs, just honest value for your investment.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Expert Team</h3>
+                <p>Skilled professionals with years of experience in latest technologies and industry best practices.</p>
+            </div>
+            <div class="feature-card">
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock support and maintenance to ensure your business runs smoothly without interruption.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Quality Assurance</h3>
+                <p>Rigorous testing and quality checks to deliver bug-free, high-performance solutions every time.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section style="background: var(--gray-900); color: white; text-align: center;">
-        <div class="container">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 16px;">Ready to Work With Us?</h2>
-            <p style="font-size: 1.125rem; color: rgba(255,255,255,0.8); margin-bottom: 32px;">Let's create something extraordinary together</p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--primary); color: white; border-radius: 50px; font-weight: 600; text-decoration: none;">Get Started Now</a>
-                <a href="https://wa.me/917385522051" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #25d366; color: white; border-radius: 50px; font-weight: 600; text-decoration: none;">💬 Chat on WhatsApp</a>
-            </div>
+    <section class="cta">
+        <h2 class="cta-title">Ready to Work With Us?</h2>
+        <p class="cta-desc">Let's create something extraordinary together. Get a free consultation today!</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn-primary">Get Started Now</a>
+            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-whatsapp">
+                💬 Chat on WhatsApp
+            </a>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">
-                        <img src="images/ks-logo.png" alt="KS Logo">
-                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px;">KS SOFTWARE</span>
-                    </div>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Transforming visions into digital excellence</p>
-                    <p style="color: rgba(255,255,255,0.7);">📍 Begumpet, Hyderabad, India</p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="KS.png" alt="KS Software Logo">
+                    <span class="footer-logo-text">KS SOFTWARE</span>
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 16px;">Quick Links</h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
-                        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a></li>
-                        <li style="margin-bottom: 8px;"><a href="clients.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Clients</a></li>
-                        <li><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 16px;">Services</h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Web Development</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Mobile Apps</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">College Projects</a></li>
-                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Cloud Solutions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 16px;">Contact</h4>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">📞 <a href="tel:+917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 73855 22051</a></p>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 8px;">✉️ <a href="mailto:mrdeveloper1397@gmail.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">mrdeveloper1397@gmail.com</a></p>
-                    <p style="color: rgba(255,255,255,0.7);">💬 <a href="https://wa.me/917385522051" style="color: rgba(255,255,255,0.7); text-decoration: none;">WhatsApp Chat</a></p>
-                </div>
+                <p class="footer-tagline">Leading software development company in Hyderabad with 2+ years of experience, specializing in web development, mobile apps, and digital transformation solutions.</p>
+                <p style="color: var(--gray-500); margin-top: 16px; font-size: 0.95rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
             </div>
-            <div style="padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: rgba(255,255,255,0.7);">
-                <p>&copy; 2026 KS Software Company. All rights reserved.</p>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="clients.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="about.html">Web Development</a></li>
+                    <li><a href="about.html">Mobile Apps</a></li>
+                    <li><a href="about.html">SEO Services</a></li>
+                    <li><a href="about.html">Cloud Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
+                    <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
+                    <li><a href="https://wa.me/917385522051">💬 WhatsApp Chat</a></li>
+                </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KS Software Company. All rights reserved. | Web Development Company in Hyderabad | Mobile App Development | SEO Services</p>
+        </div>
     </footer>
+
+    <!-- WhatsApp Floating Chatbot -->
+    <div class="whatsapp-float" id="waFloat">
+        <div class="whatsapp-popup" id="waPopup">
+            <div class="wa-popup-head">
+                <div class="wa-avatar">💬</div>
+                <div class="wa-info">
+                    <h4>KS Software</h4>
+                    <p>Typically replies instantly</p>
+                </div>
+                <button class="wa-close-btn" id="waClose">×</button>
+            </div>
+            <div class="wa-popup-body">
+                <div class="wa-msg">
+                    <div>Hi there! 👋</div>
+                    <div>How can we help you today?</div>
+                    <div class="wa-time">Just now</div>
+                </div>
+                <div class="wa-quick-replies">
+                    <button class="wa-qbtn" onclick="sendWA('I need a website')">🌐 I need a website</button>
+                    <button class="wa-qbtn" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
+                    <button class="wa-qbtn" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
+                    <button class="wa-qbtn" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
+                </div>
+                <button class="wa-chat-btn" onclick="sendWA('')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Start Chat
+                </button>
+            </div>
+        </div>
+        <button class="whatsapp-button" id="waBtn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span class="wa-notif" id="waNotif">1</span>
+        </button>
+    </div>
+
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- WhatsApp Floating Button & Popup -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <div class="whatsapp-popup-header">
+                <div class="whatsapp-popup-avatar">💬</div>
+                <div class="whatsapp-popup-info">
+                    <h4>KS Software</h4>
+                    <p>Typically replies instantly</p>
+                </div>
+                <button class="whatsapp-popup-close" id="closePopup">×</button>
+            </div>
+            <div class="whatsapp-popup-body">
+                <div class="whatsapp-message">
+                    <div>Hi there! 👋</div>
+                    <div>How can we help you today?</div>
+                    <div class="whatsapp-timestamp">Just now</div>
+                </div>
+                <div class="whatsapp-quick-replies">
+                    <button class="quick-reply-btn" onclick="sendWhatsApp('I need a website')">🌐 I need a website</button>
+                    <button class="quick-reply-btn" onclick="sendWhatsApp('I need a mobile app')">📱 I need a mobile app</button>
+                    <button class="quick-reply-btn" onclick="sendWhatsApp('I need SEO services')">🔍 I need SEO services</button>
+                    <button class="quick-reply-btn" onclick="sendWhatsApp('Get a quote')">💰 Get a quote</button>
+                </div>
+                <button class="whatsapp-chat-btn" onclick="sendWhatsApp()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Start Chat
+                </button>
+            </div>
+        </div>
+        <button class="whatsapp-button" id="whatsappButton">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span class="whatsapp-notification">1</span>
+        </button>
+    </div>
+
+<script>
+
+        // ── Navbar scroll effect ──
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            var scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // ── Scroll to top ──
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Mobile menu toggle ──
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ── Smooth scroll for anchors ──
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ── WhatsApp Chatbot ──
+        var waBtn = document.getElementById('waBtn');
+        var waPopup = document.getElementById('waPopup');
+        var waClose = document.getElementById('waClose');
+        var waNotif = document.getElementById('waNotif');
+
+        waBtn.addEventListener('click', function() {
+            waPopup.classList.toggle('active');
+            if (waNotif) waNotif.style.display = 'none';
+        });
+        waClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            waPopup.classList.remove('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (waBtn && waPopup && !waBtn.contains(e.target) && !waPopup.contains(e.target)) {
+                waPopup.classList.remove('active');
+            }
+        });
+        setTimeout(function() {
+            if (!sessionStorage.getItem('waShown_about')) {
+                waPopup.classList.add('active');
+                sessionStorage.setItem('waShown_about', '1');
+                setTimeout(function() { waPopup.classList.remove('active'); }, 8000);
+            }
+        }, 3000);
+
+        function sendWA(msg) {
+            var text = msg || "Hi, I'm interested in your services!";
+            window.open('https://wa.me/917385522051?text=' + encodeURIComponent(text), '_blank');
+        }
+</script>
 </body>
 </html>

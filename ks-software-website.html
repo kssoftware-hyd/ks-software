@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS Software Company - Transform Your Digital Vision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+        ======================================== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --white: #ffffff;
+            --black: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--gray-900);
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--gray-700);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--gray-900);
+            border-radius: 2px;
+            transition: var(--transition-base);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(9px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-9px);
+        }
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .geometric-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            top: 60%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-secondary);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            bottom: 10%;
+            left: 30%;
+            width: 250px;
+            height: 250px;
+            background: var(--gradient-warm);
+            border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-60px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(3deg);
+            }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            transition: var(--transition-base);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid var(--primary);
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 600px;
+        }
+
+        .visual-card {
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: var(--transition-base);
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        .visual-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .card-icon {
+            font-size: 48px;
+        }
+
+        .card-text {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .card-1 {
+            top: 0;
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            top: 80px;
+            right: 50px;
+            animation-delay: 1s;
+        }
+
+        .card-3 {
+            bottom: 120px;
+            left: 50px;
+            animation-delay: 2s;
+        }
+
+        .card-4 {
+            bottom: 0;
+            right: 0;
+            animation-delay: 3s;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ========================================
+           SERVICES SECTION
+        ======================================== */
+        .services {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 40px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .service-card.featured {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .service-card.featured h3,
+        .service-card.featured p {
+            color: white;
+        }
+
+        .service-card.featured .service-icon-wrapper {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           WHY CHOOSE US
+        ======================================== */
+        .why-choose {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lead-text {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-check {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .stats-card {
+            background: var(--gradient-primary);
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: var(--shadow-2xl);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 20px;
+        }
+
+        .stats-icon {
+            font-size: 48px;
+        }
+
+        .stats-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stats-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ========================================
+           PORTFOLIO
+        ======================================== */
+        .portfolio {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 32px;
+        }
+
+        .portfolio-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .portfolio-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           CONTACT SECTION
+        ======================================== */
+        .contact {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 16px;
+            transition: var(--transition-base);
+        }
+
+        .contact-item:hover {
+            background: var(--gray-100);
+            transform: translateX(5px);
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .contact-item-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .contact-item-content p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--gray-50);
+            padding: 48px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-label .required {
+            color: #ef4444;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: var(--transition-base);
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-message {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #6ee7b7;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px 40px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 80px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-tagline {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-location {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-300);
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            transition: var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-400);
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 12px;
+        }
+
+        .badge {
+            background: var(--gray-800);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--gray-300);
+        }
+
+        /* ========================================
+           SCROLL TO TOP BUTTON
+        ======================================== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+        ======================================== */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .why-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 32px;
+                box-shadow: var(--shadow-lg);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                gap: 24px;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .nav-container {
+                height: 70px;
+            }
+
+            .logo-image {
+                height: 40px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="KS Software" class="logo-image" id="logoImage">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="geometric-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            Premium Digital Solutions
+                        </div>
+                        <h1 class="hero-title">
+                            Transform Your
+                            <span class="gradient-text">Digital Vision</span>
+                            Into Reality
+                        </h1>
+                        <p class="hero-description">
+                            We craft exceptional digital experiences that drive business growth. 
+                            From concept to launch, we're your strategic technology partner in Hyderabad.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn-primary">
+                                <span>Start Your Project</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <a href="#services" class="btn-secondary">
+                                <span>Discover More</span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="visual-card card-1">
+                            <div class="card-icon">💻</div>
+                            <div class="card-text">Web Development</div>
+                        </div>
+                        <div class="visual-card card-2">
+                            <div class="card-icon">📱</div>
+                            <div class="card-text">Mobile Apps</div>
+                        </div>
+                        <div class="visual-card card-3">
+                            <div class="card-icon">☁️</div>
+                            <div class="card-text">Cloud Solutions</div>
+                        </div>
+                        <div class="visual-card card-4">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-text">Digital Strategy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Comprehensive Digital Services</h2>
+                <p class="section-description">End-to-end solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🎨</div>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive interfaces that users love. We blend aesthetics with functionality to create memorable experiences.</p>
+                </div>
+                
+                <div class="service-card featured">
+                    <div class="featured-badge">Popular</div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">⚡</div>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Fast, responsive, and scalable web applications built with cutting-edge technologies that drive results.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">📲</div>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform applications that deliver seamless experiences across all devices.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🔒</div>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>Enterprise-grade security measures to protect your digital assets and ensure compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🤖</div>
+                    </div>
+                    <h3>AI Integration</h3>
+                    <p>Smart automation and machine learning solutions that transform modern businesses.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">📊</div>
+                    </div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Data-driven strategies that help you make informed decisions and grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <span class="section-subtitle">Why KS Software</span>
+                    <h2>Your Success Is Our Priority</h2>
+                    <p class="lead-text">
+                        We don't just build software – we build partnerships. Our commitment to excellence 
+                        and innovation drives everything we do.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div>
+                                <h4>Expert Team</h4>
+                                <p>Skilled developers and designers with years of industry experience</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div>
+                                <h4>Agile Methodology</h4>
+                                <p>Fast iterations and continuous delivery for faster time-to-market</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock assistance to ensure your business never stops</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div>
+                                <h4>Transparent Pricing</h4>
+                                <p>No hidden costs – clear, honest pricing from day one</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-visual">
+                    <div class="stats-card">
+                        <div class="stats-item">
+                            <div class="stats-icon">🏆</div>
+                            <div class="stats-info">
+                                <div class="stats-number">15+</div>
+                                <div class="stats-text">Industry Awards</div>
+                            </div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-icon">👥</div>
+                            <div class="stats-info">
+                                <div class="stats-number">200+</div>
+                                <div class="stats-text">Happy Clients</div>
+                            </div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-icon">⭐</div>
+                            <div class="stats-info">
+                                <div class="stats-number">4.9/5</div>
+                                <div class="stats-text">Client Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-description">Explore some of our latest success stories</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">🛒</div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured online marketplace with advanced inventory management and secure payment processing.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-image">🏥</div>
+                    <div class="portfolio-content">
+                        <h3>Healthcare Portal</h3>
+                        <p>Patient management system with appointment scheduling, telemedicine, and secure health records.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-image">📚</div>
+                    <div class="portfolio-content">
+                        <h3>Learning Platform</h3>
+                        <p>Interactive e-learning platform with video courses, live classes, and progress tracking.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Build Something Amazing Together</h2>
+                    <p>
+                        Ready to transform your ideas into reality? Get in touch with us today and 
+                        let's discuss how we can help grow your business.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <p>+91 73855 22051</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">✉️</div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p>info@kssoftware.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div class="contact-item-content">
+                                <h4>Location</h4>
+                                <p>Begumpet, Hyderabad, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">💬</div>
+                            <div class="contact-item-content">
+                                <h4>WhatsApp</h4>
+                                <p>Chat with us instantly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div id="formMessage" class="form-message"></div>
+                    
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="name">
+                                    Full Name <span class="required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="email">
+                                    Email Address <span class="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="phone">
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="service">
+                                    Service Needed <span class="required">*</span>
+                                </label>
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="">Select a service</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="mobile">Mobile App Development</option>
+                                    <option value="uiux">UI/UX Design</option>
+                                    <option value="cloud">Cloud Solutions</option>
+                                    <option value="ai">AI Integration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="budget">
+                                Project Budget
+                            </label>
+                            <select id="budget" name="budget" class="form-select">
+                                <option value="">Select budget range</option>
+                                <option value="small">< ₹50,000</option>
+                                <option value="medium">₹50,000 - ₹2,00,000</option>
+                                <option value="large">₹2,00,000 - ₹5,00,000</option>
+                                <option value="enterprise">> ₹5,00,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">
+                                Project Details <span class="required">*</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="KS Software" id="footerLogoImage">
+                    </div>
+                    <p class="footer-tagline">Transforming visions into digital excellence</p>
+                    <div class="footer-location">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                        </svg>
+                        <span>Begumpet, Hyderabad, India</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">AI Integration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="tel:+917385522051">+91 73855 22051</a></li>
+                        <li><a href="mailto:info@kssoftware.com">info@kssoftware.com</a></li>
+                        <li><a href="https://wa.me/917385522051" target="_blank">WhatsApp Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KS Software Company. All rights reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge">Trusted Partner</span>
+                    <span class="badge">ISO Certified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // ========================================
+        // NAVIGATION
+        // ========================================
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Load logo
+        const logoImage = document.getElementById('logoImage');
+        const footerLogoImage = document.getElementById('footerLogoImage');
+        
+        // You'll need to replace this with the actual base64 or path to your KS.png
+        fetch('/mnt/user-data/uploads/KS.png')
+            .then(response => response.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                logoImage.src = url;
+                footerLogoImage.src = url;
+            })
+            .catch(() => {
+                // Fallback text logo
+                logoImage.style.display = 'none';
+                footerLogoImage.style.display = 'none';
+            });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navToggle) {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Active link highlighting
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // ========================================
+        // SMOOTH SCROLLING
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // ========================================
+        // CONTACT FORM
+        // ========================================
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    service: formData.get('service'),
+                    budget: formData.get('budget'),
+                    message: formData.get('message')
+                };
+                
+                // Validation
+                if (!data.name || !data.email || !data.message || !data.service) {
+                    showMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                // Email validation
+                if (!validateEmail(data.email)) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Phone validation (if provided)
+                if (data.phone && !validatePhone(data.phone)) {
+                    showMessage('Please enter a valid phone number.', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<span>Sending...</span>';
+                submitButton.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Success message
+                    showMessage('Thank you for your message! We will get back to you within 24 hours.', 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                    
+                    // Optional: Open WhatsApp
+                    setTimeout(() => {
+                        const shouldOpenWhatsApp = confirm('Would you like to also send us a message on WhatsApp for faster response?');
+                        if (shouldOpenWhatsApp) {
+                            sendWhatsAppMessage(data);
+                        }
+                    }, 1000);
+                }, 1500);
+            });
+        }
+        
+        // ========================================
+        // VALIDATION HELPERS
+        // ========================================
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+        
+        function validatePhone(phone) {
+            const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            return re.test(phone);
+        }
+        
+        function showMessage(message, type) {
+            if (formMessage) {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type}`;
+                formMessage.style.display = 'block';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        function sendWhatsAppMessage(data) {
+            const message = `New Project Inquiry:
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Service: ${data.service}
+Budget: ${data.budget || 'Not specified'}
+
+Message:
+${data.message}`;
+            
+            const whatsappUrl = `https://wa.me/917385522051?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Real-time validation feedback
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        
+        if (emailInput) {
+            emailInput.addEventListener('blur', () => {
+                if (emailInput.value && !validateEmail(emailInput.value)) {
+                    emailInput.style.borderColor = '#ef4444';
+                } else {
+                    emailInput.style.borderColor = '#e2e8f0';
+                }
+            });
+        }
+        
+        if (phoneInput) {
+            phoneInput.addEventListener('blur', () => {
+                if (phoneInput.value && !validatePhone(phoneInput.value)) {
+                    phoneInput.style.borderColor = '#ef4444';
+                } else {
+                    phoneInput.style.borderColor = '#e2e8f0';
+                }
+            });
+        }
+        
+        // ========================================
+        // SCROLL TO TOP BUTTON
+        // ========================================
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ========================================
+        // COUNTER ANIMATION
+        // ========================================
+        function animateCounter(element, target, duration = 2000) {
+            const text = element.textContent;
+            const isPercentage = text.includes('%');
+            const isPlus = text.includes('+');
+            let current = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (isPercentage ? '%' : isPlus ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (isPercentage ? '%' : isPlus ? '+' : '');
+                }
+            }, 16);
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number, .stats-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const isPercentage = text.includes('%');
+                        const isPlus = text.includes('+');
+                        const target = parseInt(text.replace(/[^0-9]/g, '')) || 0;
+                        
+                        if (target > 0) {
+                            stat.textContent = '0' + (isPercentage ? '%' : isPlus ? '+' : '');
+                            animateCounter(stat, target);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe stats sections
+        const heroStats = document.querySelector('.hero-stats');
+        const statsCard = document.querySelector('.stats-card');
+        
+        if (heroStats) statsObserver.observe(heroStats);
+        if (statsCard) statsObserver.observe(statsCard);
+        
+        // ========================================
+        // CARD ANIMATIONS
+        // ========================================
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe cards for animation
+        const animateElements = document.querySelectorAll('.service-card, .portfolio-card, .feature-item');
+        animateElements.forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(el);
+        });
+        
+        // ========================================
+        // PAGE LOAD ANIMATION
+        // ========================================
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // ========================================
+        // CONSOLE MESSAGE
+        // ========================================
+        console.log('%c✨ KS Software Company Website Loaded Successfully! ✨', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+        console.log('%c🚀 Premium Design System Active', 'color: #0ea5e9; font-size: 14px;');
+    </script>
+</body>
+</html>

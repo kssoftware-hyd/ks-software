@@ -3,1309 +3,1478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KS Software Company - Transform Your Digital Vision</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="KS Software Company - Leading web development, mobile app development, and SEO services in Hyderabad. 50+ projects completed with 2+ years of experience. Expert team delivering cutting-edge digital solutions.">
+    <meta name="keywords" content="web development Hyderabad, mobile app development, SEO services, software company Begumpet, Flutter development, React development, WordPress development, digital marketing Hyderabad">
+    <meta name="author" content="KS Software Company">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="KS Software Company - Premium Web & Mobile App Development in Hyderabad">
+    <meta property="og:description" content="Transform your business with cutting-edge digital solutions. 50+ projects completed with 100% client satisfaction.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kssoftware.com">
+    <meta property="og:image" content="KS.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KS Software Company - Web & App Development Hyderabad">
+    <meta name="twitter:description" content="50+ projects completed. Expert software development team in Begumpet, Hyderabad.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kssoftware.com">
+    
+    <title>KS Software Company - #1 Web & Mobile App Development Company in Hyderabad | 50+ Projects | 6+ Years Experience</title>
+    <link rel="icon" type="image/png" href="KS.png">
+    <link rel="shortcut icon" type="image/png" href="KS.png">
+    <link rel="apple-touch-icon" href="KS.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Variables */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary: #ec4899;
-            --accent: #f59e0b;
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --primary-light: #3385FF;
+            --accent: #FF3366;
+            --accent-light: #FF6699;
+            --success: #00C853;
+            --warning: #FFB300;
+            
             --white: #ffffff;
-            --black: #0f172a;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --font-display: 'Playfair Display', serif;
-            --font-body: 'DM Sans', sans-serif;
-            --font-heading: 'Montserrat', sans-serif;
-            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --black: #0A0B0D;
+            --gray-50: #F8F9FA;
+            --gray-100: #F1F3F5;
+            --gray-200: #E9ECEF;
+            --gray-300: #DEE2E6;
+            --gray-400: #CED4DA;
+            --gray-500: #ADB5BD;
+            --gray-600: #6C757D;
+            --gray-700: #495057;
+            --gray-800: #343A40;
+            --gray-900: #212529;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--gray-800);
-            background: var(--white);
-            line-height: 1.7;
+        
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            color: var(--gray-900); 
+            background: var(--white); 
+            line-height: 1.6; 
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition-base);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
+        
+        /* Utility Classes */
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+        .container-lg { max-width: 1440px; margin: 0 auto; padding: 0 24px; }
+        
         /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--gray-200);
-            transition: var(--transition-base);
+        .navbar { 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 9999; 
+            background: rgba(255,255,255,0.85); 
+            backdrop-filter: blur(20px) saturate(180%); 
+            border-bottom: 1px solid rgba(0,0,0,0.06); 
+            transition: var(--transition);
         }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-lg);
+        .navbar.scrolled { 
+            background: rgba(255,255,255,0.95); 
+            box-shadow: var(--shadow-md);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .nav-container { 
+            max-width: 1440px; 
+            margin: 0 auto; 
+            padding: 16px 32px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
+        .logo { 
+            display: flex; 
+            align-items: center; 
             gap: 12px;
+            text-decoration: none;
         }
-
-        .logo img {
-            height: 45px;
-            width: auto;
+        .logo img { 
+            height: 48px; 
+            transition: transform 0.3s; 
         }
-
-        .logo-text {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 20px;
-            letter-spacing: 1px;
-            color: var(--gray-900);
+        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
+        .logo-text { 
+            font-family: 'Sora', sans-serif; 
+            font-weight: 800; 
+            font-size: 24px; 
+            letter-spacing: -0.5px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            align-items: center;
+        .nav-menu { 
+            display: flex; 
+            list-style: none; 
+            gap: 40px; 
+            align-items: center; 
         }
-
-        .nav-link {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--gray-600);
-            position: relative;
-            transition: var(--transition-base);
+        .nav-link { 
+            text-decoration: none; 
+            color: var(--gray-700); 
+            font-weight: 600; 
+            font-size: 15px; 
+            position: relative; 
+            transition: var(--transition);
+            padding: 8px 0;
         }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition-base);
+        .nav-link::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 0; 
+            height: 2px; 
+            background: var(--primary); 
+            transition: width 0.3s ease; 
         }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary);
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-cta { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+            color: white !important; 
+            padding: 12px 28px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 16px rgba(0,102,255,0.25);
+            transition: var(--transition);
         }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
+        .nav-cta::after { display: none; }
+        .nav-cta:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 24px rgba(0,102,255,0.35);
         }
-
-        .nav-link.nav-cta {
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 24px;
-            border-radius: 50px;
-        }
-
-        .nav-link.nav-cta::after {
-            display: none;
-        }
-
-        .nav-link.nav-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .nav-toggle {
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
             display: none;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
+            background: none;
+            border: none;
             cursor: pointer;
+            padding: 8px;
         }
-
-        .nav-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--gray-700);
-            transition: var(--transition-base);
-            border-radius: 2px;
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--gray-800);
+            transition: var(--transition);
         }
-
+        
         /* Hero Section */
-        .hero-home {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 24px 80px;
-            overflow: hidden;
+        .hero { 
+            position: relative; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            padding: 140px 32px 100px; 
+            overflow: hidden; 
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
         }
-
-        .hero-gradient {
+        
+        .hero-bg-pattern {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
-            z-index: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0,102,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,51,102,0.06) 0%, transparent 50%);
         }
-
-        .geometric-shapes {
+        
+        .floating-elements {
             position: absolute;
+            width: 100%;
+            height: 100%;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: 0;
+            pointer-events: none;
         }
-
-        .shape {
+        
+        .floating-shape {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.05;
+            filter: blur(60px);
             animation: float 20s ease-in-out infinite;
         }
-
+        
         .shape-1 {
             width: 400px;
             height: 400px;
-            background: var(--primary);
-            top: 10%;
-            left: -10%;
+            background: linear-gradient(135deg, rgba(0,102,255,0.15), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
         }
-
+        
         .shape-2 {
             width: 300px;
             height: 300px;
-            background: var(--secondary);
-            bottom: 20%;
-            right: -5%;
+            background: linear-gradient(135deg, rgba(255,51,102,0.12), transparent);
+            bottom: -50px;
+            left: -50px;
             animation-delay: -5s;
         }
-
-        .shape-3 {
-            width: 200px;
-            height: 200px;
-            background: var(--accent);
-            top: 50%;
-            right: 10%;
-            animation-delay: -10s;
-        }
-
+        
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
         }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        
+        .hero-container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            position: relative; 
+            z-index: 2; 
+            display: grid; 
+            grid-template-columns: 1.1fr 0.9fr; 
+            gap: 80px; 
+            align-items: center; 
         }
-
-        .hero-content {
+        
+        .hero-content { 
             animation: fadeInUp 0.8s ease;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        @keyframes fadeInUp { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
         }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 24px;
+        
+        .hero-badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 10px 20px; 
+            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
+            border: 1px solid rgba(0,102,255,0.15); 
+            border-radius: 100px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--primary); 
+            margin-bottom: 24px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            animation: bounce 2s infinite;
         }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation: pulse 2s ease infinite;
+        
+        .badge-icon { 
+            font-size: 16px;
         }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+        
+        @keyframes bounce { 
+            0%, 100% { transform: translateY(0); } 
+            50% { transform: translateY(-4px); } 
         }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.1;
+        
+        .hero-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            font-weight: 800; 
+            line-height: 1.15; 
+            margin-bottom: 20px; 
+            letter-spacing: -1.5px;
             color: var(--gray-900);
-            margin-bottom: 24px;
         }
-
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
+        
+        .gradient-text { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block;
+        }
+        
+        .hero-desc { 
+            font-size: 1.15rem; 
+            color: var(--gray-600); 
+            line-height: 1.75; 
+            margin-bottom: 36px; 
+            max-width: 560px; 
+        }
+        
+        .hero-cta { 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+            margin-bottom: 56px; 
+        }
+        
+        .btn-primary { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 16px 32px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+            color: white; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 15px; 
+            text-decoration: none; 
+            box-shadow: 0 8px 24px rgba(0,102,255,0.3); 
+            transition: var(--transition);
+            border: none; 
+            cursor: pointer; 
+        }
+        
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 32px rgba(0,102,255,0.4); 
+        }
+        
+        .btn-secondary { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 16px 32px; 
+            background: white; 
+            color: var(--gray-800); 
+            border: 2px solid var(--gray-300); 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 15px; 
+            text-decoration: none; 
+            transition: var(--transition);
+        }
+        
+        .btn-secondary:hover { 
+            border-color: var(--primary); 
+            color: var(--primary); 
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .hero-stats { 
+            display: grid; 
+            grid-template-columns: repeat(4, auto); 
+            gap: 48px; 
+        }
+        
+        .stat-item { 
+            text-align: left; 
+        }
+        
+        .stat-number { 
+            font-family: 'Sora', sans-serif; 
+            font-size: 2.75rem; 
+            font-weight: 800; 
+            line-height: 1; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
+            -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 32px;
-            max-width: 540px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-base);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: transparent;
-            color: var(--gray-700);
-            border: 2px solid var(--gray-300);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: var(--transition-base);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: auto 1px auto 1px auto;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            line-height: 1;
             margin-bottom: 8px;
         }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--gray-600);
-            font-weight: 500;
+        
+        .stat-label { 
+            font-size: 14px; 
+            color: var(--gray-600); 
+            font-weight: 600; 
         }
-
-        .stat-divider {
-            width: 1px;
-            height: 40px;
-            background: var(--gray-300);
+        
+        .hero-visual { 
+            position: relative;
+            animation: fadeInRight 1s ease 0.2s both;
         }
-
-        .hero-visual {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            animation: fadeIn 1s ease 0.3s backwards;
+        
+        @keyframes fadeInRight { 
+            from { opacity: 0; transform: translateX(30px); } 
+            to { opacity: 1; transform: translateX(0); } 
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        
+        .visual-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
         }
-
-        .visual-card {
-            background: var(--white);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
+        
+        .visual-card { 
+            background: white; 
+            padding: 36px 28px; 
+            border-radius: 20px; 
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative; 
+            overflow: hidden;
             border: 1px solid var(--gray-200);
-            transition: var(--transition-base);
-            text-align: center;
         }
-
-        .visual-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
+        
+        .visual-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 3px; 
+            background: linear-gradient(90deg, var(--primary), var(--accent)); 
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease; 
         }
-
-        .card-icon {
-            font-size: 3rem;
+        
+        .visual-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .visual-card:hover::before { 
+            transform: scaleX(1); 
+        }
+        
+        .visual-icon { 
+            font-size: 3rem; 
             margin-bottom: 16px;
+            display: block;
         }
-
-        .card-text {
-            font-weight: 600;
-            color: var(--gray-700);
-            font-size: 15px;
+        
+        .visual-title { 
+            font-weight: 700; 
+            font-size: 1.05rem; 
+            color: var(--gray-900);
+            line-height: 1.4;
         }
-
-        /* Services Preview */
-        .services-preview {
+        
+        /* Services Section */
+        .services { 
+            padding: 100px 32px; 
+            background: white; 
+            position: relative;
+        }
+        
+        .section-header { 
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 72px; 
+        }
+        
+        .section-badge { 
+            display: inline-block; 
+            padding: 8px 18px; 
+            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
+            border-radius: 100px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-bottom: 16px; 
+        }
+        
+        .section-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 16px; 
+            letter-spacing: -1px;
+            color: var(--gray-900);
+        }
+        
+        .section-desc { 
+            font-size: 1.1rem; 
+            color: var(--gray-600); 
+            line-height: 1.7; 
+        }
+        
+        .services-grid { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 28px; 
+        }
+        
+        .service-card { 
+            background: var(--gray-50); 
+            padding: 40px 32px; 
+            border-radius: 20px; 
+            transition: var(--transition);
+            position: relative; 
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+        }
+        
+        .service-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: linear-gradient(135deg, rgba(0,102,255,0.03) 0%, rgba(255,51,102,0.03) 100%); 
+            opacity: 0; 
+            transition: opacity 0.4s; 
+        }
+        
+        .service-card:hover { 
+            background: white; 
+            border-color: var(--primary);
+            transform: translateY(-6px); 
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-card:hover::before { 
+            opacity: 1; 
+        }
+        
+        .service-icon { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            position: relative; 
+            z-index: 1;
+            display: block;
+        }
+        
+        .service-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: 1.35rem; 
+            font-weight: 700; 
+            margin-bottom: 12px; 
+            color: var(--gray-900); 
+            position: relative; 
+            z-index: 1; 
+        }
+        
+        .service-desc { 
+            color: var(--gray-600); 
+            line-height: 1.7; 
+            font-size: 0.95rem; 
+            position: relative; 
+            z-index: 1; 
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose { 
+            padding: 100px 32px; 
             background: var(--gray-50);
-            padding: 80px 24px;
         }
-
-        .section-header-center {
+        
+        .features-grid { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 32px; 
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 36px 28px;
+            border-radius: 16px;
             text-align: center;
-            margin-bottom: 60px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(0,102,255,0.1) 0%, rgba(255,51,102,0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Trust Section */
+        .trust { 
+            padding: 80px 32px; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+            color: white; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        .trust::before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            left: -20%; 
+            width: 100%; 
+            height: 200%; 
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); 
+            animation: rotate 30s linear infinite; 
+        }
+        
+        @keyframes rotate { 
+            from { transform: rotate(0deg); } 
+            to { transform: rotate(360deg); } 
+        }
+        
+        .trust-content { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        .trust-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 800; 
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .trust-desc { 
+            font-size: 1.15rem; 
+            margin-bottom: 56px; 
+            opacity: 0.95;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
-
-        .section-subtitle {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
+        
+        .trust-stats { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 48px; 
         }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            line-height: 1.2;
-            color: var(--gray-900);
-            margin-bottom: 16px;
+        
+        .trust-stat-number { 
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            line-height: 1; 
+            margin-bottom: 12px; 
         }
-
-        .section-description {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            line-height: 1.7;
+        
+        .trust-stat-label { 
+            font-size: 1.05rem; 
+            opacity: 0.92; 
+            font-weight: 600; 
         }
-
-        .services-grid {
+        
+        /* Process Section */
+        .process {
+            padding: 100px 32px;
+            background: white;
+        }
+        
+        .process-steps {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 32px;
         }
-
-        .service-item {
-            background: var(--white);
-            padding: 40px 32px;
-            border-radius: 16px;
-            border: 1px solid var(--gray-200);
-            transition: var(--transition-base);
+        
+        .process-step {
+            text-align: center;
             position: relative;
-            overflow: hidden;
         }
-
-        .service-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: var(--transition-base);
-        }
-
-        .service-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .service-item.featured {
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-        }
-
-        .service-item.featured h3,
-        .service-item.featured p {
-            color: var(--white);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .service-icon-wrapper {
-            margin-bottom: 24px;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-        }
-
-        .service-item h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-        }
-
-        .service-item p {
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-
-        /* Why Choose Section */
-        .why-choose {
-            background: var(--white);
-            padding: 80px 24px;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .lead-text {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }
-
-        .features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 16px;
-        }
-
-        .feature-check {
-            width: 32px;
-            height: 32px;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Sora', sans-serif;
         }
-
-        .feature-item h4 {
-            font-family: var(--font-heading);
-            font-size: 1.125rem;
+        
+        .step-title {
             font-weight: 700;
+            font-size: 1.15rem;
             color: var(--gray-900);
-            margin-bottom: 4px;
+            margin-bottom: 12px;
         }
-
-        .feature-item p {
+        
+        .step-desc {
             color: var(--gray-600);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
-
-        .btn-text {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 600;
-            transition: var(--transition-base);
-        }
-
-        .btn-text:hover {
-            gap: 12px;
-        }
-
-        .stats-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow-2xl);
-            border: 1px solid var(--gray-200);
-        }
-
-        .stats-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .stats-item:last-child {
-            border-bottom: none;
-        }
-
-        .stats-icon {
-            font-size: 3rem;
-        }
-
-        .stats-number {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            line-height: 1;
-        }
-
-        .stats-text {
-            color: var(--gray-600);
-            font-weight: 500;
-        }
-
+        
         /* CTA Section */
-        .cta-section {
-            position: relative;
-            padding: 100px 24px;
-            text-align: center;
-            background: var(--gray-900);
-            color: var(--white);
-            overflow: hidden;
+        .cta { 
+            padding: 100px 32px; 
+            background: var(--gray-900); 
+            color: white; 
+            text-align: center; 
         }
-
-        .cta-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
+        
+        .cta-title { 
+            font-family: 'Sora', sans-serif; 
+            font-size: clamp(2rem, 4vw, 3rem); 
+            font-weight: 800; 
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
+        
+        .cta-desc { 
+            font-size: 1.15rem; 
+            color: var(--gray-300); 
+            margin-bottom: 40px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
-
-        .cta-content h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 16px;
+        
+        .cta-buttons { 
+            display: flex; 
+            gap: 16px; 
+            justify-content: center; 
+            flex-wrap: wrap; 
         }
-
-        .cta-content p {
-            font-size: 1.125rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 32px;
+        
+        .btn-whatsapp { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 16px 32px; 
+            background: #25D366; 
+            color: white; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            box-shadow: 0 8px 24px rgba(37,211,102,0.3); 
+            transition: var(--transition);
         }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+        
+        .btn-whatsapp:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 32px rgba(37,211,102,0.4); 
         }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: #25d366;
-            color: var(--white);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: var(--transition-base);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
+        
         /* Footer */
-        .footer {
-            background: var(--gray-900);
-            color: var(--white);
-            padding: 60px 24px 24px;
+        .footer { 
+            background: var(--black); 
+            color: var(--gray-400); 
+            padding: 80px 32px 32px; 
         }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 48px;
-            margin-bottom: 40px;
+        
+        .footer-grid { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1.5fr; 
+            gap: 60px; 
+            margin-bottom: 60px; 
         }
-
-        .footer-brand .footer-logo {
-            display: flex;
+        
+        .footer-brand .footer-logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin-bottom: 20px; 
+        }
+        
+        .footer-logo img { height: 42px; }
+        
+        .footer-logo-text { 
+            font-family: 'Sora', sans-serif; 
+            font-weight: 800; 
+            font-size: 20px; 
+            color: white; 
+        }
+        
+        .footer-tagline { 
+            color: var(--gray-500); 
+            line-height: 1.75; 
+            margin-bottom: 24px; 
+            font-size: 0.95rem; 
+        }
+        
+        .footer h4 { 
+            color: white; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            font-size: 1.05rem; 
+        }
+        
+        .footer ul { list-style: none; }
+        
+        .footer ul li { margin-bottom: 12px; }
+        
+        .footer a { 
+            color: var(--gray-500); 
+            text-decoration: none; 
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer a:hover { color: white; }
+        
+        .footer-bottom { 
+            padding-top: 40px; 
+            border-top: 1px solid rgba(255,255,255,0.08); 
+            text-align: center; 
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 185px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(0,102,255,0.3);
+            transition: var(--transition);
+            z-index: 9998;
         }
-
-        .footer-logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .footer-logo-text {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 18px;
-        }
-
-        .footer-tagline {
-            color: var(--gray-400);
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .footer-location {
+        
+        .scroll-top.visible {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--gray-400);
         }
-
-        .footer-links h4 {
-            font-family: var(--font-heading);
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+        
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(0,102,255,0.4);
         }
-
-        .footer-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: var(--gray-400);
-            transition: var(--transition-base);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-light);
-        }
-
-        .footer-contact ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-contact h4 {
-            font-family: var(--font-heading);
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-contact a {
-            color: var(--gray-400);
-            transition: var(--transition-base);
-        }
-
-        .footer-contact a:hover {
-            color: var(--primary-light);
-        }
-
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--gray-400);
-            font-size: 14px;
-        }
-
-        .footer-badges {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-badges .badge {
-            padding: 6px 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Responsive */
+        
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
+            .hero-container { 
+                grid-template-columns: 1fr; 
+                gap: 60px;
             }
-            
-            .why-grid {
-                grid-template-columns: 1fr;
+            .hero-visual {
+                order: -1;
             }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+            .hero-stats { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 32px; 
+            }
+            .footer-grid { 
+                grid-template-columns: repeat(2, 1fr); 
             }
         }
-
-        @media (max-width: 768px) {
-            .nav-menu {
+        
+        @media (max-width: 768px) { 
+            .nav-menu { 
                 position: fixed;
-                left: -100%;
                 top: 73px;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
+                left: 0;
                 width: 100%;
-                text-align: center;
-                transition: var(--transition-base);
+                background: white;
+                flex-direction: column;
                 padding: 24px;
                 gap: 20px;
-                box-shadow: var(--shadow-xl);
+                box-shadow: var(--shadow-lg);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
             }
             
             .nav-menu.active {
-                left: 0;
+                transform: translateX(0);
             }
             
-            .nav-toggle {
+            .mobile-menu-btn {
                 display: flex;
             }
             
-            .nav-toggle.active span:nth-child(1) {
+            .mobile-menu-btn.active span:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
             }
             
-            .nav-toggle.active span:nth-child(2) {
+            .mobile-menu-btn.active span:nth-child(2) {
                 opacity: 0;
             }
             
-            .nav-toggle.active span:nth-child(3) {
+            .mobile-menu-btn.active span:nth-child(3) {
                 transform: rotate(-45deg) translate(7px, -7px);
             }
             
-            .hero-stats {
+            .hero-stats { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 24px; 
+            }
+            .stat-number { font-size: 2rem; }
+            .services-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .footer-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+            .visual-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .stat-divider {
-                display: none;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-            }
+        }
+
+        /* ═══ WhatsApp Floating Chatbot ═══ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 32px;
+            z-index: 9999;
+        }
+        .whatsapp-button {
+            width: 64px; height: 64px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: var(--transition);
+            border: none; position: relative;
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.1); }
+        }
+        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+        .whatsapp-button svg { width: 36px; height: 36px; fill: white; }
+        .wa-notif {
+            position: absolute; top: -5px; right: -5px;
+            width: 24px; height: 24px; background: #FF3366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 12px; font-weight: 700;
+            border: 3px solid white;
+            animation: bounce-notif 1s infinite;
+        }
+        @keyframes bounce-notif {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .whatsapp-popup {
+            position: absolute; bottom: 80px; right: 0;
+            width: 320px; background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            opacity: 0; transform: scale(0.8) translateY(20px);
+            transform-origin: bottom right;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .whatsapp-popup.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+        .wa-popup-head {
+            background: linear-gradient(135deg,#25D366,#20BA5A);
+            padding: 20px; color: white;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .wa-avatar {
+            width: 48px; height: 48px; background: white;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 24px;
+        }
+        .wa-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .wa-info p { font-size: 13px; opacity: 0.9; }
+        .wa-close-btn {
+            margin-left: auto; background: rgba(255,255,255,0.2);
+            border: none; color: white; width: 28px; height: 28px;
+            border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; transition: var(--transition);
+        }
+        .wa-close-btn:hover { background: rgba(255,255,255,0.3); }
+        .wa-popup-body { padding: 20px; }
+        .wa-msg {
+            background: var(--gray-100); padding: 12px 16px;
+            border-radius: 12px; margin-bottom: 16px;
+            position: relative; font-size: 14px; line-height: 1.6;
+            color: var(--gray-800);
+        }
+        .wa-msg::before {
+            content: ''; position: absolute; left: -8px; top: 10px;
+            width: 0; height: 0; border-style: solid;
+            border-width: 0 8px 8px 0;
+            border-color: transparent var(--gray-100) transparent transparent;
+        }
+        .wa-time { font-size: 11px; color: var(--gray-500); margin-top: 6px; }
+        .wa-quick-replies { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+        .wa-qbtn {
+            background: white; border: 1.5px solid var(--gray-300);
+            padding: 10px 14px; border-radius: 20px;
+            font-size: 13px; color: var(--gray-700);
+            cursor: pointer; transition: var(--transition);
+            text-align: left; font-weight: 500;
+        }
+        .wa-qbtn:hover { background: var(--gray-50); border-color: var(--primary); color: var(--primary); }
+        .wa-chat-btn {
+            width: 100%; background: #25D366; color: white;
+            border: none; padding: 14px; border-radius: 10px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; transition: var(--transition);
+        }
+        .wa-chat-btn:hover { background: #20BA5A; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+        @media (max-width: 768px) {
+            .whatsapp-float { right: 16px; bottom: 80px; }
+            .whatsapp-popup { width: calc(100vw - 32px); right: -16px; bottom: 80px; }
+            .whatsapp-button { width: 56px; height: 56px; }
+            .whatsapp-button svg { width: 32px; height: 32px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <img src="images/ks-logo.png" alt="KS Software Logo">
+            <a href="index.html" class="logo">
+                <img src="KS.png" alt="KS Software Company Logo - Web Development Hyderabad">
                 <span class="logo-text">KS SOFTWARE</span>
-            </div>
-            <div class="nav-toggle" id="navToggle">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="clients.html" class="nav-link">Clients & Blog</a></li>
+                <li><a href="clients.html" class="nav-link">Portfolio</a></li>
                 <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-home">
-        <div class="hero-gradient"></div>
-        <div class="geometric-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+    <section class="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
         </div>
         
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Premium Digital Solutions
+                    <span class="badge-icon">🚀</span>
+                    50+ Projects Delivered Successfully
                 </div>
                 <h1 class="hero-title">
-                    Transform Your
-                    <span class="gradient-text">Digital Vision</span>
-                    Into Reality
+                    Transform Your Digital
+                    <span class="gradient-text">Vision Into Reality</span>
                 </h1>
-                <p class="hero-description">
-                    We craft exceptional digital experiences that drive business growth. 
-                    From concept to launch, we're your strategic technology partner in Hyderabad.
+                <p class="hero-desc">
+                    Leading software development company in Hyderabad with 2+ years of experience, delivering cutting-edge web applications, mobile apps, and digital solutions that drive business growth.
                 </p>
-                <div class="hero-actions">
+                <div class="hero-cta">
                     <a href="contact.html" class="btn-primary">
                         <span>Start Your Project</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </a>
-                    <a href="about.html" class="btn-secondary">
-                        <span>Discover More</span>
+                    <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-secondary">
+                        <span>💬 WhatsApp Us</span>
                     </a>
                 </div>
-                
                 <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">150+</div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <div class="stat-number">98%</div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
                         <div class="stat-label">Client Satisfaction</div>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <div class="stat-number">5+</div>
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
                         <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
                     </div>
                 </div>
             </div>
             
             <div class="hero-visual">
-                <div class="visual-card">
-                    <div class="card-icon">💻</div>
-                    <div class="card-text">Web Development</div>
-                </div>
-                <div class="visual-card">
-                    <div class="card-icon">📱</div>
-                    <div class="card-text">Mobile Apps</div>
-                </div>
-                <div class="visual-card">
-                    <div class="card-icon">☁️</div>
-                    <div class="card-text">Cloud Solutions</div>
-                </div>
-                <div class="visual-card">
-                    <div class="card-icon">🚀</div>
-                    <div class="card-text">Digital Strategy</div>
+                <div class="visual-grid">
+                    <div class="visual-card">
+                        <div class="visual-icon">💻</div>
+                        <div class="visual-title">Web Development</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon">📱</div>
+                        <div class="visual-title">Mobile Apps</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon">🎨</div>
+                        <div class="visual-title">UI/UX Design</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon">🚀</div>
+                        <div class="visual-title">SEO & Marketing</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-preview">
-        <div class="container">
-            <div class="section-header-center">
-                <span class="section-subtitle">What We Offer</span>
-                <h2 class="section-title">Comprehensive Digital Services</h2>
-                <p class="section-description">End-to-end solutions tailored to your business needs</p>
+    <section class="services">
+        <div class="section-header">
+            <div class="section-badge">What We Offer</div>
+            <h2 class="section-title">Comprehensive Digital Solutions</h2>
+            <p class="section-desc">End-to-end technology services tailored to accelerate your business growth and digital transformation</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-desc">Custom websites, e-commerce platforms, and web applications built with modern technologies like React, WordPress, and Bootstrap for responsive, fast-loading experiences.</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🎨</div>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces that users love. We blend aesthetics with functionality.</p>
-                </div>
-                
-                <div class="service-item featured">
-                    <div class="featured-badge">Popular</div>
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">⚡</div>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Fast, responsive, and scalable web applications built with cutting-edge technologies.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">📲</div>
-                    </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform applications that deliver seamless experiences.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🔒</div>
-                    </div>
-                    <h3>Security & Compliance</h3>
-                    <p>Enterprise-grade security measures to protect your digital assets.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">🤖</div>
-                    </div>
-                    <h3>AI Integration</h3>
-                    <p>Smart automation and machine learning solutions for modern businesses.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon">📊</div>
-                    </div>
-                    <h3>Analytics & Insights</h3>
-                    <p>Data-driven strategies to optimize performance and drive growth.</p>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3 class="service-title">Mobile App Development</h3>
+                <p class="service-desc">Native and cross-platform mobile applications using Flutter, React Native, and Java for iOS and Android platforms with seamless user experiences.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">College Projects & Training</h3>
+                <p class="service-desc">Expert guidance for academic projects, final year projects, and research implementations with complete documentation and technical mentorship.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3 class="service-title">SEO & Digital Marketing</h3>
+                <p class="service-desc">Boost your online visibility with expert SEO services, Google Ads, social media marketing, content strategy, and advanced analytics.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3 class="service-title">Cloud Solutions</h3>
+                <p class="service-desc">Scalable cloud infrastructure deployment on AWS, Azure, and Google Cloud with DevOps integration, migration, and optimization services.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3 class="service-title">AI & Automation</h3>
+                <p class="service-desc">Smart automation, intelligent chatbots, and machine learning solutions to enhance your business operations and customer experience.</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section class="why-choose">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content">
-                    <span class="section-subtitle">Why KS Software</span>
-                    <h2 class="section-title">Your Success Is Our Priority</h2>
-                    <p class="lead-text">
-                        We don't just build software – we build partnerships. Our commitment to excellence 
-                        and innovation drives everything we do.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-check">✓</div>
-                            <div>
-                                <h4>Expert Team</h4>
-                                <p>Skilled developers and designers with years of industry experience</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-check">✓</div>
-                            <div>
-                                <h4>Agile Methodology</h4>
-                                <p>Fast iterations and continuous delivery for faster time-to-market</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-check">✓</div>
-                            <div>
-                                <h4>24/7 Support</h4>
-                                <p>Round-the-clock assistance to ensure your business never stops</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-check">✓</div>
-                            <div>
-                                <h4>Transparent Pricing</h4>
-                                <p>No hidden costs – clear, honest pricing from day one</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="about.html" class="btn-text">
-                        Learn More About Us
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="why-visual">
-                    <div class="stats-card">
-                        <div class="stats-item">
-                            <div class="stats-icon">🏆</div>
-                            <div class="stats-info">
-                                <div class="stats-number">15+</div>
-                                <div class="stats-text">Industry Awards</div>
-                            </div>
-                        </div>
-                        <div class="stats-item">
-                            <div class="stats-icon">👥</div>
-                            <div class="stats-info">
-                                <div class="stats-number">200+</div>
-                                <div class="stats-text">Happy Clients</div>
-                            </div>
-                        </div>
-                        <div class="stats-item">
-                            <div class="stats-icon">⭐</div>
-                            <div class="stats-info">
-                                <div class="stats-number">4.9/5</div>
-                                <div class="stats-text">Client Rating</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="section-header">
+            <div class="section-badge">Why Choose Us</div>
+            <h2 class="section-title">What Makes Us Different</h2>
+            <p class="section-desc">Our commitment to excellence and client success sets us apart</p>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-gradient"></div>
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Let's discuss how we can bring your vision to life</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn-primary">Get Started Now</a>
-                    <a href="https://wa.me/917385522051" class="btn-whatsapp" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                        </svg>
-                        Chat on WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="images/ks-logo.png" alt="KS Software Logo">
-                        <span class="footer-logo-text">KS SOFTWARE</span>
-                    </div>
-                    <p class="footer-tagline">Transforming visions into digital excellence</p>
-                    <div class="footer-location">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
-                        </svg>
-                        <span>Begumpet, Hyderabad, India</span>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="clients.html">Our Work</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="about.html">Web Development</a></li>
-                        <li><a href="about.html">Mobile Apps</a></li>
-                        <li><a href="about.html">Cloud Solutions</a></li>
-                        <li><a href="about.html">AI Integration</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Get In Touch</h4>
-                    <ul>
-                        <li>
-                            <a href="tel:+917385522051">+91 73855 22051</a>
-                        </li>
-                        <li>
-                            <a href="mailto:mrdeveloper1397@gmail.com">mrdeveloper1397@gmail.com</a>
-                        </li>
-                        <li>
-                            <a href="https://wa.me/917385522051" target="_blank">WhatsApp Chat</a>
-                        </li>
-                    </ul>
-                </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Fast Delivery</div>
+                <div class="feature-desc">Quick turnaround time without compromising on quality</div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 KS Software Company. All rights reserved.</p>
-                <div class="footer-badges">
-                    <span class="badge">Trusted Partner</span>
-                    <span class="badge">ISO Certified</span>
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <div class="feature-title">Premium Quality</div>
+                <div class="feature-desc">Industry best practices and cutting-edge technologies</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <div class="feature-title">Affordable Pricing</div>
+                <div class="feature-desc">Competitive rates with transparent pricing models</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Dedicated Support</div>
+                <div class="feature-desc">24/7 technical support and maintenance services</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust">
+        <div class="trust-content">
+            <h2 class="trust-title">Trusted by Businesses Across India</h2>
+            <p class="trust-desc">Join 50+ satisfied clients who have transformed their digital presence with KS Software Company's expert solutions</p>
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="trust-stat-number">50+</div>
+                    <div class="trust-stat-label">Successful Projects</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">100%</div>
+                    <div class="trust-stat-label">Client Satisfaction</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">6+</div>
+                    <div class="trust-stat-label">Years Experience</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">24/7</div>
+                    <div class="trust-stat-label">Dedicated Support</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="section-header">
+            <div class="section-badge">Our Process</div>
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-desc">A streamlined approach to deliver exceptional results</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-title">Discovery</div>
+                <div class="step-desc">We understand your business goals and project requirements</div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-title">Planning</div>
+                <div class="step-desc">Strategic roadmap and timeline for your project</div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-title">Development</div>
+                <div class="step-desc">Building your solution with agile methodology</div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-title">Delivery</div>
+                <div class="step-desc">Launch and ongoing support for your success</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="cta-title">Ready to Start Your Project?</h2>
+        <p class="cta-desc">Let's discuss how we can bring your digital vision to life with cutting-edge technology and expert development. Get a free consultation today!</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn-primary">Get Free Quote</a>
+            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-whatsapp">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="KS.png" alt="KS Software Logo">
+                    <span class="footer-logo-text">KS SOFTWARE</span>
+                </div>
+                <p class="footer-tagline">Leading software development company in Hyderabad with 2+ years of experience, specializing in web development, mobile apps, and digital transformation solutions.</p>
+                <p style="color: var(--gray-500); margin-top: 16px; font-size: 0.95rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="clients.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="about.html">Web Development</a></li>
+                    <li><a href="about.html">Mobile Apps</a></li>
+                    <li><a href="about.html">SEO Services</a></li>
+                    <li><a href="about.html">Cloud Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
+                    <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
+                    <li><a href="https://wa.me/917385522051">💬 WhatsApp Chat</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KS Software Company. All rights reserved. | Web Development Company in Hyderabad | Mobile App Development | SEO Services</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navbar');
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-            
-            if (navToggle) {
-                navToggle.addEventListener('click', () => {
-                    navToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
+    <!-- WhatsApp Floating Chatbot -->
+    <div class="whatsapp-float" id="waFloat">
+        <div class="whatsapp-popup" id="waPopup">
+            <div class="wa-popup-head">
+                <div class="wa-avatar">💬</div>
+                <div class="wa-info">
+                    <h4>KS Software</h4>
+                    <p>Typically replies instantly</p>
+                </div>
+                <button class="wa-close-btn" id="waClose">×</button>
+            </div>
+            <div class="wa-popup-body">
+                <div class="wa-msg">
+                    <div>Hi there! 👋</div>
+                    <div>How can we help you today?</div>
+                    <div class="wa-time">Just now</div>
+                </div>
+                <div class="wa-quick-replies">
+                    <button class="wa-qbtn" onclick="sendWA('I need a website')">🌐 I need a website</button>
+                    <button class="wa-qbtn" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
+                    <button class="wa-qbtn" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
+                    <button class="wa-qbtn" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
+                </div>
+                <button class="wa-chat-btn" onclick="sendWA('')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Start Chat
+                </button>
+            </div>
+        </div>
+        <button class="whatsapp-button" id="waBtn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span class="wa-notif" id="waNotif">1</span>
+        </button>
+    </div>
+
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+<script>
+
+        // ── Navbar scroll effect ──
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            var scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navToggle) {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            });
-            
-            window.addEventListener('load', () => {
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    document.body.style.transition = 'opacity 0.5s ease';
-                    document.body.style.opacity = '1';
-                }, 100);
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // ── Scroll to top ──
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Mobile menu toggle ──
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
             });
         });
-    </script>
+
+        // ── Smooth scroll for anchors ──
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ── WhatsApp Chatbot ──
+        var waBtn = document.getElementById('waBtn');
+        var waPopup = document.getElementById('waPopup');
+        var waClose = document.getElementById('waClose');
+        var waNotif = document.getElementById('waNotif');
+
+        waBtn.addEventListener('click', function() {
+            waPopup.classList.toggle('active');
+            if (waNotif) waNotif.style.display = 'none';
+        });
+        waClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            waPopup.classList.remove('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (waBtn && waPopup && !waBtn.contains(e.target) && !waPopup.contains(e.target)) {
+                waPopup.classList.remove('active');
+            }
+        });
+        setTimeout(function() {
+            if (!sessionStorage.getItem('waShown_index')) {
+                waPopup.classList.add('active');
+                sessionStorage.setItem('waShown_index', '1');
+                setTimeout(function() { waPopup.classList.remove('active'); }, 8000);
+            }
+        }, 3000);
+
+        function sendWA(msg) {
+            var text = msg || "Hi, I'm interested in your services!";
+            window.open('https://wa.me/917385522051?text=' + encodeURIComponent(text), '_blank');
+        }
+</script>
 </body>
 </html>
