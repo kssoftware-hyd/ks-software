@@ -10,727 +10,621 @@
     <link rel="icon" type="image/png" href="KS.png">
     <link rel="shortcut icon" type="image/png" href="KS.png">
     <link rel="apple-touch-icon" href="KS.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #0066FF;
-            --primary-dark: #0052CC;
-            --primary-light: #3385FF;
-            --accent: #FF3366;
-            --white: #ffffff;
-            --black: #0A0B0D;
-            --gray-50: #F8F9FA;
-            --gray-100: #F1F3F5;
-            --gray-200: #E9ECEF;
-            --gray-300: #DEE2E6;
-            --gray-400: #CED4DA;
-            --gray-500: #ADB5BD;
-            --gray-600: #6C757D;
-            --gray-700: #495057;
-            --gray-800: #343A40;
-            --gray-900: #212529;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
-            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --black:        #050A14;
+            --black-deep:   #030710;
+            --card:         #0B1527;
+            --card2:        #0F1D35;
+            --blue-deep:    #0A1628;
+            --blue-navy:    #0D2148;
+            --blue-mid:     #1565C0;
+            --blue-bright:  #1E88E5;
+            --blue-el:      #42A5F5;
+            --blue-glow:    #64B5F6;
+            --blue-light:   #90CAF9;
+            --white:        #FFFFFF;
+            --off-white:    #E8F0FE;
+            --gray-light:   #B0BEC5;
+            --gray-mid:     #B0BEC5;
+            --gray-dark:    #90A4AE;
+            --glow-xs: 0 0 8px rgba(66,165,245,0.25);
+            --glow-sm: 0 0 20px rgba(66,165,245,0.3);
+            --glow-md: 0 0 40px rgba(66,165,245,0.35);
+            --glow-lg: 0 0 80px rgba(66,165,245,0.2);
+            --shadow: 0 8px 32px rgba(0,0,0,0.5);
+            --shadow-xl: 0 24px 64px rgba(0,0,0,0.6);
+            --tr: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            --tr-slow: all 0.5s cubic-bezier(0.4,0,0.2,1);
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        .navbar { position: fixed; width: 100%; top: 0; z-index: 9999; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(0,0,0,0.06); transition: var(--transition); }
-        .navbar.scrolled { background: rgba(255,255,255,0.95); box-shadow: var(--shadow-md); }
-        .nav-container { max-width: 1440px; margin: 0 auto; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; }
+        body { font-family: 'Exo 2', sans-serif; background: var(--black); color: var(--off-white); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--black); }
+        ::-webkit-scrollbar-thumb { background: var(--blue-mid); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--blue-el); }
+        body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(rgba(66,165,245,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(66,165,245,0.025) 1px,transparent 1px); background-size: 64px 64px; }
+
+        /* NAV */
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 9999; background: rgba(3,7,16,0.7); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid rgba(66,165,245,0.1); transition: var(--tr); }
+        .navbar.scrolled { background: rgba(3,7,16,0.96); border-bottom-color: rgba(66,165,245,0.2); box-shadow: 0 4px 32px rgba(0,0,0,0.6), var(--glow-xs); }
+        .nav-container { max-width: 1440px; margin: 0 auto; padding: 0 32px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo img { height: 48px; transition: transform 0.3s; }
-        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
-        .logo-text { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.5px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-menu { display: flex; list-style: none; gap: 40px; align-items: center; }
-        .nav-link { text-decoration: none; color: var(--gray-700); font-weight: 600; font-size: 15px; position: relative; transition: var(--transition); padding: 8px 0; }
-        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
-        .nav-link:hover, .nav-link.active { color: var(--primary); }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-        .nav-cta { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white !important; padding: 12px 28px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,102,255,0.25); }
-        .nav-cta::after { display: none; }
-        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,102,255,0.35); }
-        .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
-        .mobile-menu-btn span { width: 24px; height: 2px; background: var(--gray-800); transition: var(--transition); }
-        .page-header { padding: 140px 32px 100px; background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%); text-align: center; position: relative; overflow: hidden; }
-        .header-bg-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.3; background-image: radial-gradient(circle at 20% 30%, rgba(0,102,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,51,102,0.06) 0%, transparent 50%); }
-        .page-header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        .page-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); border: 1px solid rgba(0,102,255,0.15); border-radius: 100px; font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .page-title { font-family: 'Sora', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1.5px; color: var(--gray-900); }
-        .gradient-text { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
-        .page-desc { font-size: 1.15rem; color: var(--gray-600); line-height: 1.75; max-width: 700px; margin: 0 auto; }
-        section { padding: 100px 32px; }
+        .logo img { height: 46px; width: 46px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(66,165,245,0.5)); transition: var(--tr); }
+        .logo:hover img { filter: drop-shadow(0 0 18px rgba(66,165,245,0.85)); transform: scale(1.06); }
+        .logo-txt { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; color: var(--white); }
+        .logo-txt em { color: var(--blue-el); font-style: normal; }
+        .nav-ul { display: flex; list-style: none; gap: 6px; align-items: center; }
+        .nav-a { text-decoration: none; color: var(--gray-light); font-weight: 600; font-size: 13px; letter-spacing: 0.8px; padding: 8px 14px; border-radius: 8px; transition: var(--tr); text-transform: uppercase; }
+        .nav-a:hover, .nav-a.active { color: var(--blue-el); background: rgba(66,165,245,0.08); }
+        .nav-cta { background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright)) !important; color: var(--white) !important; border: 1px solid rgba(66,165,245,0.3); box-shadow: var(--glow-xs); }
+        .nav-cta:hover { background: linear-gradient(135deg, var(--blue-bright), var(--blue-el)) !important; box-shadow: var(--glow-sm) !important; transform: translateY(-2px); }
+        .mob-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mob-btn span { width: 24px; height: 2px; background: var(--blue-el); transition: var(--tr); display: block; }
+
+        /* PAGE HEADER */
+        .page-header { min-height: 48vh; display: flex; align-items: center; justify-content: center; padding: 130px 32px 80px; text-align: center; position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 55% at 50% -5%, rgba(21,101,192,0.22) 0%, transparent 65%), var(--black); }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+        .orb1 { width: 480px; height: 480px; background: radial-gradient(circle, rgba(21,101,192,0.28) 0%, transparent 70%); top: -140px; right: -100px; animation: orb 18s ease-in-out infinite; }
+        .orb2 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(66,165,245,0.14) 0%, transparent 70%); bottom: -80px; left: -60px; animation: orb 22s ease-in-out infinite reverse; }
+        @keyframes orb { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(35px,-35px) scale(1.12)} 66%{transform:translate(-25px,25px) scale(0.9)} }
+        .page-header-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; animation: fadeUp 0.9s ease both; }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.22); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--blue-el); text-transform: uppercase; margin-bottom: 26px; }
+        .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-el); box-shadow: 0 0 8px var(--blue-el); animation: dp 1.6s ease infinite; }
+        @keyframes dp { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.65)} }
+        .page-h1 { font-family: 'Rajdhani', sans-serif; font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 20px; letter-spacing: 0.5px; }
+        .page-h1 .grad { display: block; background: linear-gradient(90deg, var(--blue-el) 0%, var(--blue-glow) 55%, var(--blue-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 22px rgba(66,165,245,0.4)); }
+        .page-desc { font-size: 1.08rem; color: var(--gray-mid); line-height: 1.8; max-width: 640px; margin: 0 auto; }
+
+        /* SECTIONS */
+        section { position: relative; z-index: 1; padding: 96px 32px; }
         .container { max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; max-width: 800px; margin: 0 auto 72px; }
-        .section-badge { display: inline-block; padding: 8px 18px; background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); border-radius: 100px; font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-        .section-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; color: var(--gray-900); }
-        .section-desc { font-size: 1.1rem; color: var(--gray-600); line-height: 1.7; }
-        .stats-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding: 60px 40px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border-radius: 20px; margin-bottom: 80px; box-shadow: var(--shadow-xl); }
-        .stat-box { text-align: center; }
-        .stat-box h3 { font-family: 'Sora', sans-serif; font-size: 3.5rem; font-weight: 900; margin-bottom: 12px; line-height: 1; }
-        .stat-box p { font-size: 1.05rem; opacity: 0.95; font-weight: 600; }
+        .sec-hdr { text-align: center; max-width: 740px; margin: 0 auto 60px; }
+        .sec-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.18); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--blue-el); text-transform: uppercase; margin-bottom: 16px; }
+        .sec-h2 { font-family: 'Rajdhani', sans-serif; font-size: clamp(1.9rem,4vw,3rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 14px; letter-spacing: 0.5px; }
+        .sec-h2 .hl { background: linear-gradient(90deg,var(--blue-el),var(--blue-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .sec-p { font-size: 1.02rem; color: var(--gray-mid); line-height: 1.75; }
 
-        /* ── CLIENT GRID — uniform card sizing ── */
-        .client-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 32px;
-            align-items: start;
-        }
-        .client-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            border: 1px solid var(--gray-200);
-            display: flex;
-            flex-direction: column;
-        }
-        .client-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: var(--primary); }
-        .client-preview {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .client-preview::before { content: ''; position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,102,255,0.05) 0%, rgba(255,51,102,0.05) 100%); }
-        .client-content { padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
-        .client-title { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--gray-900); }
-        .client-desc { color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; flex: 1; }
-        .client-link { display: inline-flex; align-items: center; gap: 6px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 14px; transition: var(--transition); margin-top: auto; }
-        .client-link:hover { gap: 10px; }
+        /* STATS BANNER */
+        .stats-sec { background: var(--black); padding-top: 48px; padding-bottom: 0; }
+        .stats-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 100%); border: 1px solid rgba(66,165,245,0.18); border-radius: 20px; overflow: hidden; box-shadow: var(--glow-xs), var(--shadow); }
+        .stat-box { text-align: center; padding: 48px 32px; border-right: 1px solid rgba(66,165,245,0.1); transition: var(--tr); }
+        .stat-box:last-child { border-right: none; }
+        .stat-box:hover { background: rgba(66,165,245,0.05); }
+        .stat-box h3 { font-family: 'Rajdhani', sans-serif; font-size: 3.2rem; font-weight: 700; color: var(--blue-el); line-height: 1; margin-bottom: 12px; text-shadow: 0 0 28px rgba(66,165,245,0.45); }
+        .stat-box p { font-size: 0.88rem; color: var(--blue-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'JetBrains Mono', monospace; }
 
-        /* ── PROJECTS GRID ── */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; }
-        .project-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition); border: 1px solid var(--gray-200); display: flex; flex-direction: column; }
-        .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: var(--primary); }
-        .project-img { height: 220px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
-        .project-category { position: absolute; top: 16px; left: 16px; padding: 8px 16px; background: rgba(255,255,255,0.95); border-radius: 100px; font-size: 13px; font-weight: 700; color: var(--gray-900); backdrop-filter: blur(10px); }
-        .project-content { padding: 32px 28px; flex: 1; display: flex; flex-direction: column; }
-        .project-title { font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--gray-900); }
-        .project-desc { color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; font-size: 0.95rem; flex: 1; }
-        .tech-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-        .tech-tag { padding: 6px 14px; background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--primary); }
-        .project-meta { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--gray-200); font-size: 13px; color: var(--gray-600); font-weight: 600; margin-top: auto; }
+        /* CLIENT GRID */
+        .client-sec { background: linear-gradient(180deg, var(--black) 0%, var(--blue-deep) 50%, var(--black) 100%); }
+        .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; align-items: start; }
+        .client-card { background: var(--card); border: 1px solid rgba(66,165,245,0.1); border-radius: 20px; overflow: hidden; transition: var(--tr-slow); display: flex; flex-direction: column; position: relative; }
+        .client-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--blue-mid), var(--blue-el)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+        .client-card:hover { transform: translateY(-8px); box-shadow: var(--glow-xs), var(--shadow); border-color: rgba(66,165,245,0.3); background: var(--card2); }
+        .client-card:hover::after { transform: scaleX(1); }
+        .client-preview { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; flex-shrink: 0; filter: drop-shadow(0 0 12px rgba(66,165,245,0.2)); }
+        .client-preview::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(5,10,20,0.6) 100%); }
+        .client-content { padding: 24px 22px; flex: 1; display: flex; flex-direction: column; }
+        .client-title { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
+        .client-desc { color: var(--gray-mid); font-size: 0.88rem; line-height: 1.65; margin-bottom: 16px; flex: 1; }
+        .client-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue-el); text-decoration: none; font-weight: 600; font-size: 13px; transition: var(--tr); margin-top: auto; font-family: 'JetBrains Mono', monospace; }
+        .client-link:hover { gap: 10px; color: var(--blue-glow); }
 
-        /* ── TECH GRID ── */
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
-        .tech-card { background: white; padding: 36px 28px; border-radius: 20px; border: 2px solid var(--gray-200); text-align: center; transition: var(--transition); }
-        .tech-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .tech-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
-        .tech-card h3 { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+        /* PROJECTS GRID */
+        .projects-sec { background: var(--black); }
+        .projects-sec-alt { background: linear-gradient(180deg, var(--black) 0%, var(--blue-deep) 50%, var(--black) 100%); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+        .project-card { background: var(--card); border: 1px solid rgba(66,165,245,0.1); border-radius: 20px; overflow: hidden; transition: var(--tr-slow); display: flex; flex-direction: column; position: relative; }
+        .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--blue-mid), var(--blue-el)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+        .project-card:hover { transform: translateY(-8px); box-shadow: var(--glow-xs), var(--shadow); border-color: rgba(66,165,245,0.3); background: var(--card2); }
+        .project-card:hover::after { transform: scaleX(1); }
+        .project-img { height: 200px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+        .project-category { position: absolute; top: 16px; left: 16px; padding: 7px 14px; background: rgba(5,10,20,0.82); backdrop-filter: blur(10px); border: 1px solid rgba(66,165,245,0.2); border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--blue-el); font-family: 'JetBrains Mono', monospace; }
+        .project-content { padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
+        .project-title { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
+        .project-desc { color: var(--gray-mid); line-height: 1.7; margin-bottom: 18px; font-size: 0.9rem; flex: 1; }
+        .tech-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+        .tech-tag { padding: 5px 12px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.18); border-radius: 100px; font-size: 11px; font-weight: 700; color: var(--blue-el); font-family: 'JetBrains Mono', monospace; }
+        .project-meta { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid rgba(66,165,245,0.08); font-size: 12px; color: var(--gray-mid); font-weight: 600; margin-top: auto; font-family: 'JetBrains Mono', monospace; }
+        .project-meta a { color: var(--blue-el); text-decoration: none; }
+        .project-meta a:hover { color: var(--blue-glow); }
 
-        /* ── SOCIAL ── */
-        .social-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; text-align: center; padding: 80px 32px; }
-        .social-links { display: flex; justify-content: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
-        .social-link { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 15px; transition: var(--transition); border: 1px solid rgba(255,255,255,0.2); }
-        .social-link:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+        /* TECH GRID */
+        .tech-sec { background: var(--black); }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+        .tech-card { background: var(--card); border: 1px solid rgba(66,165,245,0.1); padding: 36px 28px; border-radius: 20px; text-align: center; transition: var(--tr); }
+        .tech-card:hover { border-color: rgba(66,165,245,0.3); transform: translateY(-5px); box-shadow: var(--glow-xs), var(--shadow); background: var(--card2); }
+        .tech-icon { font-size: 3rem; margin-bottom: 18px; display: block; filter: drop-shadow(0 0 8px rgba(66,165,245,0.3)); }
+        .tech-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--blue-el); margin-bottom: 16px; }
 
-        /* ── CTA ── */
-        .cta { padding: 100px 32px; background: var(--gray-900); color: white; text-align: center; }
-        .cta-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 20px; }
-        .cta-desc { font-size: 1.15rem; color: var(--gray-300); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border-radius: 12px; font-weight: 700; font-size: 15px; text-decoration: none; box-shadow: 0 8px 24px rgba(0,102,255,0.3); transition: var(--transition); }
-        .btn-primary:hover { transform: translateY(-3px); }
-        .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: #25D366; color: white; border-radius: 12px; font-weight: 700; text-decoration: none; transition: var(--transition); }
-        .btn-whatsapp:hover { transform: translateY(-3px); }
+        /* SOCIAL SECTION */
+        .social-sec { background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 100%); border-top: 1px solid rgba(66,165,245,0.14); border-bottom: 1px solid rgba(66,165,245,0.14); text-align: center; padding: 80px 32px; position: relative; overflow: hidden; }
+        .social-sec::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 65% 90% at 50% 0%, rgba(66,165,245,0.1) 0%, transparent 55%); pointer-events: none; }
+        .social-sec h2 { font-family: 'Rajdhani', sans-serif; font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--white); margin-bottom: 12px; position: relative; z-index: 2; }
+        .social-sec p { font-size: 1.02rem; color: var(--blue-light); margin-bottom: 40px; position: relative; z-index: 2; }
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; z-index: 2; }
+        .social-link { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.2); color: var(--off-white); text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 14px; transition: var(--tr); backdrop-filter: blur(10px); }
+        .social-link:hover { background: rgba(66,165,245,0.15); border-color: var(--blue-el); color: var(--white); transform: translateY(-3px); box-shadow: var(--glow-xs); }
 
-        /* ── FOOTER ── */
-        .footer { background: var(--black); color: var(--gray-400); padding: 80px 32px 32px; }
-        .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px; }
-        .footer-brand .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .footer-logo img { height: 42px; }
-        .footer-logo-text { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 20px; color: white; }
-        .footer-tagline { color: var(--gray-500); line-height: 1.75; margin-bottom: 24px; font-size: 0.95rem; }
-        .footer h4 { color: white; font-weight: 700; margin-bottom: 20px; font-size: 1.05rem; }
+        /* CTA */
+        .cta-sec { padding: 96px 32px; background: linear-gradient(135deg, var(--blue-deep) 0%, #040C1E 100%); text-align: center; position: relative; overflow: hidden; }
+        .cta-sec::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 65% 80% at 50% 50%, rgba(21,101,192,0.18) 0%, transparent 65%); }
+        .cta-in { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
+        .cta-h { font-family: 'Rajdhani', sans-serif; font-size: clamp(1.9rem,4vw,2.9rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
+        .cta-p { font-size: 1.06rem; color: var(--blue-light); margin-bottom: 38px; line-height: 1.75; }
+        .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-pri { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border-radius: 10px; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; border: none; background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright)); color: var(--white); box-shadow: 0 4px 24px rgba(21,101,192,0.5), var(--glow-xs); transition: var(--tr); position: relative; overflow: hidden; }
+        .btn-pri::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,var(--blue-bright),var(--blue-el)); opacity:0; transition:opacity 0.3s; }
+        .btn-pri:hover::before { opacity:1; }
+        .btn-pri:hover { transform:translateY(-3px); box-shadow:0 8px 32px rgba(30,136,229,0.65),var(--glow-md); }
+        .btn-pri > * { position:relative; z-index:1; }
+        .btn-wa { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border-radius: 10px; background: #25D366; color: white; font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 15px; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.35); transition: var(--tr); }
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(37,211,102,0.5); background: #20BA5A; }
+
+        /* FOOTER */
+        .footer { background: var(--black-deep); border-top: 1px solid rgba(66,165,245,0.08); padding: 68px 32px 26px; }
+        .foot-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 52px; margin-bottom: 52px; }
+        .foot-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .foot-logo img { height: 40px; filter: drop-shadow(0 0 8px rgba(66,165,245,0.4)); }
+        .foot-logo-txt { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: 1.5px; color: var(--white); }
+        .foot-logo-txt em { color: var(--blue-el); font-style: normal; }
+        .foot-tag { color: var(--gray-dark); line-height: 1.75; font-size: 0.9rem; margin-bottom: 16px; }
+        .footer h4 { font-family: 'Rajdhani', sans-serif; color: var(--white); font-weight: 700; margin-bottom: 18px; font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 10px; border-bottom: 1px solid rgba(66,165,245,0.12); }
         .footer ul { list-style: none; }
-        .footer ul li { margin-bottom: 12px; }
-        .footer a { color: var(--gray-500); text-decoration: none; transition: color 0.3s; font-size: 0.95rem; }
-        .footer a:hover { color: white; }
-        .footer-bottom { padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: var(--gray-600); font-size: 0.9rem; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer a { color: var(--gray-dark); text-decoration: none; transition: color 0.3s; font-size: 0.9rem; }
+        .footer a:hover { color: var(--blue-el); }
+        .foot-bot { border-top: 1px solid rgba(66,165,245,0.07); padding-top: 28px; text-align: center; color: var(--gray-dark); font-size: 0.82rem; }
 
-        /* ── SCROLL TOP ── */
-        .scroll-top { position: fixed; bottom: 185px; right: 32px; width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 20px rgba(0,102,255,0.3); transition: var(--transition); z-index: 9998; }
-        .scroll-top.visible { display: flex; }
-        .scroll-top:hover { transform: translateY(-4px); }
+        /* FLOAT STACK */
+        .float-stack { position: fixed; bottom: 26px; right: 26px; z-index: 9997; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .scroll-top { width: 44px; height: 44px; background: var(--card); border: 1px solid rgba(66,165,245,0.22); color: var(--blue-el); border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; font-size: 18px; transition: var(--tr); box-shadow: var(--glow-xs); }
+        .scroll-top.vis { display: flex; }
+        .scroll-top:hover { background: rgba(66,165,245,0.1); transform: translateY(-4px); box-shadow: var(--glow-sm); border-color: var(--blue-el); }
+        .wa-float { position: relative; }
+        .wa-btn-main { width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; position: relative; transition: var(--tr); box-shadow: 0 4px 20px rgba(37,211,102,0.4); animation: waP 2s infinite; }
+        @keyframes waP { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.7),0 0 0 9px rgba(37,211,102,0.08)} }
+        .wa-btn-main:hover { transform: scale(1.1); }
+        .wa-btn-main svg { width: 30px; height: 30px; fill: white; }
+        .wa-notif { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; background: var(--blue-el); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; font-weight: 700; border: 2px solid var(--black); animation: nb 1s ease infinite; }
+        @keyframes nb { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        .wa-pop { position: absolute; bottom: 68px; right: 0; width: 305px; background: var(--card); border: 1px solid rgba(66,165,245,0.18); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-xl), var(--glow-xs); opacity: 0; transform: scale(0.82) translateY(20px); transform-origin: bottom right; pointer-events: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .wa-pop.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+        .wa-hd { background: linear-gradient(135deg,#25D366,#20BA5A); padding: 15px 16px; display: flex; align-items: center; gap: 11px; }
+        .wa-av { width: 40px; height: 40px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 19px; }
+        .wa-in h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 2px; }
+        .wa-in p { font-size: 11px; color: rgba(255,255,255,0.85); }
+        .wa-xbtn { margin-left: auto; background: rgba(255,255,255,0.14); border: none; color: white; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: var(--tr); }
+        .wa-xbtn:hover { background: rgba(255,255,255,0.28); }
+        .wa-bd { padding: 15px; }
+        .wa-msg { background: var(--black); border: 1px solid rgba(66,165,245,0.1); padding: 11px 13px; border-radius: 12px; margin-bottom: 13px; font-size: 13px; line-height: 1.6; color: var(--off-white); position: relative; }
+        .wa-msg::before { content: ''; position: absolute; left: -8px; top: 10px; border: solid transparent; border-width: 0 8px 8px 0; border-right-color: var(--black); }
+        .wa-t { font-size: 10px; color: var(--gray-mid); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+        .wa-reps { display: flex; flex-direction: column; gap: 6px; margin-bottom: 13px; }
+        .wa-qb { background: var(--black); border: 1px solid rgba(66,165,245,0.14); padding: 8px 13px; border-radius: 20px; font-size: 12.5px; color: var(--gray-light); cursor: pointer; transition: var(--tr); text-align: left; font-family: 'Exo 2', sans-serif; font-weight: 500; }
+        .wa-qb:hover { border-color: rgba(66,165,245,0.38); color: var(--blue-el); background: rgba(66,165,245,0.05); }
+        .wa-go { width: 100%; background: #25D366; color: white; border: none; padding: 11px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px; font-family: 'Exo 2', sans-serif; transition: var(--tr); }
+        .wa-go:hover { background: #20BA5A; transform: translateY(-2px); }
 
-        /* ── WHATSAPP CHATBOT ── */
-        .whatsapp-float { position: fixed; bottom: 100px; right: 32px; z-index: 9999; }
-        .whatsapp-button { width: 64px; height: 64px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: var(--transition); border: none; position: relative; animation: pulse-wa 2s infinite; }
-        @keyframes pulse-wa { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.1); } }
-        .whatsapp-button:hover { transform: scale(1.1); }
-        .whatsapp-button svg { width: 36px; height: 36px; fill: white; }
-        .wa-notif { position: absolute; top: -5px; right: -5px; width: 24px; height: 24px; background: #FF3366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700; border: 3px solid white; animation: bounce-notif 1s infinite; }
-        @keyframes bounce-notif { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-        .whatsapp-popup { position: absolute; bottom: 80px; right: 0; width: 320px; background: white; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: scale(0.8) translateY(20px); transform-origin: bottom right; pointer-events: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .whatsapp-popup.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
-        .wa-popup-head { background: linear-gradient(135deg,#25D366,#20BA5A); padding: 20px; color: white; display: flex; align-items: center; gap: 12px; }
-        .wa-avatar { width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-        .wa-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-        .wa-info p { font-size: 13px; opacity: 0.9; }
-        .wa-close-btn { margin-left: auto; background: rgba(255,255,255,0.2); border: none; color: white; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: var(--transition); }
-        .wa-close-btn:hover { background: rgba(255,255,255,0.3); }
-        .wa-popup-body { padding: 20px; }
-        .wa-msg { background: var(--gray-100); padding: 12px 16px; border-radius: 12px; margin-bottom: 16px; font-size: 14px; line-height: 1.6; color: var(--gray-800); position: relative; }
-        .wa-msg::before { content: ''; position: absolute; left: -8px; top: 10px; width: 0; height: 0; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent var(--gray-100) transparent transparent; }
-        .wa-time { font-size: 11px; color: var(--gray-500); margin-top: 6px; }
-        .wa-quick-replies { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-        .wa-qbtn { background: white; border: 1.5px solid var(--gray-300); padding: 10px 14px; border-radius: 20px; font-size: 13px; color: var(--gray-700); cursor: pointer; transition: var(--transition); text-align: left; font-weight: 500; }
-        .wa-qbtn:hover { background: var(--gray-50); border-color: var(--primary); color: var(--primary); }
-        .wa-chat-btn { width: 100%; background: #25D366; color: white; border: none; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); }
-        .wa-chat-btn:hover { background: #20BA5A; transform: translateY(-2px); }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) {
-            .nav-menu { position: fixed; top: 73px; left: 0; width: 100%; background: white; flex-direction: column; padding: 24px; gap: 20px; box-shadow: var(--shadow-lg); transform: translateX(-100%); transition: transform 0.3s ease; }
-            .nav-menu.active { transform: translateX(0); }
-            .mobile-menu-btn { display: flex; }
-            .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-            .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
-            .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-            .stats-banner { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 40px 24px; }
-            .stat-box h3 { font-size: 2.5rem; }
-            .projects-grid, .client-grid, .tech-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .whatsapp-float { right: 16px; bottom: 80px; }
-            .whatsapp-popup { width: calc(100vw - 32px); right: -16px; bottom: 80px; }
-            .whatsapp-button { width: 56px; height: 56px; }
-            .whatsapp-button svg { width: 32px; height: 32px; }
-            .scroll-top { bottom: 160px; right: 16px; width: 44px; height: 44px; }
+        /* RESPONSIVE */
+        @media(max-width:1024px){ .foot-grid{grid-template-columns:repeat(2,1fr);} }
+        @media(max-width:768px){
+            .nav-ul{position:fixed;top:70px;left:0;width:100%;background:rgba(3,7,16,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:22px;gap:6px;border-bottom:1px solid rgba(66,165,245,0.14);transform:translateX(-100%);transition:transform 0.3s ease;}
+            .nav-ul.active{transform:translateX(0);}
+            .mob-btn{display:flex;}
+            .mob-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+            .mob-btn.active span:nth-child(2){opacity:0;}
+            .mob-btn.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px);}
+            .stats-banner{grid-template-columns:repeat(2,1fr);}
+            .stat-box{border-right:none;border-bottom:1px solid rgba(66,165,245,0.1);}
+            .projects-grid,.client-grid,.tech-grid{grid-template-columns:1fr;}
+            .foot-grid{grid-template-columns:1fr;gap:32px;}
+            .float-stack{right:14px;bottom:14px;}
+            .wa-pop{width:calc(100vw - 36px);right:-12px;}
+            section{padding:72px 20px;}
         }
     </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="KS.png" alt="KS Software Company Logo">
-                <span class="logo-text">KS SOFTWARE</span>
-            </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="clients.html" class="nav-link active">Portfolio</a></li>
-                <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <div class="page-header">
-        <div class="header-bg-pattern"></div>
-        <div class="page-header-content">
-            <div class="page-badge"><span>🎯</span> Our Portfolio</div>
-            <h1 class="page-title">Our <span class="gradient-text">Success Stories</span></h1>
-            <p class="page-desc">Delivering excellence across diverse industries with 50+ successful projects and cutting-edge digital solutions</p>
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" aria-label="KS Software Home">
+            <img src="KS.png" alt="KS Software Company" width="46" height="46">
+            <span class="logo-txt">KS <em>SOFTWARE</em></span>
+        </a>
+        <button class="mob-btn" id="mobBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-ul" id="navUl">
+            <li><a href="index.html" class="nav-a">Home</a></li>
+            <li><a href="about.html" class="nav-a">About Us</a></li>
+            <li><a href="clients.html" class="nav-a active">Portfolio</a></li>
+            <li><a href="contact.html" class="nav-a nav-cta">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <div class="orb orb1" aria-hidden="true"></div>
+    <div class="orb orb2" aria-hidden="true"></div>
+    <div class="page-header-inner">
+        <div class="eyebrow"><span class="dot"></span>Our Portfolio</div>
+        <h1 class="page-h1">Our <span class="grad">Success Stories</span></h1>
+        <p class="page-desc">Delivering excellence across diverse industries with 50+ successful projects and cutting-edge digital solutions</p>
+    </div>
+</div>
+
+<!-- STATS -->
+<section class="stats-sec">
+    <div class="container">
+        <div class="stats-banner">
+            <div class="stat-box"><h3>50+</h3><p>Projects Completed</p></div>
+            <div class="stat-box"><h3>10+</h3><p>Technologies Used</p></div>
+            <div class="stat-box"><h3>100%</h3><p>Client Satisfaction</p></div>
+            <div class="stat-box"><h3>24/7</h3><p>Support Available</p></div>
         </div>
     </div>
+</section>
 
-    <!-- Stats Section -->
-    <section style="background: white; padding-top: 40px;">
-        <div class="container">
-            <div class="stats-banner">
-                <div class="stat-box"><h3>50+</h3><p>Projects Completed</p></div>
-                <div class="stat-box"><h3>10+</h3><p>Technologies Used</p></div>
-                <div class="stat-box"><h3>100%</h3><p>Client Satisfaction</p></div>
-                <div class="stat-box"><h3>24/7</h3><p>Support Available</p></div>
+<!-- LIVE CLIENT WEBSITES -->
+<section class="client-sec">
+    <div class="sec-hdr">
+        <div class="sec-badge">🌐 Live Projects</div>
+        <h2 class="sec-h2">Our <span class="hl">Client Websites</span></h2>
+        <p class="sec-p">Explore our live client projects delivering real business value</p>
+    </div>
+    <div class="container">
+        <div class="client-grid">
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🏢</div>
+                <div class="client-content">
+                    <h3 class="client-title">SI Legal Services</h3>
+                    <p class="client-desc">Professional legal services website with comprehensive information and client portal.</p>
+                    <a href="https://www.silegalservices.com" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🎬</div>
+                <div class="client-content">
+                    <h3 class="client-title">Shayan Influencer</h3>
+                    <p class="client-desc">Modern website with videography showcase and editing system.</p>
+                    <a href="https://kssoftware-hyd.github.io/Shayan/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🏥</div>
+                <div class="client-content">
+                    <h3 class="client-title">Inamdar Medical</h3>
+                    <p class="client-desc">Healthcare website with doctor profiles, appointment booking, and patient resources.</p>
+                    <a href="https://kssoftware-hyd.github.io/InamdarMedical/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">🎨</div>
+                <div class="client-content">
+                    <h3 class="client-title">Novelty Creations</h3>
+                    <p class="client-desc">Creative agency portfolio with stunning project showcases and modern design.</p>
+                    <a href="https://kssoftware-hyd.github.io/Novelty/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #0d5c2e 0%, #1e9c52 100%);">🏥</div>
+                <div class="client-content">
+                    <h3 class="client-title">Mahaveer Hospital</h3>
+                    <p class="client-desc">Multi-specialty hospital website with doctor profiles, department listings, and online appointment booking.</p>
+                    <a href="https://mahaveerhospital.co.in/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #0d2d5c 0%, #1e5aa0 100%);">🏛️</div>
+                <div class="client-content">
+                    <h3 class="client-title">YCIT College</h3>
+                    <p class="client-desc">Full-featured college website with departments, faculty, admissions, campus gallery and student resources.</p>
+                    <a href="https://kssoftware-hyd.github.io/YCIT/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
+            </div>
+            <div class="client-card">
+                <div class="client-preview" style="background: linear-gradient(135deg, #2d0d5c 0%, #6b30a8 100%);">🎓</div>
+                <div class="client-content">
+                    <h3 class="client-title">College MCQ Exam</h3>
+                    <p class="client-desc">Interactive online examination system with MCQ quizzes, real-time scoring, countdown timer and result analytics.</p>
+                    <a href="https://kssoftware-hyd.github.io/MCQProject/" target="_blank" class="client-link">Visit Website →</a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Live Client Websites -->
-    <section style="background: var(--gray-50);">
-        <div class="section-header">
-            <div class="section-badge">Live Projects</div>
-            <h2 class="section-title">Our Client Websites</h2>
-            <p class="section-desc">Explore our live client projects delivering real business value</p>
-        </div>
-        <div class="container">
-            <!-- ALL 8 client cards inside ONE .client-grid -->
-            <div class="client-grid">
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🏢</div>
-                    <div class="client-content">
-                        <h3 class="client-title">SI Legal Services</h3>
-                        <p class="client-desc">Professional legal services website with comprehensive information and client portal.</p>
-                        <a href="https://www.silegalservices.com" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+<!-- WEBSITE PROJECTS -->
+<section class="projects-sec">
+    <div class="sec-hdr">
+        <div class="sec-badge">💻 Web Development</div>
+        <h2 class="sec-h2">Website <span class="hl">Development Projects</span></h2>
+        <p class="sec-p">Professional websites built with cutting-edge technologies</p>
+    </div>
+    <div class="container">
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><div class="project-category">🏠 Real Estate</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Premium Properties Portal</h3>
+                    <p class="project-desc">Full-featured real estate website with advanced property search, virtual tours, mortgage calculator, and agent management system.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🍽️</div>
-                    <div class="client-content">
-                        <h3 class="client-title">Shayan Influencer</h3>
-                        <p class="client-desc">Modern website with videography showcase and editing system.</p>
-                        <a href="https://kssoftware-hyd.github.io/Shayan/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><div class="project-category">💼 Consultancy</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Business Consultancy Hub</h3>
+                    <p class="project-desc">Professional consultancy website with service portfolio, case studies, blog, client testimonials, and appointment booking.</p>
+                    <div class="tech-tags"><span class="tech-tag">WordPress</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">SEO</span><span class="tech-tag">Analytics</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🏥</div>
-                    <div class="client-content">
-                        <h3 class="client-title">Inamdar Medical</h3>
-                        <p class="client-desc">Healthcare website with doctor profiles, appointment booking, and patient resources.</p>
-                        <a href="https://kssoftware-hyd.github.io/InamdarMedical/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><div class="project-category">🎓 Education</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">University Information Portal</h3>
+                    <p class="project-desc">Comprehensive college website with admission portal, course catalog, faculty profiles, and event calendar.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">MySQL</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📅 2024</span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">🎨</div>
-                    <div class="client-content">
-                        <h3 class="client-title">Novelty Creations</h3>
-                        <p class="client-desc">Creative agency portfolio with stunning project showcases and modern design.</p>
-                        <a href="https://kssoftware-hyd.github.io/Novelty/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"><div class="project-category">🎨 Portfolio</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Creative Portfolio Showcase</h3>
+                    <p class="project-desc">Stunning portfolio website for creative professionals with project galleries and interactive animations.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Animations</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📅 2024</span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #0d5c2e 0%, #1e9c52 100%);">🏥</div>
-                    <div class="client-content">
-                        <h3 class="client-title">Mahaveer Hospital</h3>
-                        <p class="client-desc">Multi-specialty hospital website with doctor profiles, department listings, and online appointment booking.</p>
-                        <a href="https://kssoftware-hyd.github.io/MahaveerHospital/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"><div class="project-category">🛒 E-Commerce</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Online Shopping Platform</h3>
+                    <p class="project-desc">Complete e-commerce solution with product catalog, shopping cart, and payment gateway integration.</p>
+                    <div class="tech-tags"><span class="tech-tag">WordPress</span><span class="tech-tag">WooCommerce</span><span class="tech-tag">SEO</span><span class="tech-tag">Payment APIs</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #0d2d5c 0%, #1e5aa0 100%);">🏛️</div>
-                    <div class="client-content">
-                        <h3 class="client-title">YCIT College</h3>
-                        <p class="client-desc">Full-featured college website with departments, faculty, admissions, campus gallery and student resources.</p>
-                        <a href="https://kssoftware-hyd.github.io/YCIT/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #0d5c2e 0%, #1e9c52 100%);"><div class="project-category">🏥 Healthcare</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Mahaveer Hospital Website</h3>
+                    <p class="project-desc">Professional multi-specialty hospital website with doctor profiles, department pages, appointment booking, and patient-friendly navigation.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive</span></div>
+                    <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://mahaveerhospital.co.in/" target="_blank">View Live</a></span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #5c3d0d 0%, #a07820 100%);">⚖️</div>
-                    <div class="client-content">
-                        <h3 class="client-title">SI Advocate Consultancy</h3>
-                        <p class="client-desc">Professional legal services website with practice areas, attorney profiles, and consultation request forms.</p>
-                        <a href="https://kssoftware-hyd.github.io/SI/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #0d2d5c 0%, #1e5aa0 100%);"><div class="project-category">🏛️ Education</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">YCIT College Website</h3>
+                    <p class="project-desc">Full-featured college website with departments, faculty listings, campus gallery, events calendar, news section and admission forms.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Mobile-First</span></div>
+                    <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/YCIT/" target="_blank">View Live</a></span></div>
                 </div>
-
-                <div class="client-card">
-                    <div class="client-preview" style="background: linear-gradient(135deg, #2d0d5c 0%, #6b30a8 100%);">🎓</div>
-                    <div class="client-content">
-                        <h3 class="client-title">College MCQ Exam Platform</h3>
-                        <p class="client-desc">Interactive online examination system with MCQ quizzes, real-time scoring, countdown timer and result analytics.</p>
-                        <a href="https://kssoftware-hyd.github.io/MCQProject/" target="_blank" class="client-link">Visit Website →</a>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #5c3d0d 0%, #a07820 100%);"><div class="project-category">⚖️ Legal</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">SI Advocate Consultancy</h3>
+                    <p class="project-desc">Premium legal consultancy website with practice area listings, attorney profiles, case highlights, and consultation request form.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">SEO Optimized</span></div>
+                    <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/SI/" target="_blank">View Live</a></span></div>
                 </div>
-
-            </div><!-- /.client-grid -->
-        </div>
-    </section>
-
-    <!-- Website Projects -->
-    <section style="background: white;">
-        <div class="section-header">
-            <div class="section-badge">Web Development</div>
-            <h2 class="section-title">Website Development Projects</h2>
-            <p class="section-desc">Professional websites built with cutting-edge technologies</p>
-        </div>
-        <div class="container">
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="project-category">🏠 Real Estate</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Premium Properties Portal</h3>
-                        <p class="project-desc">Full-featured real estate website with advanced property search, virtual tours, mortgage calculator, and agent management system.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">JavaScript</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #2d0d5c 0%, #6b30a8 100%);"><div class="project-category">🎓 Education</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">College MCQ Exam Platform</h3>
+                    <p class="project-desc">Interactive online examination system with MCQ-based quizzes, real-time scoring, countdown timer, and performance result analytics.</p>
+                    <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">Vanilla JS</span><span class="tech-tag">CSS3</span><span class="tech-tag">LocalStorage</span></div>
+                    <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/MCQProject/" target="_blank">View Live</a></span></div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="project-category">💼 Consultancy</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Business Consultancy Hub</h3>
-                        <p class="project-desc">Professional consultancy website with service portfolio, case studies, blog, client testimonials, and appointment booking.</p>
-                        <div class="tech-tags"><span class="tech-tag">WordPress</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">SEO</span><span class="tech-tag">Analytics</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <div class="project-category">🎓 Education</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">University Information Portal</h3>
-                        <p class="project-desc">Comprehensive college website with admission portal, course catalog, faculty profiles, and event calendar.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">MySQL</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2024</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <div class="project-category">🎨 Portfolio</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Creative Portfolio Showcase</h3>
-                        <p class="project-desc">Stunning portfolio website for creative professionals with project galleries and interactive animations.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Animations</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2024</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                        <div class="project-category">🛒 E-Commerce</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Online Shopping Platform</h3>
-                        <p class="project-desc">Complete e-commerce solution with product catalog, shopping cart, and payment gateway integration.</p>
-                        <div class="tech-tags"><span class="tech-tag">WordPress</span><span class="tech-tag">WooCommerce</span><span class="tech-tag">SEO</span><span class="tech-tag">Payment APIs</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2025</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <div class="project-category">🏢 Corporate</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enterprise Business Website</h3>
-                        <p class="project-desc">Professional corporate website with multi-page structure, SEO optimization, and CMS integration.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">SEO</span><span class="tech-tag">Analytics</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📅 2024</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #0d5c2e 0%, #1e9c52 100%);">
-                        <div class="project-category">🏥 Healthcare</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Mahaveer Hospital Website</h3>
-                        <p class="project-desc">Professional multi-specialty hospital website with doctor profiles, department pages, appointment booking, and patient-friendly navigation.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive</span></div>
-                        <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/MahaveerHospital/" target="_blank" style="color:var(--primary)">View Live</a></span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #0d2d5c 0%, #1e5aa0 100%);">
-                        <div class="project-category">🏛️ Education</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">YCIT College Website</h3>
-                        <p class="project-desc">Full-featured college website with departments, faculty listings, campus gallery, events calendar, news section and admission forms.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Mobile-First</span></div>
-                        <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/YCIT/" target="_blank" style="color:var(--primary)">View Live</a></span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #5c3d0d 0%, #a07820 100%);">
-                        <div class="project-category">⚖️ Legal</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SI Advocate Consultancy</h3>
-                        <p class="project-desc">Premium legal consultancy website with practice area listings, attorney profiles, case highlights, and consultation request form with professional design.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">SEO Optimized</span></div>
-                        <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/SI/" target="_blank" style="color:var(--primary)">View Live</a></span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #2d0d5c 0%, #6b30a8 100%);">
-                        <div class="project-category">🎓 Education</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">College MCQ Exam Platform</h3>
-                        <p class="project-desc">Interactive online examination system with MCQ-based quizzes, real-time scoring, countdown timer, and performance result analytics for students.</p>
-                        <div class="tech-tags"><span class="tech-tag">HTML5</span><span class="tech-tag">Vanilla JS</span><span class="tech-tag">CSS3</span><span class="tech-tag">LocalStorage</span></div>
-                        <div class="project-meta"><span>✅ Live</span><span>🔗 <a href="https://kssoftware-hyd.github.io/MCQProject/" target="_blank" style="color:var(--primary)">View Live</a></span></div>
-                    </div>
-                </div>
-
-            </div><!-- /.projects-grid -->
-        </div>
-    </section>
-
-    <!-- Mobile App Projects -->
-    <section style="background: var(--gray-50);">
-        <div class="section-header">
-            <div class="section-badge">Mobile Development</div>
-            <h2 class="section-title">Mobile App Development</h2>
-            <p class="section-desc">Native and cross-platform applications for modern businesses</p>
-        </div>
-        <div class="container">
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="project-category">📝 Education</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Online Examination System</h3>
-                        <p class="project-desc">Comprehensive exam app with timer, multiple question types, instant results, and performance analytics.</p>
-                        <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📱 iOS & Android</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="project-category">🎯 Learning</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Interactive Quiz Platform</h3>
-                        <p class="project-desc">Engaging quiz app with categories, leaderboards, achievements, and real-time multiplayer mode.</p>
-                        <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Android SDK</span><span class="tech-tag">Firebase</span><span class="tech-tag">REST API</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📱 Android</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <div class="project-category">🏘️ Real Estate</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Property Finder Mobile App</h3>
-                        <p class="project-desc">Feature-rich real estate app with property search, virtual tours, and map integration.</p>
-                        <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Node.js</span><span class="tech-tag">Google Maps</span><span class="tech-tag">Push Notifications</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📱 iOS & Android</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <div class="project-category">📚 E-Learning</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Student Learning Hub</h3>
-                        <p class="project-desc">Complete LMS app with video lectures, assignments, quizzes, and progress tracking.</p>
-                        <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Node.js</span><span class="tech-tag">MySQL</span><span class="tech-tag">Video Streaming</span></div>
-                        <div class="project-meta"><span>✅ Completed</span><span>📱 Android</span></div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Technologies -->
-    <section style="background: white;">
-        <div class="section-header">
-            <div class="section-badge">Our Expertise</div>
-            <h2 class="section-title">Technologies & Tools</h2>
-            <p class="section-desc">Leveraging the latest technologies to build exceptional solutions</p>
-        </div>
-        <div class="container">
-            <div class="tech-grid">
-                <div class="tech-card"><span class="tech-icon">📱</span><h3>Mobile Development</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Flutter</span><span class="tech-tag">Java</span><span class="tech-tag">React Native</span><span class="tech-tag">Kotlin</span></div></div>
-                <div class="tech-card"><span class="tech-icon">🌐</span><h3>Web Development</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">WordPress</span></div></div>
-                <div class="tech-card"><span class="tech-icon">⚙️</span><h3>Backend & Database</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Node.js</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span></div></div>
-                <div class="tech-card"><span class="tech-icon">🎨</span><h3>Design & UX</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Figma</span><span class="tech-tag">Adobe XD</span><span class="tech-tag">UI/UX</span><span class="tech-tag">Responsive</span></div></div>
-                <div class="tech-card"><span class="tech-icon">🚀</span><h3>Digital Marketing</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">SEO</span><span class="tech-tag">Google Ads</span><span class="tech-tag">Analytics</span><span class="tech-tag">Social Media</span></div></div>
-                <div class="tech-card"><span class="tech-icon">☁️</span><h3>Cloud & DevOps</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">AWS</span><span class="tech-tag">Firebase</span><span class="tech-tag">Docker</span><span class="tech-tag">CI/CD</span></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Media -->
-    <section class="social-section">
-        <div class="container">
-            <h2 style="font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;">Connect With Us</h2>
-            <p style="font-size:1.15rem;opacity:0.95;margin-bottom:40px;">Follow our journey and stay updated with our latest projects</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/ks_software" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    Instagram
-                </a>
-                <a href="https://www.linkedin.com/in/ks-software" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://wa.me/917385522051" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <h2 class="cta-title">Ready to Start Your Project?</h2>
-        <p class="cta-desc">Let's discuss how we can bring your vision to life with cutting-edge technology</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn-primary">Get Started Now</a>
-            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="KS.png" alt="KS Software Logo">
-                    <span class="footer-logo-text">KS SOFTWARE</span>
+<!-- MOBILE APP PROJECTS -->
+<section class="projects-sec-alt">
+    <div class="sec-hdr">
+        <div class="sec-badge">📱 Mobile Development</div>
+        <h2 class="sec-h2">Mobile App <span class="hl">Development</span></h2>
+        <p class="sec-p">Native and cross-platform applications for modern businesses</p>
+    </div>
+    <div class="container">
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><div class="project-category">📝 Education</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Online Examination System</h3>
+                    <p class="project-desc">Comprehensive exam app with timer, multiple question types, instant results, and performance analytics.</p>
+                    <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📱 iOS & Android</span></div>
                 </div>
-                <p class="footer-tagline">Leading software development company in Hyderabad with 6+ years of experience, specializing in web development, mobile apps, and digital transformation solutions.</p>
-                <p style="color:var(--gray-500);margin-top:16px;font-size:0.95rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
             </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="clients.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><div class="project-category">🎯 Learning</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Interactive Quiz Platform</h3>
+                    <p class="project-desc">Engaging quiz app with categories, leaderboards, achievements, and real-time multiplayer mode.</p>
+                    <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Android SDK</span><span class="tech-tag">Firebase</span><span class="tech-tag">REST API</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📱 Android</span></div>
+                </div>
             </div>
-            <div>
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="about.html">Web Development</a></li>
-                    <li><a href="about.html">Mobile Apps</a></li>
-                    <li><a href="about.html">SEO Services</a></li>
-                    <li><a href="about.html">Cloud Solutions</a></li>
-                </ul>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><div class="project-category">🏘️ Real Estate</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Property Finder Mobile App</h3>
+                    <p class="project-desc">Feature-rich real estate app with property search, virtual tours, and map integration.</p>
+                    <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Node.js</span><span class="tech-tag">Google Maps</span><span class="tech-tag">Push Notifications</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📱 iOS & Android</span></div>
+                </div>
             </div>
-            <div>
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
-                    <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
-                    <li><a href="https://wa.me/917385522051">💬 WhatsApp Chat</a></li>
-                </ul>
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"><div class="project-category">📚 E-Learning</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Student Learning Hub</h3>
+                    <p class="project-desc">Complete LMS app with video lectures, assignments, quizzes, and progress tracking.</p>
+                    <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Node.js</span><span class="tech-tag">MySQL</span><span class="tech-tag">Video Streaming</span></div>
+                    <div class="project-meta"><span>✅ Completed</span><span>📱 Android</span></div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 KS Software Company. All rights reserved. | Web Development Company in Hyderabad | Mobile App Development | SEO Services</p>
-        </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- WhatsApp Chatbot -->
-    <div class="whatsapp-float" id="waFloat">
-        <div class="whatsapp-popup" id="waPopup">
-            <div class="wa-popup-head">
-                <div class="wa-avatar">💬</div>
-                <div class="wa-info"><h4>KS Software</h4><p>Typically replies instantly</p></div>
-                <button class="wa-close-btn" id="waClose">×</button>
+<!-- TECHNOLOGIES -->
+<section class="tech-sec">
+    <div class="sec-hdr">
+        <div class="sec-badge">⚙️ Our Expertise</div>
+        <h2 class="sec-h2">Technologies <span class="hl">&amp; Tools</span></h2>
+        <p class="sec-p">Leveraging the latest technologies to build exceptional solutions</p>
+    </div>
+    <div class="container">
+        <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon">📱</span><h3>Mobile Development</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Flutter</span><span class="tech-tag">Java</span><span class="tech-tag">React Native</span><span class="tech-tag">Kotlin</span></div></div>
+            <div class="tech-card"><span class="tech-icon">🌐</span><h3>Web Development</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">WordPress</span></div></div>
+            <div class="tech-card"><span class="tech-icon">⚙️</span><h3>Backend & Database</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Node.js</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">MongoDB</span></div></div>
+            <div class="tech-card"><span class="tech-icon">🎨</span><h3>Design & UX</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">Figma</span><span class="tech-tag">Adobe XD</span><span class="tech-tag">UI/UX</span><span class="tech-tag">Responsive</span></div></div>
+            <div class="tech-card"><span class="tech-icon">🚀</span><h3>Digital Marketing</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">SEO</span><span class="tech-tag">Google Ads</span><span class="tech-tag">Analytics</span><span class="tech-tag">Social Media</span></div></div>
+            <div class="tech-card"><span class="tech-icon">☁️</span><h3>Cloud & DevOps</h3><div class="tech-tags" style="justify-content:center;"><span class="tech-tag">AWS</span><span class="tech-tag">Firebase</span><span class="tech-tag">Docker</span><span class="tech-tag">CI/CD</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-sec">
+    <h2>Connect With Us</h2>
+    <p>Follow our journey and stay updated with our latest projects</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/ks_software" target="_blank" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/ks-software" target="_blank" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+        </a>
+        <a href="https://wa.me/917385522051" target="_blank" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+    <div class="cta-in">
+        <h2 class="cta-h">Ready to Start Your Project?</h2>
+        <p class="cta-p">Let's discuss how we can bring your vision to life with cutting-edge technology</p>
+        <div class="cta-row">
+            <a href="contact.html" class="btn-pri"><span>Get Started Now</span></a>
+            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="btn-wa">💬 Chat on WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="foot-grid">
+        <div>
+            <div class="foot-logo">
+                <img src="KS.png" alt="KS Software Logo" width="40" height="40">
+                <span class="foot-logo-txt">KS <em>SOFTWARE</em></span>
             </div>
-            <div class="wa-popup-body">
-                <div class="wa-msg">
-                    <div>Hi there! 👋</div>
-                    <div>How can we help you today?</div>
-                    <div class="wa-time">Just now</div>
+            <p class="foot-tag">Leading software development company in Hyderabad (kssoftware.co.in) with 6+ years of experience in web development, mobile apps & digital transformation.</p>
+            <p style="color:var(--gray-dark);font-size:0.88rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="clients.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="about.html">Web Development</a></li>
+                <li><a href="about.html">Mobile Apps</a></li>
+                <li><a href="about.html">SEO Services</a></li>
+                <li><a href="about.html">Cloud Solutions</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
+                <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
+                <li><a href="https://wa.me/917385522051" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
+                <li><a href="https://kssoftware.co.in" target="_blank">🌐 kssoftware.co.in</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bot">
+        <p>&copy; 2026 KS Software Company – kssoftware.co.in | All rights reserved. | Web Development Hyderabad | Mobile App Development | SEO Services Hyderabad</p>
+    </div>
+</footer>
+
+<!-- FLOAT STACK -->
+<div class="float-stack">
+    <div class="wa-float" id="waFloat">
+        <div class="wa-pop" id="waPop" role="dialog" aria-label="WhatsApp chat">
+            <div class="wa-hd">
+                <div class="wa-av">💬</div>
+                <div class="wa-in"><h4>KS Software</h4><p>Typically replies instantly</p></div>
+                <button class="wa-xbtn" id="waX" aria-label="Close">×</button>
+            </div>
+            <div class="wa-bd">
+                <div class="wa-msg">Hi there! 👋 How can we help you today?<div class="wa-t">Just now</div></div>
+                <div class="wa-reps">
+                    <button class="wa-qb" onclick="sendWA('I need a website')">🌐 I need a website</button>
+                    <button class="wa-qb" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
+                    <button class="wa-qb" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
+                    <button class="wa-qb" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
                 </div>
-                <div class="wa-quick-replies">
-                    <button class="wa-qbtn" onclick="sendWA('I need a website')">🌐 I need a website</button>
-                    <button class="wa-qbtn" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
-                    <button class="wa-qbtn" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
-                    <button class="wa-qbtn" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
-                </div>
-                <button class="wa-chat-btn" onclick="sendWA('')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <button class="wa-go" onclick="sendWA('')">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     Start Chat
                 </button>
             </div>
         </div>
-        <button class="whatsapp-button" id="waBtn">
+        <button class="wa-btn-main" id="waBtn" aria-label="Open WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span class="wa-notif" id="waNotif">1</span>
+            <span class="wa-notif" id="waN">1</span>
         </button>
     </div>
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+</div>
 
-    <button class="scroll-top" id="scrollTop">↑</button>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            var scrollTopBtn = document.getElementById('scrollTop');
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-            if (window.scrollY > 300) scrollTopBtn.classList.add('visible');
-            else scrollTopBtn.classList.remove('visible');
-        });
-
-        document.getElementById('scrollTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        var navMenu = document.getElementById('navMenu');
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        document.addEventListener('click', function(e) {
-            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-        navMenu.querySelectorAll('.nav-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        var waBtn = document.getElementById('waBtn');
-        var waPopup = document.getElementById('waPopup');
-        var waClose = document.getElementById('waClose');
-        var waNotif = document.getElementById('waNotif');
-
-        waBtn.addEventListener('click', function() {
-            waPopup.classList.toggle('active');
-            if (waNotif) waNotif.style.display = 'none';
-        });
-        waClose.addEventListener('click', function(e) {
-            e.stopPropagation();
-            waPopup.classList.remove('active');
-        });
-        document.addEventListener('click', function(e) {
-            if (waBtn && waPopup && !waBtn.contains(e.target) && !waPopup.contains(e.target)) {
-                waPopup.classList.remove('active');
-            }
-        });
-        setTimeout(function() {
-            if (!sessionStorage.getItem('waShown_clients')) {
-                waPopup.classList.add('active');
-                sessionStorage.setItem('waShown_clients', '1');
-                setTimeout(function() { waPopup.classList.remove('active'); }, 8000);
-            }
-        }, 3000);
-
-        function sendWA(msg) {
-            var text = msg || "Hi, I'm interested in your services!";
-            window.open('https://wa.me/917385522051?text=' + encodeURIComponent(text), '_blank');
-        }
-    </script>
+<script>
+    var nb = document.getElementById('navbar'), st = document.getElementById('scrollTop');
+    window.addEventListener('scroll', function () { nb.classList.toggle('scrolled', scrollY > 50); st.classList.toggle('vis', scrollY > 300); });
+    st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    var mb = document.getElementById('mobBtn'), nu = document.getElementById('navUl');
+    mb.addEventListener('click', function () { var e = mb.getAttribute('aria-expanded') === 'true'; mb.setAttribute('aria-expanded', !e); mb.classList.toggle('active'); nu.classList.toggle('active'); });
+    document.addEventListener('click', function (e) { if (!mb.contains(e.target) && !nu.contains(e.target)) { mb.classList.remove('active'); nu.classList.remove('active'); } });
+    nu.querySelectorAll('.nav-a').forEach(l => l.addEventListener('click', () => { mb.classList.remove('active'); nu.classList.remove('active'); }));
+    var waBtn = document.getElementById('waBtn'), waPop = document.getElementById('waPop'), waX = document.getElementById('waX'), waN = document.getElementById('waN');
+    waBtn.addEventListener('click', function (e) { e.stopPropagation(); waPop.classList.toggle('active'); if (waN) waN.style.display = 'none'; });
+    waX.addEventListener('click', function (e) { e.stopPropagation(); waPop.classList.remove('active'); });
+    document.addEventListener('click', function (e) { if (!waBtn.contains(e.target) && !waPop.contains(e.target)) waPop.classList.remove('active'); });
+    setTimeout(function () { if (!sessionStorage.getItem('ws_clients')) { waPop.classList.add('active'); sessionStorage.setItem('ws_clients', '1'); setTimeout(() => waPop.classList.remove('active'), 8000); } }, 3000);
+    function sendWA(m) { window.open('https://wa.me/917385522051?text=' + encodeURIComponent(m || "Hi, I'm interested in your services at kssoftware.co.in!"), '_blank'); }
+</script>
 </body>
 </html>

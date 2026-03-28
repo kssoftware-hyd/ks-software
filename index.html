@@ -3,1478 +3,719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="KS Software Company - Leading web development, mobile app development, and SEO services in Hyderabad. 50+ projects completed with 2+ years of experience. Expert team delivering cutting-edge digital solutions.">
-    <meta name="keywords" content="web development Hyderabad, mobile app development, SEO services, software company Begumpet, Flutter development, React development, WordPress development, digital marketing Hyderabad">
+    <meta name="description" content="KS Software Company – #1 Web Development & Mobile App Development company in Hyderabad. 50+ projects delivered, 100% client satisfaction. Expert React, Flutter, WordPress, SEO & Cloud solutions. Get a FREE quote today!">
+    <meta name="keywords" content="web development Hyderabad, mobile app development Hyderabad, software company Hyderabad, SEO services Hyderabad, Flutter app development, React development, WordPress development, digital marketing Hyderabad, website design Hyderabad, kssoftware, KS Software">
     <meta name="author" content="KS Software Company">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="KS Software Company - Premium Web & Mobile App Development in Hyderabad">
-    <meta property="og:description" content="Transform your business with cutting-edge digital solutions. 50+ projects completed with 100% client satisfaction.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="geo.region" content="IN-TG">
+    <meta name="geo.placename" content="Hyderabad, Telangana, India">
+    <meta property="og:title" content="KS Software Company – #1 Web & Mobile App Development in Hyderabad">
+    <meta property="og:description" content="Transform your business with cutting-edge digital solutions. 50+ projects | 100% client satisfaction | 6+ years experience.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kssoftware.com">
-    <meta property="og:image" content="KS.png">
-    
-    <!-- Twitter Card Meta Tags -->
+    <meta property="og:url" content="https://kssoftware.co.in">
+    <meta property="og:image" content="https://kssoftware.co.in/KS.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KS Software Company - Web & App Development Hyderabad">
-    <meta name="twitter:description" content="50+ projects completed. Expert software development team in Begumpet, Hyderabad.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://kssoftware.com">
-    
-    <title>KS Software Company - #1 Web & Mobile App Development Company in Hyderabad | 50+ Projects | 6+ Years Experience</title>
+    <link rel="canonical" href="https://kssoftware.co.in">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"KS Software Company","url":"https://kssoftware.co.in","telephone":"+91-7385522051","email":"mrdeveloper1397@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Begumpet","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500016","addressCountry":"IN"},"areaServed":"Hyderabad, Telangana, India"}</script>
+    <title>KS Software Company – #1 Web & Mobile App Development in Hyderabad | 50+ Projects</title>
     <link rel="icon" type="image/png" href="KS.png">
-    <link rel="shortcut icon" type="image/png" href="KS.png">
-    <link rel="apple-touch-icon" href="KS.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #0066FF;
-            --primary-dark: #0052CC;
-            --primary-light: #3385FF;
-            --accent: #FF3366;
-            --accent-light: #FF6699;
-            --success: #00C853;
-            --warning: #FFB300;
-            
-            --white: #ffffff;
-            --black: #0A0B0D;
-            --gray-50: #F8F9FA;
-            --gray-100: #F1F3F5;
-            --gray-200: #E9ECEF;
-            --gray-300: #DEE2E6;
-            --gray-400: #CED4DA;
-            --gray-500: #ADB5BD;
-            --gray-600: #6C757D;
-            --gray-700: #495057;
-            --gray-800: #343A40;
-            --gray-900: #212529;
-            
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
-            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
-            
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --black:        #050A14;
+            --black-deep:   #030710;
+            --card:         #0B1527;
+            --card2:        #0F1D35;
+            --blue-deep:    #0A1628;
+            --blue-navy:    #0D2148;
+            --blue-mid:     #1565C0;
+            --blue-bright:  #1E88E5;
+            --blue-el:      #42A5F5;
+            --blue-glow:    #64B5F6;
+            --blue-light:   #90CAF9;
+            --white:        #FFFFFF;
+            --off-white:    #E8F0FE;
+            --gray-light:   #B0BEC5;
+            --gray-mid:     #B0BEC5;
+            --gray-dark:    #90A4AE;
+            --glow-xs: 0 0 8px rgba(66,165,245,0.25);
+            --glow-sm: 0 0 20px rgba(66,165,245,0.3);
+            --glow-md: 0 0 40px rgba(66,165,245,0.35);
+            --glow-lg: 0 0 80px rgba(66,165,245,0.2);
+            --shadow: 0 8px 32px rgba(0,0,0,0.5);
+            --shadow-xl: 0 24px 64px rgba(0,0,0,0.6);
+            --tr: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            --tr-slow: all 0.5s cubic-bezier(0.4,0,0.2,1);
         }
-        
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-            color: var(--gray-900); 
-            background: var(--white); 
-            line-height: 1.6; 
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: var(--black);
+            color: var(--off-white);
+            line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        
-        /* Utility Classes */
-        .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
-        .container-lg { max-width: 1440px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Navigation */
-        .navbar { 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 9999; 
-            background: rgba(255,255,255,0.85); 
-            backdrop-filter: blur(20px) saturate(180%); 
-            border-bottom: 1px solid rgba(0,0,0,0.06); 
-            transition: var(--transition);
-        }
-        .navbar.scrolled { 
-            background: rgba(255,255,255,0.95); 
-            box-shadow: var(--shadow-md);
-        }
-        .nav-container { 
-            max-width: 1440px; 
-            margin: 0 auto; 
-            padding: 16px 32px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px;
-            text-decoration: none;
-        }
-        .logo img { 
-            height: 48px; 
-            transition: transform 0.3s; 
-        }
-        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
-        .logo-text { 
-            font-family: 'Sora', sans-serif; 
-            font-weight: 800; 
-            font-size: 24px; 
-            letter-spacing: -0.5px; 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        .nav-menu { 
-            display: flex; 
-            list-style: none; 
-            gap: 40px; 
-            align-items: center; 
-        }
-        .nav-link { 
-            text-decoration: none; 
-            color: var(--gray-700); 
-            font-weight: 600; 
-            font-size: 15px; 
-            position: relative; 
-            transition: var(--transition);
-            padding: 8px 0;
-        }
-        .nav-link::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 0; 
-            height: 2px; 
-            background: var(--primary); 
-            transition: width 0.3s ease; 
-        }
-        .nav-link:hover, .nav-link.active { color: var(--primary); }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-        .nav-cta { 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
-            color: white !important; 
-            padding: 12px 28px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 16px rgba(0,102,255,0.25);
-            transition: var(--transition);
-        }
-        .nav-cta::after { display: none; }
-        .nav-cta:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 8px 24px rgba(0,102,255,0.35);
-        }
-        
-        /* Mobile Menu Toggle */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-        .mobile-menu-btn span {
-            width: 24px;
-            height: 2px;
-            background: var(--gray-800);
-            transition: var(--transition);
-        }
-        
-        /* Hero Section */
-        .hero { 
-            position: relative; 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            padding: 140px 32px 100px; 
-            overflow: hidden; 
-            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
-        }
-        
-        .hero-bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.4;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0,102,255,0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255,51,102,0.06) 0%, transparent 50%);
-        }
-        
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-        
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        .shape-1 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(0,102,255,0.15), transparent);
-            top: -100px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-        
-        .shape-2 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(255,51,102,0.12), transparent);
-            bottom: -50px;
-            left: -50px;
-            animation-delay: -5s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        
-        .hero-container { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            position: relative; 
-            z-index: 2; 
-            display: grid; 
-            grid-template-columns: 1.1fr 0.9fr; 
-            gap: 80px; 
-            align-items: center; 
-        }
-        
-        .hero-content { 
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        @keyframes fadeInUp { 
-            from { opacity: 0; transform: translateY(30px); } 
-            to { opacity: 1; transform: translateY(0); } 
-        }
-        
-        .hero-badge { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            padding: 10px 20px; 
-            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
-            border: 1px solid rgba(0,102,255,0.15); 
-            border-radius: 100px; 
-            font-size: 13px; 
-            font-weight: 700; 
-            color: var(--primary); 
-            margin-bottom: 24px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;
-            animation: bounce 2s infinite;
-        }
-        
-        .badge-icon { 
-            font-size: 16px;
-        }
-        
-        @keyframes bounce { 
-            0%, 100% { transform: translateY(0); } 
-            50% { transform: translateY(-4px); } 
-        }
-        
-        .hero-title { 
-            font-family: 'Sora', sans-serif; 
-            font-size: clamp(2.5rem, 5vw, 4.5rem); 
-            font-weight: 800; 
-            line-height: 1.15; 
-            margin-bottom: 20px; 
-            letter-spacing: -1.5px;
-            color: var(--gray-900);
-        }
-        
-        .gradient-text { 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block;
-        }
-        
-        .hero-desc { 
-            font-size: 1.15rem; 
-            color: var(--gray-600); 
-            line-height: 1.75; 
-            margin-bottom: 36px; 
-            max-width: 560px; 
-        }
-        
-        .hero-cta { 
-            display: flex; 
-            gap: 16px; 
-            flex-wrap: wrap; 
-            margin-bottom: 56px; 
-        }
-        
-        .btn-primary { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
-            padding: 16px 32px; 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
-            color: white; 
-            border-radius: 12px; 
-            font-weight: 700; 
-            font-size: 15px; 
-            text-decoration: none; 
-            box-shadow: 0 8px 24px rgba(0,102,255,0.3); 
-            transition: var(--transition);
-            border: none; 
-            cursor: pointer; 
-        }
-        
-        .btn-primary:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 12px 32px rgba(0,102,255,0.4); 
-        }
-        
-        .btn-secondary { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
-            padding: 16px 32px; 
-            background: white; 
-            color: var(--gray-800); 
-            border: 2px solid var(--gray-300); 
-            border-radius: 12px; 
-            font-weight: 700; 
-            font-size: 15px; 
-            text-decoration: none; 
-            transition: var(--transition);
-        }
-        
-        .btn-secondary:hover { 
-            border-color: var(--primary); 
-            color: var(--primary); 
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .hero-stats { 
-            display: grid; 
-            grid-template-columns: repeat(4, auto); 
-            gap: 48px; 
-        }
-        
-        .stat-item { 
-            text-align: left; 
-        }
-        
-        .stat-number { 
-            font-family: 'Sora', sans-serif; 
-            font-size: 2.75rem; 
-            font-weight: 800; 
-            line-height: 1; 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
-        }
-        
-        .stat-label { 
-            font-size: 14px; 
-            color: var(--gray-600); 
-            font-weight: 600; 
-        }
-        
-        .hero-visual { 
-            position: relative;
-            animation: fadeInRight 1s ease 0.2s both;
-        }
-        
-        @keyframes fadeInRight { 
-            from { opacity: 0; transform: translateX(30px); } 
-            to { opacity: 1; transform: translateX(0); } 
-        }
-        
-        .visual-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 20px; 
-        }
-        
-        .visual-card { 
-            background: white; 
-            padding: 36px 28px; 
-            border-radius: 20px; 
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative; 
-            overflow: hidden;
-            border: 1px solid var(--gray-200);
-        }
-        
-        .visual-card::before { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 3px; 
-            background: linear-gradient(90deg, var(--primary), var(--accent)); 
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease; 
-        }
-        
-        .visual-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
-        }
-        
-        .visual-card:hover::before { 
-            transform: scaleX(1); 
-        }
-        
-        .visual-icon { 
-            font-size: 3rem; 
-            margin-bottom: 16px;
-            display: block;
-        }
-        
-        .visual-title { 
-            font-weight: 700; 
-            font-size: 1.05rem; 
-            color: var(--gray-900);
-            line-height: 1.4;
-        }
-        
-        /* Services Section */
-        .services { 
-            padding: 100px 32px; 
-            background: white; 
-            position: relative;
-        }
-        
-        .section-header { 
-            text-align: center; 
-            max-width: 800px; 
-            margin: 0 auto 72px; 
-        }
-        
-        .section-badge { 
-            display: inline-block; 
-            padding: 8px 18px; 
-            background: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(255,51,102,0.08) 100%); 
-            border-radius: 100px; 
-            font-size: 13px; 
-            font-weight: 700; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 16px; 
-        }
-        
-        .section-title { 
-            font-family: 'Sora', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3rem); 
-            font-weight: 800; 
-            line-height: 1.2; 
-            margin-bottom: 16px; 
-            letter-spacing: -1px;
-            color: var(--gray-900);
-        }
-        
-        .section-desc { 
-            font-size: 1.1rem; 
-            color: var(--gray-600); 
-            line-height: 1.7; 
-        }
-        
-        .services-grid { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 28px; 
-        }
-        
-        .service-card { 
-            background: var(--gray-50); 
-            padding: 40px 32px; 
-            border-radius: 20px; 
-            transition: var(--transition);
-            position: relative; 
-            overflow: hidden;
-            border: 1px solid var(--gray-200);
-            cursor: pointer;
-        }
-        
-        .service-card::before { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: linear-gradient(135deg, rgba(0,102,255,0.03) 0%, rgba(255,51,102,0.03) 100%); 
-            opacity: 0; 
-            transition: opacity 0.4s; 
-        }
-        
-        .service-card:hover { 
-            background: white; 
-            border-color: var(--primary);
-            transform: translateY(-6px); 
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-card:hover::before { 
-            opacity: 1; 
-        }
-        
-        .service-icon { 
-            font-size: 3.5rem; 
-            margin-bottom: 20px; 
-            position: relative; 
-            z-index: 1;
-            display: block;
-        }
-        
-        .service-title { 
-            font-family: 'Sora', sans-serif; 
-            font-size: 1.35rem; 
-            font-weight: 700; 
-            margin-bottom: 12px; 
-            color: var(--gray-900); 
-            position: relative; 
-            z-index: 1; 
-        }
-        
-        .service-desc { 
-            color: var(--gray-600); 
-            line-height: 1.7; 
-            font-size: 0.95rem; 
-            position: relative; 
-            z-index: 1; 
-        }
-        
-        /* Why Choose Us Section */
-        .why-choose { 
-            padding: 100px 32px; 
-            background: var(--gray-50);
-        }
-        
-        .features-grid { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 32px; 
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 36px 28px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-200);
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary);
-        }
-        
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, rgba(0,102,255,0.1) 0%, rgba(255,51,102,0.1) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-        
-        .feature-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        
-        .feature-desc {
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        /* Trust Section */
-        .trust { 
-            padding: 80px 32px; 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
-            color: white; 
-            text-align: center; 
-            position: relative; 
-            overflow: hidden; 
-        }
-        
-        .trust::before { 
-            content: ''; 
-            position: absolute; 
-            top: -50%; 
-            left: -20%; 
-            width: 100%; 
-            height: 200%; 
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); 
-            animation: rotate 30s linear infinite; 
-        }
-        
-        @keyframes rotate { 
-            from { transform: rotate(0deg); } 
-            to { transform: rotate(360deg); } 
-        }
-        
-        .trust-content { 
-            position: relative; 
-            z-index: 2; 
-            max-width: 1100px; 
-            margin: 0 auto; 
-        }
-        
-        .trust-title { 
-            font-family: 'Sora', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3rem); 
-            font-weight: 800; 
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .trust-desc { 
-            font-size: 1.15rem; 
-            margin-bottom: 56px; 
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .trust-stats { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 48px; 
-        }
-        
-        .trust-stat-number { 
-            font-family: 'Sora', sans-serif;
-            font-size: 3.5rem; 
-            font-weight: 900; 
-            line-height: 1; 
-            margin-bottom: 12px; 
-        }
-        
-        .trust-stat-label { 
-            font-size: 1.05rem; 
-            opacity: 0.92; 
-            font-weight: 600; 
-        }
-        
-        /* Process Section */
-        .process {
-            padding: 100px 32px;
-            background: white;
-        }
-        
-        .process-steps {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-        }
-        
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            font-family: 'Sora', sans-serif;
-        }
-        
-        .step-title {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-        }
-        
-        .step-desc {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* CTA Section */
-        .cta { 
-            padding: 100px 32px; 
-            background: var(--gray-900); 
-            color: white; 
-            text-align: center; 
-        }
-        
-        .cta-title { 
-            font-family: 'Sora', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3rem); 
-            font-weight: 800; 
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .cta-desc { 
-            font-size: 1.15rem; 
-            color: var(--gray-300); 
-            margin-bottom: 40px; 
-            max-width: 700px; 
-            margin-left: auto; 
-            margin-right: auto; 
-        }
-        
-        .cta-buttons { 
-            display: flex; 
-            gap: 16px; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-        }
-        
-        .btn-whatsapp { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
-            padding: 16px 32px; 
-            background: #25D366; 
-            color: white; 
-            border-radius: 12px; 
-            font-weight: 700; 
-            text-decoration: none; 
-            box-shadow: 0 8px 24px rgba(37,211,102,0.3); 
-            transition: var(--transition);
-        }
-        
-        .btn-whatsapp:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 12px 32px rgba(37,211,102,0.4); 
-        }
-        
-        /* Footer */
-        .footer { 
-            background: var(--black); 
-            color: var(--gray-400); 
-            padding: 80px 32px 32px; 
-        }
-        
-        .footer-grid { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: 2fr 1fr 1fr 1.5fr; 
-            gap: 60px; 
-            margin-bottom: 60px; 
-        }
-        
-        .footer-brand .footer-logo { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            margin-bottom: 20px; 
-        }
-        
-        .footer-logo img { height: 42px; }
-        
-        .footer-logo-text { 
-            font-family: 'Sora', sans-serif; 
-            font-weight: 800; 
-            font-size: 20px; 
-            color: white; 
-        }
-        
-        .footer-tagline { 
-            color: var(--gray-500); 
-            line-height: 1.75; 
-            margin-bottom: 24px; 
-            font-size: 0.95rem; 
-        }
-        
-        .footer h4 { 
-            color: white; 
-            font-weight: 700; 
-            margin-bottom: 20px; 
-            font-size: 1.05rem; 
-        }
-        
-        .footer ul { list-style: none; }
-        
-        .footer ul li { margin-bottom: 12px; }
-        
-        .footer a { 
-            color: var(--gray-500); 
-            text-decoration: none; 
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer a:hover { color: white; }
-        
-        .footer-bottom { 
-            padding-top: 40px; 
-            border-top: 1px solid rgba(255,255,255,0.08); 
-            text-align: center; 
-            color: var(--gray-600);
-            font-size: 0.9rem;
-        }
-        
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 185px;
-            right: 32px;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 20px rgba(0,102,255,0.3);
-            transition: var(--transition);
-            z-index: 9998;
-        }
-        
-        .scroll-top.visible {
-            display: flex;
-        }
-        
-        .scroll-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(0,102,255,0.4);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-container { 
-                grid-template-columns: 1fr; 
-                gap: 60px;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .hero-stats { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 32px; 
-            }
-            .footer-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-            }
-        }
-        
-        @media (max-width: 768px) { 
-            .nav-menu { 
-                position: fixed;
-                top: 73px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 24px;
-                gap: 20px;
-                box-shadow: var(--shadow-lg);
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-            
-            .nav-menu.active {
-                transform: translateX(0);
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .mobile-menu-btn.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            
-            .mobile-menu-btn.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .mobile-menu-btn.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -7px);
-            }
-            
-            .hero-stats { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 24px; 
-            }
-            .stat-number { font-size: 2rem; }
-            .services-grid { 
-                grid-template-columns: 1fr; 
-            }
-            .footer-grid { 
-                grid-template-columns: 1fr; 
-                gap: 40px;
-            }
-            .visual-grid {
-                grid-template-columns: 1fr;
-            }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--black); }
+        ::-webkit-scrollbar-thumb { background: var(--blue-mid); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--blue-el); }
+
+        /* Grid texture */
+        body::before {
+            content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+            background-image: linear-gradient(rgba(66,165,245,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(66,165,245,0.025) 1px,transparent 1px);
+            background-size: 64px 64px;
         }
 
-        /* ═══ WhatsApp Floating Chatbot ═══ */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 100px;
-            right: 32px;
-            z-index: 9999;
+        /* ── NAV ── */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 9999;
+            background: rgba(3,7,16,0.7); backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(66,165,245,0.1); transition: var(--tr);
         }
-        .whatsapp-button {
-            width: 64px; height: 64px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-            transition: var(--transition);
-            border: none; position: relative;
-            animation: pulse-wa 2s infinite;
+        .navbar.scrolled { background: rgba(3,7,16,0.96); border-bottom-color: rgba(66,165,245,0.2); box-shadow: 0 4px 32px rgba(0,0,0,0.6), var(--glow-xs); }
+        .nav-container { max-width: 1440px; margin: 0 auto; padding: 0 32px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo img { height: 46px; width: 46px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(66,165,245,0.5)); transition: var(--tr); }
+        .logo:hover img { filter: drop-shadow(0 0 18px rgba(66,165,245,0.85)); transform: scale(1.06); }
+        .logo-txt { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; color: var(--white); }
+        .logo-txt em { color: var(--blue-el); font-style: normal; }
+        .nav-ul { display: flex; list-style: none; gap: 6px; align-items: center; }
+        .nav-a {
+            text-decoration: none; color: var(--gray-light); font-weight: 600; font-size: 13px;
+            letter-spacing: 0.8px; padding: 8px 14px; border-radius: 8px;
+            transition: var(--tr); text-transform: uppercase;
         }
-        @keyframes pulse-wa {
-            0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
-            50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.1); }
+        .nav-a:hover, .nav-a.active { color: var(--blue-el); background: rgba(66,165,245,0.08); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright)) !important;
+            color: var(--white) !important; border: 1px solid rgba(66,165,245,0.3);
+            box-shadow: var(--glow-xs);
         }
-        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
-        .whatsapp-button svg { width: 36px; height: 36px; fill: white; }
-        .wa-notif {
-            position: absolute; top: -5px; right: -5px;
-            width: 24px; height: 24px; background: #FF3366;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 12px; font-weight: 700;
-            border: 3px solid white;
-            animation: bounce-notif 1s infinite;
+        .nav-cta:hover { background: linear-gradient(135deg, var(--blue-bright), var(--blue-el)) !important; box-shadow: var(--glow-sm) !important; transform: translateY(-2px); }
+        .mob-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mob-btn span { width: 24px; height: 2px; background: var(--blue-el); transition: var(--tr); display: block; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 110px 32px 80px; position: relative; overflow: hidden;
+            background: radial-gradient(ellipse 80% 55% at 50% -5%, rgba(21,101,192,0.22) 0%, transparent 65%), var(--black);
         }
-        @keyframes bounce-notif {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+        .orb1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(21,101,192,0.28) 0%, transparent 70%); top: -160px; right: -120px; animation: orb 18s ease-in-out infinite; }
+        .orb2 { width: 360px; height: 360px; background: radial-gradient(circle, rgba(66,165,245,0.14) 0%, transparent 70%); bottom: -100px; left: -80px; animation: orb 22s ease-in-out infinite reverse; }
+        .orb3 { width: 240px; height: 240px; background: radial-gradient(circle, rgba(30,136,229,0.18) 0%, transparent 70%); top: 45%; left: 42%; animation: orb 14s ease-in-out infinite; }
+        @keyframes orb { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(35px,-35px) scale(1.12)} 66%{transform:translate(-25px,25px) scale(0.9)} }
+
+        .swoosh { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .swoosh svg { width: 100%; height: 100%; }
+
+        .hero-inner {
+            max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;
+            display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: center;
         }
-        .whatsapp-popup {
-            position: absolute; bottom: 80px; right: 0;
-            width: 320px; background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            overflow: hidden;
-            opacity: 0; transform: scale(0.8) translateY(20px);
-            transform-origin: bottom right;
-            pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        .hero-content { order: 1; animation: fadeUp 0.9s ease both; }
+        .hero-visual { order: 2; animation: fadeRight 1s ease 0.3s both; }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeRight { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 18px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.22);
+            border-radius: 100px; font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--blue-el); text-transform: uppercase; margin-bottom: 26px;
         }
-        .whatsapp-popup.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
-        .wa-popup-head {
-            background: linear-gradient(135deg,#25D366,#20BA5A);
-            padding: 20px; color: white;
-            display: flex; align-items: center; gap: 12px;
+        .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-el); box-shadow: 0 0 8px var(--blue-el); animation: dp 1.6s ease infinite; }
+        @keyframes dp { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.65)} }
+
+        .hero-h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 700; line-height: 1.1;
+            color: var(--white); margin-bottom: 22px; letter-spacing: 0.5px;
         }
-        .wa-avatar {
-            width: 48px; height: 48px; background: white;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 24px;
+        .hero-h1 .grad {
+            display: block;
+            background: linear-gradient(90deg, var(--blue-el) 0%, var(--blue-glow) 55%, var(--blue-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 22px rgba(66,165,245,0.4));
         }
-        .wa-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-        .wa-info p { font-size: 13px; opacity: 0.9; }
-        .wa-close-btn {
-            margin-left: auto; background: rgba(255,255,255,0.2);
-            border: none; color: white; width: 28px; height: 28px;
-            border-radius: 50%; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px; transition: var(--transition);
+        .hero-p { font-size: 1.08rem; color: var(--gray-light); line-height: 1.8; margin-bottom: 38px; max-width: 540px; }
+        .hero-p strong { color: var(--blue-el); font-weight: 600; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+
+        .btn-pri {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 30px; border-radius: 10px;
+            font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 15px;
+            text-decoration: none; cursor: pointer; border: none;
+            background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright));
+            color: var(--white); box-shadow: 0 4px 24px rgba(21,101,192,0.5), var(--glow-xs);
+            transition: var(--tr); position: relative; overflow: hidden;
         }
-        .wa-close-btn:hover { background: rgba(255,255,255,0.3); }
-        .wa-popup-body { padding: 20px; }
-        .wa-msg {
-            background: var(--gray-100); padding: 12px 16px;
-            border-radius: 12px; margin-bottom: 16px;
-            position: relative; font-size: 14px; line-height: 1.6;
-            color: var(--gray-800);
+        .btn-pri::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,var(--blue-bright),var(--blue-el)); opacity:0; transition:opacity 0.3s; }
+        .btn-pri:hover::before { opacity:1; }
+        .btn-pri:hover { transform:translateY(-3px); box-shadow:0 8px 32px rgba(30,136,229,0.65),var(--glow-md); }
+        .btn-pri > * { position:relative; z-index:1; }
+
+        .btn-sec {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 30px; border-radius: 10px;
+            font-family: 'Exo 2', sans-serif; font-weight: 700; font-size: 15px;
+            text-decoration: none; background: transparent;
+            color: var(--blue-el); border: 1.5px solid rgba(66,165,245,0.35);
+            transition: var(--tr);
         }
-        .wa-msg::before {
-            content: ''; position: absolute; left: -8px; top: 10px;
-            width: 0; height: 0; border-style: solid;
-            border-width: 0 8px 8px 0;
-            border-color: transparent var(--gray-100) transparent transparent;
+        .btn-sec:hover { background:rgba(66,165,245,0.07); border-color:var(--blue-el); transform:translateY(-3px); box-shadow:var(--glow-xs); }
+
+        .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+        .s-card {
+            background: var(--card); border: 1px solid rgba(66,165,245,0.1);
+            border-radius: 14px; padding: 18px 14px; text-align: center; transition: var(--tr);
         }
-        .wa-time { font-size: 11px; color: var(--gray-500); margin-top: 6px; }
-        .wa-quick-replies { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-        .wa-qbtn {
-            background: white; border: 1.5px solid var(--gray-300);
-            padding: 10px 14px; border-radius: 20px;
-            font-size: 13px; color: var(--gray-700);
-            cursor: pointer; transition: var(--transition);
-            text-align: left; font-weight: 500;
+        .s-card:hover { border-color:rgba(66,165,245,0.35); box-shadow:var(--glow-xs); transform:translateY(-4px); }
+        .s-num { font-family:'Rajdhani',sans-serif; font-size:2rem; font-weight:700; color:var(--blue-el); line-height:1; text-shadow:0 0 20px rgba(66,165,245,0.45); margin-bottom:5px; }
+        .s-lbl { font-size:11px; color:var(--gray-mid); font-weight:600; letter-spacing:0.5px; text-transform:uppercase; font-family:'JetBrains Mono',monospace; }
+
+        .vis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .vis-card {
+            background: var(--card); border: 1px solid rgba(66,165,245,0.1);
+            border-radius: 18px; padding: 30px 22px; transition: var(--tr-slow); position: relative; overflow: hidden;
         }
-        .wa-qbtn:hover { background: var(--gray-50); border-color: var(--primary); color: var(--primary); }
-        .wa-chat-btn {
-            width: 100%; background: #25D366; color: white;
-            border: none; padding: 14px; border-radius: 10px;
-            font-size: 15px; font-weight: 700; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            gap: 8px; transition: var(--transition);
+        .vis-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--blue-el),transparent); transform:scaleX(0); transition:transform 0.4s; }
+        .vis-card:hover { border-color:rgba(66,165,245,0.3); box-shadow:var(--glow-xs),var(--shadow); transform:translateY(-6px); background:var(--card2); }
+        .vis-card:hover::before { transform:scaleX(1); }
+        .vis-ico { font-size:2.4rem; margin-bottom:12px; display:block; filter:drop-shadow(0 0 8px rgba(66,165,245,0.3)); }
+        .vis-ttl { font-weight:700; font-size:0.93rem; color:var(--off-white); }
+
+        /* ── SECTIONS ── */
+        section { position: relative; z-index: 1; }
+        .sec-hdr { text-align: center; max-width: 740px; margin: 0 auto 60px; }
+        .sec-badge {
+            display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px;
+            background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.18); border-radius: 100px;
+            font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px;
+            color: var(--blue-el); text-transform: uppercase; margin-bottom: 16px;
         }
-        .wa-chat-btn:hover { background: #20BA5A; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
-        @media (max-width: 768px) {
-            .whatsapp-float { right: 16px; bottom: 80px; }
-            .whatsapp-popup { width: calc(100vw - 32px); right: -16px; bottom: 80px; }
-            .whatsapp-button { width: 56px; height: 56px; }
-            .whatsapp-button svg { width: 32px; height: 32px; }
+        .sec-h2 { font-family:'Rajdhani',sans-serif; font-size:clamp(1.9rem,4vw,3rem); font-weight:700; color:var(--white); line-height:1.15; margin-bottom:14px; letter-spacing:0.5px; }
+        .sec-h2 .hl { background:linear-gradient(90deg,var(--blue-el),var(--blue-glow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .sec-p { font-size:1.02rem; color:var(--gray-mid); line-height:1.75; }
+
+        /* ── SERVICES ── */
+        .services {
+            padding: 96px 32px;
+            background: linear-gradient(180deg, var(--black) 0%, var(--blue-deep) 50%, var(--black) 100%);
+        }
+        .svc-grid { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:22px; }
+        .svc-card {
+            background: var(--card); border: 1px solid rgba(66,165,245,0.1);
+            border-radius: 18px; padding: 32px 26px; transition: var(--tr-slow); position: relative; overflow: hidden; cursor: pointer;
+        }
+        .svc-card::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--blue-mid),var(--blue-el)); transform:scaleX(0); transform-origin:left; transition:transform 0.4s; }
+        .svc-card:hover { border-color:rgba(66,165,245,0.28); background:var(--card2); transform:translateY(-7px); box-shadow:var(--glow-xs),var(--shadow); }
+        .svc-card:hover::after { transform:scaleX(1); }
+        .svc-ico-w { width:56px; height:56px; background:rgba(66,165,245,0.07); border:1px solid rgba(66,165,245,0.14); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.7rem; margin-bottom:18px; transition:var(--tr); }
+        .svc-card:hover .svc-ico-w { background:rgba(66,165,245,0.14); border-color:rgba(66,165,245,0.32); box-shadow:0 0 14px rgba(66,165,245,0.18); }
+        .svc-ttl { font-family:'Rajdhani',sans-serif; font-size:1.2rem; font-weight:700; color:var(--white); margin-bottom:10px; letter-spacing:0.3px; }
+        .svc-dsc { color:var(--gray-mid); line-height:1.7; font-size:0.9rem; }
+
+        /* ── WHY ── */
+        .why { padding: 96px 32px; background: var(--black); }
+        .feat-grid { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px; }
+        .feat-card { background:var(--card); border:1px solid rgba(66,165,245,0.1); border-radius:18px; padding:34px 26px; text-align:center; transition:var(--tr); }
+        .feat-card:hover { border-color:rgba(66,165,245,0.3); box-shadow:var(--glow-xs); transform:translateY(-6px); }
+        .feat-ico { width:66px; height:66px; margin:0 auto 18px; background:rgba(66,165,245,0.07); border:1px solid rgba(66,165,245,0.16); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.9rem; transition:var(--tr); }
+        .feat-card:hover .feat-ico { background:rgba(66,165,245,0.14); box-shadow:0 0 18px rgba(66,165,245,0.2); }
+        .feat-ttl { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.12rem; color:var(--white); margin-bottom:8px; }
+        .feat-dsc { color:var(--gray-mid); font-size:0.88rem; line-height:1.65; }
+
+        /* ── TRUST ── */
+        .trust {
+            padding: 76px 32px;
+            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-navy) 50%, var(--blue-deep) 100%);
+            border-top: 1px solid rgba(66,165,245,0.14); border-bottom: 1px solid rgba(66,165,245,0.14);
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .trust::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 65% 90% at 50% 0%,rgba(66,165,245,0.1) 0%,transparent 55%); pointer-events:none; }
+        .trust-in { max-width:1100px; margin:0 auto; position:relative; z-index:2; }
+        .trust-h { font-family:'Rajdhani',sans-serif; font-size:clamp(1.9rem,4vw,2.9rem); font-weight:700; color:var(--white); margin-bottom:12px; }
+        .trust-p { font-size:1.02rem; color:var(--blue-light); margin-bottom:52px; max-width:640px; margin-left:auto; margin-right:auto; }
+        .t-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:32px; }
+        .t-card { background:rgba(66,165,245,0.05); border:1px solid rgba(66,165,245,0.14); border-radius:16px; padding:26px 18px; transition:var(--tr); }
+        .t-card:hover { border-color:rgba(66,165,245,0.38); box-shadow:var(--glow-xs); }
+        .t-num { font-family:'Rajdhani',sans-serif; font-size:2.9rem; font-weight:700; color:var(--blue-el); line-height:1; text-shadow:0 0 28px rgba(66,165,245,0.45); margin-bottom:8px; }
+        .t-lbl { font-size:0.9rem; color:var(--blue-light); font-weight:600; }
+
+        /* ── PROCESS ── */
+        .process { padding: 96px 32px; background: var(--black); }
+        .proc-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px; }
+        .proc { text-align:center; }
+        .proc-n { width:58px; height:58px; margin:0 auto 22px; background:linear-gradient(135deg,var(--blue-mid),var(--blue-bright)); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Rajdhani',sans-serif; font-size:1.5rem; font-weight:700; box-shadow:0 4px 20px rgba(21,101,192,0.5),var(--glow-xs); }
+        .proc-t { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.1rem; color:var(--white); margin-bottom:8px; }
+        .proc-d { color:var(--gray-mid); font-size:0.9rem; line-height:1.6; }
+
+        /* ── CTA ── */
+        .cta-sec { padding:96px 32px; background:linear-gradient(135deg,var(--blue-deep) 0%,#040C1E 100%); text-align:center; position:relative; overflow:hidden; }
+        .cta-sec::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 65% 80% at 50% 50%,rgba(21,101,192,0.18) 0%,transparent 65%); }
+        .cta-in { position:relative; z-index:2; max-width:780px; margin:0 auto; }
+        .cta-h { font-family:'Rajdhani',sans-serif; font-size:clamp(1.9rem,4vw,2.9rem); font-weight:700; color:var(--white); margin-bottom:16px; }
+        .cta-p { font-size:1.06rem; color:var(--blue-light); margin-bottom:38px; line-height:1.75; }
+        .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+        .btn-wa { display:inline-flex; align-items:center; gap:10px; padding:14px 30px; border-radius:10px; background:#25D366; color:white; font-family:'Exo 2',sans-serif; font-weight:700; font-size:15px; text-decoration:none; box-shadow:0 4px 24px rgba(37,211,102,0.35); transition:var(--tr); }
+        .btn-wa:hover { transform:translateY(-3px); box-shadow:0 8px 32px rgba(37,211,102,0.5); background:#20BA5A; }
+
+        /* ── FOOTER ── */
+        .footer { background:var(--black-deep); border-top:1px solid rgba(66,165,245,0.08); padding:68px 32px 26px; }
+        .foot-grid { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:52px; margin-bottom:52px; }
+        .foot-logo { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+        .foot-logo img { height:40px; filter:drop-shadow(0 0 8px rgba(66,165,245,0.4)); }
+        .foot-logo-txt { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:19px; letter-spacing:1.5px; color:var(--white); }
+        .foot-logo-txt em { color:var(--blue-el); font-style:normal; }
+        .foot-tag { color:var(--gray-dark); line-height:1.75; font-size:0.9rem; margin-bottom:16px; }
+        .footer h4 { font-family:'Rajdhani',sans-serif; color:var(--white); font-weight:700; margin-bottom:18px; font-size:0.95rem; letter-spacing:1.5px; text-transform:uppercase; padding-bottom:10px; border-bottom:1px solid rgba(66,165,245,0.12); }
+        .footer ul { list-style:none; }
+        .footer ul li { margin-bottom:10px; }
+        .footer a { color:var(--gray-dark); text-decoration:none; transition:color 0.3s; font-size:0.9rem; }
+        .footer a:hover { color:var(--blue-el); }
+        .foot-bot { border-top:1px solid rgba(66,165,245,0.07); padding-top:28px; text-align:center; color:var(--gray-dark); font-size:0.82rem; }
+
+        /* ── DISCOUNT POPUP ── */
+        .dp-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.78); z-index:99998; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(7px); opacity:0; pointer-events:none; transition:opacity 0.4s ease; }
+        .dp-overlay.active { opacity:1; pointer-events:all; }
+        .dp-box { background:var(--card); border:1px solid rgba(66,165,245,0.22); border-radius:22px; overflow:hidden; max-width:450px; width:calc(100% - 40px); box-shadow:var(--shadow-xl),0 0 60px rgba(21,101,192,0.28); transform:scale(0.82) translateY(40px); transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1); position:relative; }
+        .dp-overlay.active .dp-box { transform:scale(1) translateY(0); }
+        .dp-head { background:linear-gradient(135deg,#091525 0%,#1565C0 55%,#0C1B36 100%); padding:30px 26px 22px; text-align:center; position:relative; border-bottom:1px solid rgba(66,165,245,0.18); }
+        .dp-head::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(66,165,245,0.22) 0%,transparent 65%); }
+        .dp-close { position:absolute; top:12px; right:14px; background:rgba(66,165,245,0.1); border:1px solid rgba(66,165,245,0.2); color:var(--blue-el); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:17px; display:flex; align-items:center; justify-content:center; transition:var(--tr); z-index:2; }
+        .dp-close:hover { background:rgba(66,165,245,0.22); transform:rotate(90deg); }
+        .dp-tag { position:relative; z-index:2; display:inline-block; background:rgba(66,165,245,0.14); border:1px solid rgba(66,165,245,0.28); color:var(--blue-el); padding:5px 14px; border-radius:100px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px; font-family:'JetBrains Mono',monospace; }
+        .dp-ttl { position:relative; z-index:2; font-family:'Rajdhani',sans-serif; font-size:1.85rem; font-weight:700; color:var(--white); line-height:1.2; margin-bottom:7px; }
+        .dp-sub { position:relative; z-index:2; color:var(--blue-light); font-size:0.88rem; }
+        .dp-badge-wrap { display:flex; justify-content:center; margin:-34px 0 0; position:relative; z-index:3; }
+        .dp-badge { background:linear-gradient(135deg,var(--blue-mid),var(--blue-el)); color:white; width:84px; height:84px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 8px 32px rgba(21,101,192,0.65),var(--glow-md); border:3px solid var(--card); animation:badgeP 1.2s ease infinite alternate; }
+        @keyframes badgeP { from{box-shadow:0 8px 32px rgba(21,101,192,0.6),var(--glow-sm)} to{box-shadow:0 8px 40px rgba(66,165,245,0.85),var(--glow-lg)} }
+        .dp-pct { font-family:'Rajdhani',sans-serif; font-size:1.75rem; font-weight:700; line-height:1; }
+        .dp-off { font-size:11px; font-weight:700; letter-spacing:1px; }
+        .dp-body { padding:26px 26px 26px; }
+        .dp-perks { list-style:none; margin-bottom:20px; }
+        .dp-perks li { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid rgba(66,165,245,0.07); font-size:0.9rem; color:var(--off-white); font-weight:500; }
+        .dp-perks li:last-child { border-bottom:none; }
+        .p-ico { color:var(--blue-el); font-size:15px; flex-shrink:0; }
+        .dp-timer { text-align:center; margin-bottom:20px; }
+        .dp-tlbl { font-size:10px; color:var(--gray-mid); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; font-family:'JetBrains Mono',monospace; }
+        .dp-trow { display:flex; gap:8px; justify-content:center; }
+        .dp-tu { background:var(--black); border:1px solid rgba(66,165,245,0.18); border-radius:10px; padding:9px 12px; min-width:54px; text-align:center; }
+        .dp-tn { font-family:'Rajdhani',sans-serif; font-size:1.45rem; font-weight:700; color:var(--blue-el); display:block; line-height:1; text-shadow:0 0 12px rgba(66,165,245,0.5); }
+        .dp-ts { font-size:9px; color:var(--gray-mid); text-transform:uppercase; letter-spacing:0.5px; font-family:'JetBrains Mono',monospace; }
+        .dp-sep { font-size:1.4rem; font-weight:700; color:var(--blue-mid); align-self:center; margin-top:-8px; }
+        .dp-btn { width:100%; background:linear-gradient(135deg,var(--blue-mid),var(--blue-bright)); color:white; border:none; padding:14px; border-radius:12px; font-size:15px; font-weight:700; font-family:'Exo 2',sans-serif; cursor:pointer; box-shadow:0 4px 24px rgba(21,101,192,0.5),var(--glow-xs); transition:var(--tr); display:flex; align-items:center; justify-content:center; gap:8px; }
+        .dp-btn:hover { box-shadow:0 8px 32px rgba(30,136,229,0.7),var(--glow-md); transform:translateY(-2px); }
+        .dp-skip { text-align:center; margin-top:10px; font-size:12px; color:var(--gray-dark); }
+        .dp-skip a { color:var(--gray-mid); cursor:pointer; text-decoration:underline; }
+        .dp-skip a:hover { color:var(--off-white); }
+
+        /* ── FLOAT STACK ── */
+        .float-stack { position:fixed; bottom:26px; right:26px; z-index:9997; display:flex; flex-direction:column; align-items:center; gap:12px; }
+        .scroll-top { width:44px; height:44px; background:var(--card); border:1px solid rgba(66,165,245,0.22); color:var(--blue-el); border-radius:50%; cursor:pointer; display:none; align-items:center; justify-content:center; font-size:18px; transition:var(--tr); box-shadow:var(--glow-xs); }
+        .scroll-top.vis { display:flex; }
+        .scroll-top:hover { background:rgba(66,165,245,0.1); transform:translateY(-4px); box-shadow:var(--glow-sm); border-color:var(--blue-el); }
+
+        .wa-float { position:relative; }
+        .wa-btn-main { width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; border:none; position:relative; transition:var(--tr); box-shadow:0 4px 20px rgba(37,211,102,0.4); animation:waP 2s infinite; }
+        @keyframes waP { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.7),0 0 0 9px rgba(37,211,102,0.08)} }
+        .wa-btn-main:hover { transform:scale(1.1); }
+        .wa-btn-main svg { width:30px; height:30px; fill:white; }
+        .wa-notif { position:absolute; top:-4px; right:-4px; width:20px; height:20px; background:var(--blue-el); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:700; border:2px solid var(--black); animation:nb 1s ease infinite; }
+        @keyframes nb { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        .wa-pop { position:absolute; bottom:68px; right:0; width:305px; background:var(--card); border:1px solid rgba(66,165,245,0.18); border-radius:18px; overflow:hidden; box-shadow:var(--shadow-xl),var(--glow-xs); opacity:0; transform:scale(0.82) translateY(20px); transform-origin:bottom right; pointer-events:none; transition:all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .wa-pop.active { opacity:1; transform:scale(1) translateY(0); pointer-events:all; }
+        .wa-hd { background:linear-gradient(135deg,#25D366,#20BA5A); padding:15px 16px; display:flex; align-items:center; gap:11px; }
+        .wa-av { width:40px; height:40px; background:rgba(255,255,255,0.18); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:19px; }
+        .wa-in h4 { font-size:14px; font-weight:700; color:white; margin-bottom:2px; }
+        .wa-in p { font-size:11px; color:rgba(255,255,255,0.85); }
+        .wa-xbtn { margin-left:auto; background:rgba(255,255,255,0.14); border:none; color:white; width:25px; height:25px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; transition:var(--tr); }
+        .wa-xbtn:hover { background:rgba(255,255,255,0.28); }
+        .wa-bd { padding:15px; }
+        .wa-msg { background:var(--black); border:1px solid rgba(66,165,245,0.1); padding:11px 13px; border-radius:12px; margin-bottom:13px; font-size:13px; line-height:1.6; color:var(--off-white); position:relative; }
+        .wa-msg::before { content:''; position:absolute; left:-8px; top:10px; border:solid transparent; border-width:0 8px 8px 0; border-right-color:var(--black); }
+        .wa-t { font-size:10px; color:var(--gray-mid); margin-top:4px; font-family:'JetBrains Mono',monospace; }
+        .wa-reps { display:flex; flex-direction:column; gap:6px; margin-bottom:13px; }
+        .wa-qb { background:var(--black); border:1px solid rgba(66,165,245,0.14); padding:8px 13px; border-radius:20px; font-size:12.5px; color:var(--gray-light); cursor:pointer; transition:var(--tr); text-align:left; font-family:'Exo 2',sans-serif; font-weight:500; }
+        .wa-qb:hover { border-color:rgba(66,165,245,0.38); color:var(--blue-el); background:rgba(66,165,245,0.05); }
+        .wa-go { width:100%; background:#25D366; color:white; border:none; padding:11px; border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:7px; font-family:'Exo 2',sans-serif; transition:var(--tr); }
+        .wa-go:hover { background:#20BA5A; transform:translateY(-2px); }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:1024px){
+            .hero-inner{grid-template-columns:1fr;gap:56px}
+            .stats-row{grid-template-columns:repeat(2,1fr)}
+            .foot-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            .nav-ul{position:fixed;top:70px;left:0;width:100%;background:rgba(3,7,16,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:22px;gap:6px;border-bottom:1px solid rgba(66,165,245,0.14);transform:translateX(-100%);transition:transform 0.3s ease}
+            .nav-ul.active{transform:translateX(0)}
+            .mob-btn{display:flex}
+            .mob-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+            .mob-btn.active span:nth-child(2){opacity:0}
+            .mob-btn.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+            .stats-row{grid-template-columns:repeat(2,1fr);gap:12px}
+            .svc-grid{grid-template-columns:1fr}
+            .foot-grid{grid-template-columns:1fr;gap:32px}
+            .vis-grid{grid-template-columns:1fr}
+            .float-stack{right:14px;bottom:14px}
+            .wa-pop{width:calc(100vw - 36px);right:-12px}
         }
     </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="KS.png" alt="KS Software Company Logo - Web Development Hyderabad">
-                <span class="logo-text">KS SOFTWARE</span>
-            </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="clients.html" class="nav-link">Portfolio</a></li>
-                <li><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" aria-label="KS Software Home">
+            <img src="KS.png" alt="KS Software Company" width="46" height="46">
+            <span class="logo-txt">KS <em>SOFTWARE</em></span>
+        </a>
+        <button class="mob-btn" id="mobBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-ul" id="navUl">
+            <li><a href="index.html" class="nav-a active">Home</a></li>
+            <li><a href="about.html" class="nav-a">About Us</a></li>
+            <li><a href="clients.html" class="nav-a">Portfolio</a></li>
+            <li><a href="contact.html" class="nav-a nav-cta">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="orb orb1" aria-hidden="true"></div>
+    <div class="orb orb2" aria-hidden="true"></div>
+    <div class="orb orb3" aria-hidden="true"></div>
+    <div class="swoosh" aria-hidden="true">
+        <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" opacity="0.06">
+            <ellipse cx="880" cy="490" rx="620" ry="115" stroke="white" stroke-width="2" fill="none" transform="rotate(-14 880 490)"/>
+            <ellipse cx="840" cy="475" rx="730" ry="92" stroke="white" stroke-width="1" fill="none" transform="rotate(-11 840 475)"/>
+        </svg>
+    </div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="eyebrow"><span class="dot"></span>50+ Projects Delivered Successfully</div>
+            <h1 class="hero-h1">Transform Your Digital<span class="grad">Vision Into Reality</span></h1>
+            <p class="hero-p">Leading software development company in Hyderabad at <strong>kssoftware.co.in</strong> — 6+ years delivering cutting-edge web apps, mobile solutions, SEO &amp; cloud services that drive real business growth.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn-pri">
+                    <span>Start Your Project</span>
+                    <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </a>
+                <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="btn-sec">💬 WhatsApp Us</a>
+            </div>
+            <div class="stats-row">
+                <div class="s-card"><div class="s-num">50+</div><div class="s-lbl">Projects</div></div>
+                <div class="s-card"><div class="s-num">100%</div><div class="s-lbl">Satisfaction</div></div>
+                <div class="s-card"><div class="s-num">6+</div><div class="s-lbl">Yrs Exp</div></div>
+                <div class="s-card"><div class="s-num">24/7</div><div class="s-lbl">Support</div></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="vis-grid">
+                <div class="vis-card"><span class="vis-ico">💻</span><div class="vis-ttl">Web Development</div></div>
+                <div class="vis-card"><span class="vis-ico">📱</span><div class="vis-ttl">Mobile Apps</div></div>
+                <div class="vis-card"><span class="vis-ico">🎨</span><div class="vis-ttl">UI/UX Design</div></div>
+                <div class="vis-card"><span class="vis-ico">🚀</span><div class="vis-ttl">SEO & Marketing</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <div class="sec-hdr">
+        <div class="sec-badge">⚡ What We Offer</div>
+        <h2 class="sec-h2">Comprehensive <span class="hl">Digital Solutions</span></h2>
+        <p class="sec-p">End-to-end technology services tailored to accelerate your business growth and digital transformation</p>
+    </div>
+    <div class="svc-grid">
+        <article class="svc-card"><div class="svc-ico-w">🌐</div><h3 class="svc-ttl">Web Development</h3><p class="svc-dsc">Custom websites, e-commerce platforms, and web applications built with React, WordPress, and Bootstrap for responsive, fast-loading experiences.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">📱</div><h3 class="svc-ttl">Mobile App Development</h3><p class="svc-dsc">Native and cross-platform mobile apps using Flutter, React Native, and Java for iOS & Android with seamless user experiences.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🎓</div><h3 class="svc-ttl">College Projects & Training</h3><p class="svc-dsc">Expert guidance for academic and final year projects with complete documentation and technical mentorship.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🔍</div><h3 class="svc-ttl">SEO & Digital Marketing</h3><p class="svc-dsc">Boost online visibility with expert SEO, Google Ads, social media marketing, content strategy, and advanced analytics.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">☁️</div><h3 class="svc-ttl">Cloud Solutions</h3><p class="svc-dsc">Scalable cloud infrastructure on AWS, Azure, and Google Cloud with DevOps integration, migration, and optimization.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🤖</div><h3 class="svc-ttl">AI & Automation</h3><p class="svc-dsc">Smart automation, intelligent chatbots, and machine learning solutions to enhance operations and customer experience.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🔧</div><h3 class="svc-ttl">Website Maintenance</h3><p class="svc-dsc">Regular updates, bug fixes, speed optimization, content updates, and performance monitoring to keep your website running 24/7.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🛠️</div><h3 class="svc-ttl">Software Maintenance</h3><p class="svc-dsc">Ongoing support, patch management, version upgrades, security fixes, and feature enhancements to keep your software reliable.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🌍</div><h3 class="svc-ttl">Website Hosting</h3><p class="svc-dsc">Fast, secure, reliable hosting with 99.9% uptime, SSD storage, unlimited bandwidth, cPanel access, and daily backups.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🔒</div><h3 class="svc-ttl">SSL Certificate & Security</h3><p class="svc-dsc">SSL/TLS installation, HTTPS setup, security audits, malware removal, firewall protection, and DDoS security.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">🌐</div><h3 class="svc-ttl">Domain Registration</h3><p class="svc-dsc">Domain registration, renewal, and transfer for .com, .in, .co.in, .net, .org and all popular TLDs with DNS management.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">💾</div><h3 class="svc-ttl">Backup & Recovery</h3><p class="svc-dsc">Automated daily/weekly backups, disaster recovery planning, and instant restore to protect your business data.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">⚡</div><h3 class="svc-ttl">Website Speed Optimization</h3><p class="svc-dsc">Page speed, image compression, caching, CDN integration, Core Web Vitals, and Google PageSpeed enhancement.</p></article>
+        <article class="svc-card"><div class="svc-ico-w">📧</div><h3 class="svc-ttl">Business Email Setup</h3><p class="svc-dsc">Professional business email, Google Workspace & cPanel setup, spam protection, and email migration services.</p></article>
+    </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+    <div class="sec-hdr">
+        <div class="sec-badge">🏆 Why Choose Us</div>
+        <h2 class="sec-h2">What Makes Us <span class="hl">Different</span></h2>
+        <p class="sec-p">Our commitment to excellence and client success sets us apart from the rest</p>
+    </div>
+    <div class="feat-grid">
+        <div class="feat-card"><div class="feat-ico">⚡</div><div class="feat-ttl">Fast Delivery</div><div class="feat-dsc">Quick turnaround without compromising on quality</div></div>
+        <div class="feat-card"><div class="feat-ico">💎</div><div class="feat-ttl">Premium Quality</div><div class="feat-dsc">Industry best practices and cutting-edge technologies</div></div>
+        <div class="feat-card"><div class="feat-ico">💰</div><div class="feat-ttl">Affordable Pricing</div><div class="feat-dsc">Competitive rates with transparent pricing models</div></div>
+        <div class="feat-card"><div class="feat-ico">🛡️</div><div class="feat-ttl">Dedicated Support</div><div class="feat-dsc">24/7 technical support and maintenance services</div></div>
+    </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+    <div class="trust-in">
+        <h2 class="trust-h">Trusted by Businesses Across India</h2>
+        <p class="trust-p">Join 50+ satisfied clients who transformed their digital presence with KS Software Company at kssoftware.co.in</p>
+        <div class="t-grid">
+            <div class="t-card"><div class="t-num">50+</div><div class="t-lbl">Successful Projects</div></div>
+            <div class="t-card"><div class="t-num">100%</div><div class="t-lbl">Client Satisfaction</div></div>
+            <div class="t-card"><div class="t-num">6+</div><div class="t-lbl">Years Experience</div></div>
+            <div class="t-card"><div class="t-num">24/7</div><div class="t-lbl">Dedicated Support</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+    <div class="sec-hdr">
+        <div class="sec-badge">🔄 Our Process</div>
+        <h2 class="sec-h2">How We <span class="hl">Work</span></h2>
+        <p class="sec-p">A streamlined approach to deliver exceptional results every time</p>
+    </div>
+    <div class="proc-grid">
+        <div class="proc"><div class="proc-n">1</div><div class="proc-t">Discovery</div><div class="proc-d">We understand your business goals and project requirements</div></div>
+        <div class="proc"><div class="proc-n">2</div><div class="proc-t">Planning</div><div class="proc-d">Strategic roadmap and timeline for your project</div></div>
+        <div class="proc"><div class="proc-n">3</div><div class="proc-t">Development</div><div class="proc-d">Building your solution with agile methodology</div></div>
+        <div class="proc"><div class="proc-n">4</div><div class="proc-t">Delivery</div><div class="proc-d">Launch and ongoing support for your success</div></div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+    <div class="cta-in">
+        <h2 class="cta-h">Ready to Start Your Project?</h2>
+        <p class="cta-p">Let's bring your digital vision to life. Get a free consultation at kssoftware.co.in today!</p>
+        <div class="cta-row">
+            <a href="contact.html" class="btn-pri"><span>Get Free Quote</span></a>
+            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="btn-wa">💬 Chat on WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="foot-grid">
+        <div>
+            <div class="foot-logo">
+                <img src="KS.png" alt="KS Software Logo" width="40" height="40">
+                <span class="foot-logo-txt">KS <em>SOFTWARE</em></span>
+            </div>
+            <p class="foot-tag">Leading software development company in Hyderabad (kssoftware.co.in) with 6+ years of experience in web development, mobile apps & digital transformation.</p>
+            <p style="color:var(--gray-dark);font-size:0.88rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="clients.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-    </nav>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="about.html">Web Development</a></li>
+                <li><a href="about.html">Mobile Apps</a></li>
+                <li><a href="about.html">SEO Services</a></li>
+                <li><a href="about.html">Website Hosting</a></li>
+                <li><a href="about.html">SSL & Security</a></li>
+                <li><a href="about.html">Cloud Solutions</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
+                <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
+                <li><a href="https://wa.me/917385522051" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
+                <li><a href="https://kssoftware.co.in" target="_blank">🌐 kssoftware.co.in</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bot">
+        <p>&copy; 2026 KS Software Company – kssoftware.co.in | All rights reserved. | Web Development Hyderabad | Mobile App Development | SEO Services Hyderabad</p>
+    </div>
+</footer>
 
-    <section class="hero">
-        <div class="hero-bg-pattern"></div>
-        <div class="floating-elements">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
+<!-- DISCOUNT POPUP -->
+<div class="dp-overlay" id="dpOverlay" role="dialog" aria-modal="true" aria-labelledby="dpTitle">
+    <div class="dp-box">
+        <div class="dp-head">
+            <button class="dp-close" id="dpClose" aria-label="Close">×</button>
+            <div class="dp-tag">🎉 Limited Time Offer</div>
+            <h2 class="dp-ttl" id="dpTitle">Exclusive Website Deal!</h2>
+            <p class="dp-sub">Get your dream website at an unbeatable price</p>
         </div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-icon">🚀</span>
-                    50+ Projects Delivered Successfully
-                </div>
-                <h1 class="hero-title">
-                    Transform Your Digital
-                    <span class="gradient-text">Vision Into Reality</span>
-                </h1>
-                <p class="hero-desc">
-                    Leading software development company in Hyderabad with 2+ years of experience, delivering cutting-edge web applications, mobile apps, and digital solutions that drive business growth.
-                </p>
-                <div class="hero-cta">
-                    <a href="contact.html" class="btn-primary">
-                        <span>Start Your Project</span>
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-secondary">
-                        <span>💬 WhatsApp Us</span>
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support Available</div>
-                    </div>
+        <div class="dp-badge-wrap">
+            <div class="dp-badge"><span class="dp-pct">25%</span><span class="dp-off">OFF</span></div>
+        </div>
+        <div class="dp-body">
+            <ul class="dp-perks">
+                <li><span class="p-ico">⚡</span>Professional website design &amp; development</li>
+                <li><span class="p-ico">⚡</span>Free domain &amp; 1-year hosting included</li>
+                <li><span class="p-ico">⚡</span>SEO-ready &amp; mobile responsive</li>
+                <li><span class="p-ico">⚡</span>3 months free support &amp; maintenance</li>
+            </ul>
+            <div class="dp-timer">
+                <div class="dp-tlbl">⏳ Offer expires Apr 30, 2026 · 12:00 PM</div>
+                <div class="dp-trow">
+                    <div class="dp-tu"><span class="dp-tn" id="tD">30</span><span class="dp-ts">days</span></div>
+                    <span class="dp-sep">:</span>
+                    <div class="dp-tu"><span class="dp-tn" id="tH">23</span><span class="dp-ts">hrs</span></div>
+                    <span class="dp-sep">:</span>
+                    <div class="dp-tu"><span class="dp-tn" id="tM">59</span><span class="dp-ts">min</span></div>
+                    <span class="dp-sep">:</span>
+                    <div class="dp-tu"><span class="dp-tn" id="tS">59</span><span class="dp-ts">sec</span></div>
                 </div>
             </div>
-            
-            <div class="hero-visual">
-                <div class="visual-grid">
-                    <div class="visual-card">
-                        <div class="visual-icon">💻</div>
-                        <div class="visual-title">Web Development</div>
-                    </div>
-                    <div class="visual-card">
-                        <div class="visual-icon">📱</div>
-                        <div class="visual-title">Mobile Apps</div>
-                    </div>
-                    <div class="visual-card">
-                        <div class="visual-icon">🎨</div>
-                        <div class="visual-title">UI/UX Design</div>
-                    </div>
-                    <div class="visual-card">
-                        <div class="visual-icon">🚀</div>
-                        <div class="visual-title">SEO & Marketing</div>
-                    </div>
-                </div>
-            </div>
+            <button class="dp-btn" onclick="claimOffer()">🚀 Claim 25% Discount Now</button>
+            <div class="dp-skip"><a id="dpSkip">No thanks, I'll pay full price</a></div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section class="services">
-        <div class="section-header">
-            <div class="section-badge">What We Offer</div>
-            <h2 class="section-title">Comprehensive Digital Solutions</h2>
-            <p class="section-desc">End-to-end technology services tailored to accelerate your business growth and digital transformation</p>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🌐</div>
-                <h3 class="service-title">Web Development</h3>
-                <p class="service-desc">Custom websites, e-commerce platforms, and web applications built with modern technologies like React, WordPress, and Bootstrap for responsive, fast-loading experiences.</p>
+<!-- FLOAT STACK -->
+<div class="float-stack">
+    <div class="wa-float" id="waFloat">
+        <div class="wa-pop" id="waPop" role="dialog" aria-label="WhatsApp chat">
+            <div class="wa-hd">
+                <div class="wa-av">💬</div>
+                <div class="wa-in"><h4>KS Software</h4><p>Typically replies instantly</p></div>
+                <button class="wa-xbtn" id="waX" aria-label="Close">×</button>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3 class="service-title">Mobile App Development</h3>
-                <p class="service-desc">Native and cross-platform mobile applications using Flutter, React Native, and Java for iOS and Android platforms with seamless user experiences.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🎓</div>
-                <h3 class="service-title">College Projects & Training</h3>
-                <p class="service-desc">Expert guidance for academic projects, final year projects, and research implementations with complete documentation and technical mentorship.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3 class="service-title">SEO & Digital Marketing</h3>
-                <p class="service-desc">Boost your online visibility with expert SEO services, Google Ads, social media marketing, content strategy, and advanced analytics.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">☁️</div>
-                <h3 class="service-title">Cloud Solutions</h3>
-                <p class="service-desc">Scalable cloud infrastructure deployment on AWS, Azure, and Google Cloud with DevOps integration, migration, and optimization services.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🤖</div>
-                <h3 class="service-title">AI & Automation</h3>
-                <p class="service-desc">Smart automation, intelligent chatbots, and machine learning solutions to enhance your business operations and customer experience.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-choose">
-        <div class="section-header">
-            <div class="section-badge">Why Choose Us</div>
-            <h2 class="section-title">What Makes Us Different</h2>
-            <p class="section-desc">Our commitment to excellence and client success sets us apart</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">Fast Delivery</div>
-                <div class="feature-desc">Quick turnaround time without compromising on quality</div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <div class="feature-title">Premium Quality</div>
-                <div class="feature-desc">Industry best practices and cutting-edge technologies</div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <div class="feature-title">Affordable Pricing</div>
-                <div class="feature-desc">Competitive rates with transparent pricing models</div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-title">Dedicated Support</div>
-                <div class="feature-desc">24/7 technical support and maintenance services</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="trust">
-        <div class="trust-content">
-            <h2 class="trust-title">Trusted by Businesses Across India</h2>
-            <p class="trust-desc">Join 50+ satisfied clients who have transformed their digital presence with KS Software Company's expert solutions</p>
-            <div class="trust-stats">
-                <div class="trust-stat">
-                    <div class="trust-stat-number">50+</div>
-                    <div class="trust-stat-label">Successful Projects</div>
+            <div class="wa-bd">
+                <div class="wa-msg">Hi there! 👋 How can we help you today?<div class="wa-t">Just now</div></div>
+                <div class="wa-reps">
+                    <button class="wa-qb" onclick="sendWA('I need a website')">🌐 I need a website</button>
+                    <button class="wa-qb" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
+                    <button class="wa-qb" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
+                    <button class="wa-qb" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
                 </div>
-                <div class="trust-stat">
-                    <div class="trust-stat-number">100%</div>
-                    <div class="trust-stat-label">Client Satisfaction</div>
-                </div>
-                <div class="trust-stat">
-                    <div class="trust-stat-number">6+</div>
-                    <div class="trust-stat-label">Years Experience</div>
-                </div>
-                <div class="trust-stat">
-                    <div class="trust-stat-number">24/7</div>
-                    <div class="trust-stat-label">Dedicated Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="process">
-        <div class="section-header">
-            <div class="section-badge">Our Process</div>
-            <h2 class="section-title">How We Work</h2>
-            <p class="section-desc">A streamlined approach to deliver exceptional results</p>
-        </div>
-        
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-title">Discovery</div>
-                <div class="step-desc">We understand your business goals and project requirements</div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-title">Planning</div>
-                <div class="step-desc">Strategic roadmap and timeline for your project</div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-title">Development</div>
-                <div class="step-desc">Building your solution with agile methodology</div>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <div class="step-title">Delivery</div>
-                <div class="step-desc">Launch and ongoing support for your success</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <h2 class="cta-title">Ready to Start Your Project?</h2>
-        <p class="cta-desc">Let's discuss how we can bring your digital vision to life with cutting-edge technology and expert development. Get a free consultation today!</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn-primary">Get Free Quote</a>
-            <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-whatsapp">
-                💬 Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="KS.png" alt="KS Software Logo">
-                    <span class="footer-logo-text">KS SOFTWARE</span>
-                </div>
-                <p class="footer-tagline">Leading software development company in Hyderabad with 2+ years of experience, specializing in web development, mobile apps, and digital transformation solutions.</p>
-                <p style="color: var(--gray-500); margin-top: 16px; font-size: 0.95rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="clients.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="about.html">Web Development</a></li>
-                    <li><a href="about.html">Mobile Apps</a></li>
-                    <li><a href="about.html">SEO Services</a></li>
-                    <li><a href="about.html">Cloud Solutions</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
-                    <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
-                    <li><a href="https://wa.me/917385522051">💬 WhatsApp Chat</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 KS Software Company. All rights reserved. | Web Development Company in Hyderabad | Mobile App Development | SEO Services</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Floating Chatbot -->
-    <div class="whatsapp-float" id="waFloat">
-        <div class="whatsapp-popup" id="waPopup">
-            <div class="wa-popup-head">
-                <div class="wa-avatar">💬</div>
-                <div class="wa-info">
-                    <h4>KS Software</h4>
-                    <p>Typically replies instantly</p>
-                </div>
-                <button class="wa-close-btn" id="waClose">×</button>
-            </div>
-            <div class="wa-popup-body">
-                <div class="wa-msg">
-                    <div>Hi there! 👋</div>
-                    <div>How can we help you today?</div>
-                    <div class="wa-time">Just now</div>
-                </div>
-                <div class="wa-quick-replies">
-                    <button class="wa-qbtn" onclick="sendWA('I need a website')">🌐 I need a website</button>
-                    <button class="wa-qbtn" onclick="sendWA('I need a mobile app')">📱 I need a mobile app</button>
-                    <button class="wa-qbtn" onclick="sendWA('I need SEO services')">🔍 I need SEO services</button>
-                    <button class="wa-qbtn" onclick="sendWA('Get a free quote')">💰 Get a free quote</button>
-                </div>
-                <button class="wa-chat-btn" onclick="sendWA('')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <button class="wa-go" onclick="sendWA('')">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     Start Chat
                 </button>
             </div>
         </div>
-        <button class="whatsapp-button" id="waBtn">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span class="wa-notif" id="waNotif">1</span>
+        <button class="wa-btn-main" id="waBtn" aria-label="Open WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span class="wa-notif" id="waN">1</span>
         </button>
     </div>
-
-    <button class="scroll-top" id="scrollTop">↑</button>
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+</div>
 
 <script>
+    // Navbar scroll
+    var nb = document.getElementById('navbar'), st = document.getElementById('scrollTop');
+    window.addEventListener('scroll', function () {
+        nb.classList.toggle('scrolled', scrollY > 50);
+        st.classList.toggle('vis', scrollY > 300);
+    });
+    st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // ── Navbar scroll effect ──
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            var scrollTopBtn = document.getElementById('scrollTop');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-
-        // ── Scroll to top ──
-        document.getElementById('scrollTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ── Mobile menu toggle ──
-        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        var navMenu = document.getElementById('navMenu');
-
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', function(e) {
-            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-
-        navMenu.querySelectorAll('.nav-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // ── Smooth scroll for anchors ──
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // ── WhatsApp Chatbot ──
-        var waBtn = document.getElementById('waBtn');
-        var waPopup = document.getElementById('waPopup');
-        var waClose = document.getElementById('waClose');
-        var waNotif = document.getElementById('waNotif');
-
-        waBtn.addEventListener('click', function() {
-            waPopup.classList.toggle('active');
-            if (waNotif) waNotif.style.display = 'none';
-        });
-        waClose.addEventListener('click', function(e) {
-            e.stopPropagation();
-            waPopup.classList.remove('active');
-        });
-        document.addEventListener('click', function(e) {
-            if (waBtn && waPopup && !waBtn.contains(e.target) && !waPopup.contains(e.target)) {
-                waPopup.classList.remove('active');
-            }
-        });
-        setTimeout(function() {
-            if (!sessionStorage.getItem('waShown_index')) {
-                waPopup.classList.add('active');
-                sessionStorage.setItem('waShown_index', '1');
-                setTimeout(function() { waPopup.classList.remove('active'); }, 8000);
-            }
-        }, 3000);
-
-        function sendWA(msg) {
-            var text = msg || "Hi, I'm interested in your services!";
-            window.open('https://wa.me/917385522051?text=' + encodeURIComponent(text), '_blank');
+    // Mobile menu
+    var mb = document.getElementById('mobBtn'), nu = document.getElementById('navUl');
+    mb.addEventListener('click', function () {
+        var e = mb.getAttribute('aria-expanded') === 'true';
+        mb.setAttribute('aria-expanded', !e);
+        mb.classList.toggle('active');
+        nu.classList.toggle('active');
+    });
+    document.addEventListener('click', function (e) {
+        if (!mb.contains(e.target) && !nu.contains(e.target)) {
+            mb.classList.remove('active');
+            nu.classList.remove('active');
         }
+    });
+    nu.querySelectorAll('.nav-a').forEach(l => l.addEventListener('click', () => {
+        mb.classList.remove('active');
+        nu.classList.remove('active');
+    }));
+
+    // WhatsApp popup
+    var waBtn = document.getElementById('waBtn'), waPop = document.getElementById('waPop'),
+        waX = document.getElementById('waX'), waN = document.getElementById('waN');
+    waBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        waPop.classList.toggle('active');
+        if (waN) waN.style.display = 'none';
+    });
+    waX.addEventListener('click', function (e) {
+        e.stopPropagation();
+        waPop.classList.remove('active');
+    });
+    document.addEventListener('click', function (e) {
+        if (!waBtn.contains(e.target) && !waPop.contains(e.target)) waPop.classList.remove('active');
+    });
+    setTimeout(function () {
+        if (!sessionStorage.getItem('ws')) {
+            waPop.classList.add('active');
+            sessionStorage.setItem('ws', '1');
+            setTimeout(() => waPop.classList.remove('active'), 8000);
+        }
+    }, 3000);
+    function sendWA(m) {
+        window.open('https://wa.me/917385522051?text=' + encodeURIComponent(m || "Hi, I'm interested in your services at kssoftware.co.in!"), '_blank');
+    }
+
+    // Discount popup
+    var dpo = document.getElementById('dpOverlay');
+    document.getElementById('dpClose').addEventListener('click', closeDP);
+    document.getElementById('dpSkip').addEventListener('click', closeDP);
+    dpo.addEventListener('click', e => { if (e.target === dpo) closeDP(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDP(); });
+    function closeDP() { dpo.classList.remove('active'); sessionStorage.setItem('dp', '1'); }
+    function claimOffer() {
+        closeDP();
+        window.open('https://wa.me/917385522051?text=' + encodeURIComponent("Hi, I'd like to claim the 25% website discount at kssoftware.co.in!"), '_blank');
+    }
+    if (!sessionStorage.getItem('dp')) setTimeout(() => dpo.classList.add('active'), 4000);
+
+    // Countdown timer — fixed deadline: April 30, 2026 at 12:00 PM IST
+    (function () {
+        var K = 'kse';
+        var deadline = new Date('2026-04-30T12:00:00+05:30').getTime();
+        // Store in sessionStorage so it's consistent within the session
+        if (!sessionStorage.getItem(K)) {
+            sessionStorage.setItem(K, deadline);
+        }
+        var e = deadline; // Always use the fixed deadline, not a stored one
+
+        function p(n) { return String(n).padStart(2, '0'); }
+        function tick() {
+            var d = Math.max(0, e - Date.now());
+            document.getElementById('tD').textContent = p(Math.floor(d / 86400000));
+            document.getElementById('tH').textContent = p(Math.floor(d % 86400000 / 3600000));
+            document.getElementById('tM').textContent = p(Math.floor(d % 3600000 / 60000));
+            document.getElementById('tS').textContent = p(Math.floor(d % 60000 / 1000));
+            if (d > 0) requestAnimationFrame(tick);
+        }
+        tick();
+    })();
 </script>
 </body>
 </html>
