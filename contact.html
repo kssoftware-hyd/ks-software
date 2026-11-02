@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact KS Software Company in Hyderabad for web development, mobile apps, SEO services. Call +91 73855 22051 or WhatsApp us for immediate response.">
     <meta name="keywords" content="KS Software Contact, Hyderabad Software Company, Web Development Contact, Mobile App Development, Begumpet Hyderabad">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="author" content="KS Software Company">
     <title>Contact Us - KS Software Company | Get Free Quote Today</title>
     <link rel="icon" type="image/png" href="KS.png">
@@ -90,6 +91,8 @@
         .btn-call:hover { box-shadow: 0 8px 28px rgba(30,136,229,0.55); }
         .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
         .btn-whatsapp:hover { background: #20BA5A; box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+        .btn-insta { background: linear-gradient(135deg,#f58529,#dd2a7b 55%,#8134af); color: white; box-shadow: 0 4px 20px rgba(221,42,123,0.35); }
+        .btn-insta:hover { box-shadow: 0 8px 28px rgba(221,42,123,0.5); }
         .btn-email { background: var(--card2); color: var(--off-white); border: 1px solid rgba(66,165,245,0.2); box-shadow: var(--glow-xs); }
         .btn-email:hover { border-color: var(--blue-el); box-shadow: var(--glow-sm); }
 
@@ -101,59 +104,67 @@
         .sec-h2 .hl { background: linear-gradient(90deg,var(--blue-el),var(--blue-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* CONTACT GRID */
-        .contact-sec { background: var(--black); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 52px; align-items: start; }
+        .contact-sec { background: var(--black); padding-bottom: 60px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 36px; align-items: start; }
 
-        /* CONTACT INFO CARDS */
-        .contact-info { display: flex; flex-direction: column; gap: 20px; }
-        .info-card { background: var(--card); border: 1px solid rgba(66,165,245,0.1); padding: 28px 24px; border-radius: 18px; transition: var(--tr); position: relative; overflow: hidden; }
-        .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--blue-mid), var(--blue-el)); transform: scaleY(0); transition: transform 0.3s ease; }
-        .info-card:hover { transform: translateX(6px); box-shadow: var(--glow-xs), var(--shadow); border-color: rgba(66,165,245,0.3); background: var(--card2); }
-        .info-card:hover::before { transform: scaleY(1); }
-        .info-card.featured { background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 100%); border-color: rgba(66,165,245,0.25); box-shadow: var(--glow-xs); }
-        .info-card.featured::before { transform: scaleY(1); }
-        .info-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; filter: drop-shadow(0 0 8px rgba(66,165,245,0.3)); }
-        .info-title { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-        .info-text { line-height: 1.8; font-size: 0.92rem; color: var(--gray-mid); }
-        .info-text a { color: var(--blue-el); text-decoration: none; font-weight: 600; transition: var(--tr); }
-        .info-text a:hover { color: var(--blue-glow); text-decoration: underline; }
-        .info-card.featured .info-text { color: var(--blue-light); }
-
-        /* BUSINESS HOURS */
-        .business-hours { background: var(--card); border: 1px solid rgba(66,165,245,0.1); padding: 24px 22px; border-radius: 18px; }
-        .hours-title { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; color: var(--white); }
-        .hours-list { display: flex; flex-direction: column; gap: 10px; }
-        .hours-item { display: flex; justify-content: space-between; padding: 11px 14px; background: var(--black); border: 1px solid rgba(66,165,245,0.06); border-radius: 10px; transition: var(--tr); }
-        .hours-item:hover { border-color: rgba(66,165,245,0.18); background: rgba(66,165,245,0.04); }
-        .hours-item.today { background: rgba(66,165,245,0.07); border-color: rgba(66,165,245,0.2); }
-        .day { font-weight: 600; color: var(--off-white); font-size: 0.9rem; }
-        .time { color: var(--gray-mid); font-size: 0.88rem; font-family: 'JetBrains Mono', monospace; }
-        .hours-item.today .day { color: var(--blue-el); }
+        /* OFFICE CARD — map + business info, Google-Maps-card style */
+        .office-card { background: var(--card); border: 1px solid rgba(66,165,245,0.12); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow), var(--glow-xs); }
+        .office-map { position: relative; width: 100%; height: 200px; background: var(--black-deep); }
+        .office-map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(0.15) contrast(1.05); }
+        .office-map-tag { position: absolute; top: 12px; left: 12px; background: rgba(3,7,16,0.82); backdrop-filter: blur(6px); border: 1px solid rgba(66,165,245,0.3); color: var(--blue-light); font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; }
+        .office-body { padding: 22px 24px 20px; }
+        .office-name { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+        .office-sub { color: var(--blue-el); font-size: 0.82rem; font-weight: 600; margin-bottom: 16px; }
+        .office-rows { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+        .office-row { display: flex; align-items: flex-start; gap: 9px; font-size: 0.86rem; color: var(--gray-mid); line-height: 1.5; }
+        .office-row a { color: var(--blue-el); text-decoration: none; font-weight: 600; }
+        .office-row a:hover { text-decoration: underline; }
+        .office-ico { flex-shrink: 0; width: 18px; text-align: center; }
+        .office-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .office-actions .quick-btn { flex: 1; padding: 10px 14px; font-size: 12.5px; justify-content: center; }
+        .branch-strip { padding: 16px 24px 18px; border-top: 1px solid rgba(66,165,245,0.1); background: rgba(66,165,245,0.03); }
+        .branch-hd { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+        .branch-strip .branch-ico { font-size: 1.05rem; flex-shrink: 0; }
+        .branch-name { font-family: 'Rajdhani', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); }
+        .branch-rows { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+        .branch-rows .office-row { font-size: 0.82rem; }
+        .branch-link { display: inline-flex; align-items: center; gap: 5px; padding: 7px 13px; background: rgba(66,165,245,0.07); border: 1px solid rgba(66,165,245,0.18); border-radius: 100px; color: var(--off-white); font-size: 0.76rem; font-weight: 600; text-decoration: none; transition: var(--tr); white-space: nowrap; }
+        .branch-link:hover { border-color: rgba(66,165,245,0.4); color: var(--blue-el); background: rgba(66,165,245,0.12); }
 
         /* CONTACT FORM */
-        .form-wrapper { background: var(--card); border: 1px solid rgba(66,165,245,0.14); padding: 44px 38px; border-radius: 22px; box-shadow: var(--shadow), var(--glow-xs); }
-        .form-title { font-family: 'Rajdhani', sans-serif; font-size: 1.9rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-        .form-subtitle { color: var(--gray-mid); margin-bottom: 30px; font-size: 0.95rem; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; margin-bottom: 9px; font-weight: 600; color: var(--off-white); font-size: 0.9rem; letter-spacing: 0.3px; }
+        .form-wrapper { background: var(--card); border: 1px solid rgba(66,165,245,0.14); padding: 30px 30px 28px; border-radius: 20px; box-shadow: var(--shadow), var(--glow-xs); position: relative; overflow: hidden; }
+        .form-wrapper::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--blue-mid), var(--blue-el), var(--blue-mid)); }
+        .form-title { font-family: 'Rajdhani', sans-serif; font-size: 1.55rem; font-weight: 700; margin-bottom: 6px; color: var(--white); display: flex; align-items: center; gap: 9px; }
+        .form-subtitle { color: var(--gray-mid); margin-bottom: 20px; font-size: 0.88rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; margin-bottom: 7px; font-weight: 600; color: var(--off-white); font-size: 0.86rem; letter-spacing: 0.3px; }
         .form-group label .required { color: var(--blue-el); margin-left: 2px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1.5px solid rgba(66,165,245,0.14); border-radius: 10px; font-family: 'Exo 2', sans-serif; font-size: 14px; transition: var(--tr); background: var(--black); color: var(--off-white); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid rgba(66,165,245,0.14); border-radius: 10px; font-family: 'Exo 2', sans-serif; font-size: 13.5px; transition: var(--tr); background: var(--black); color: var(--off-white); }
         .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray-dark); }
         .form-group select option { background: var(--card); color: var(--off-white); }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--blue-el); background: var(--black-deep); box-shadow: 0 0 0 3px rgba(66,165,245,0.1); }
-        .form-group textarea { resize: vertical; min-height: 130px; }
-        .btn-submit { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright)); color: white; border: none; border-radius: 12px; font-weight: 700; font-size: 15px; cursor: pointer; transition: var(--tr); box-shadow: 0 4px 20px rgba(21,101,192,0.45), var(--glow-xs); text-transform: uppercase; letter-spacing: 1px; font-family: 'Exo 2', sans-serif; position: relative; overflow: hidden; }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+
+        /* SUBMIT BUTTON */
+        .btn-submit { width: 100%; padding: 14px; margin-top: 2px; background: linear-gradient(135deg, var(--blue-mid), var(--blue-bright)); color: white; border: none; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; transition: var(--tr); box-shadow: 0 4px 20px rgba(21,101,192,0.45), var(--glow-xs); text-transform: uppercase; letter-spacing: 1px; font-family: 'Exo 2', sans-serif; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .btn-submit::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--blue-bright), var(--blue-el)); opacity: 0; transition: opacity 0.3s; }
         .btn-submit:hover::before { opacity: 1; }
         .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,136,229,0.6), var(--glow-md); }
-        .btn-submit span { position: relative; z-index: 1; }
-        .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-        .form-message { margin-top: 18px; padding: 14px 18px; border-radius: 10px; text-align: center; font-weight: 600; display: none; font-size: 0.92rem; }
-        .form-message.success { background: rgba(0,200,83,0.1); color: #4caf50; border: 1px solid rgba(76,175,80,0.3); display: block; }
-        .form-message.error { background: rgba(66,165,245,0.07); color: var(--blue-el); border: 1px solid rgba(66,165,245,0.25); display: block; }
+        .btn-submit > * { position: relative; z-index: 1; }
+        .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 
-        /* FAQ */
+        /* SPINNER */
+        .spinner { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; flex-shrink: 0; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .btn-submit.loading .spinner { display: block; }
+
+        /* FORM MESSAGE */
+        .form-message { margin-top: 14px; padding: 14px 18px; border-radius: 12px; text-align: center; font-weight: 600; display: none; font-size: 0.9rem; line-height: 1.6; }
+        .form-message.success { background: rgba(0,200,83,0.1); color: #4caf50; border: 1px solid rgba(76,175,80,0.3); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .form-message.error { background: rgba(244,67,54,0.08); color: #ef9a9a; border: 1px solid rgba(244,67,54,0.25); display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+
         .faq-sec { background: linear-gradient(180deg, var(--black) 0%, var(--blue-deep) 50%, var(--black) 100%); }
         .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
         .faq-item { background: var(--card); border: 1px solid rgba(66,165,245,0.1); padding: 28px 24px; border-radius: 16px; transition: var(--tr); }
@@ -223,7 +234,27 @@
             section{padding:72px 20px;}
             .form-wrapper{padding:30px 22px;}
         }
+
+        /* ── VISITOR COUNTER ── */
+        .visitor-bar{max-width:1400px;margin:0 auto 28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 24px;background:rgba(66,165,245,0.05);border:1px solid rgba(66,165,245,0.12);border-radius:12px;}
+        .visitor-bar .v-icon{font-size:1rem;}
+        .visitor-bar .v-label{font-size:0.85rem;color:var(--gray-dark);font-family:'JetBrains Mono',monospace;letter-spacing:0.5px;}
+        .visitor-bar .v-count{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:var(--blue-el);text-shadow:0 0 12px rgba(66,165,245,0.5);min-width:60px;display:inline-block;text-align:center;}
+        .visitor-bar .v-dot{width:6px;height:6px;border-radius:50%;background:#25D366;box-shadow:0 0 6px #25D366;animation:vdp 1.5s ease infinite;flex-shrink:0;}
+        @keyframes vdp{0%,100%{opacity:1}50%{opacity:0.3}}
     </style>
+    <link rel="canonical" href="https://kssoftware.co.in/contact.html">
+    <link rel="alternate" hreflang="en-IN" href="https://kssoftware.co.in/contact.html">
+    <meta property="og:title" content="Contact KS Software">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kssoftware.co.in/contact.html">
+    <meta property="og:image" content="https://kssoftware.co.in/KS.png">
+    <meta property="og:site_name" content="KS Software Company">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","@id":"https://kssoftware.co.in/#business","name":"KS Software Company","url":"https://kssoftware.co.in","logo":"https://kssoftware.co.in/KS.png","telephone":"+91-7385522051","email":"mrdeveloper1397@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Begumpet","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500016","addressCountry":"IN"},"sameAs":["https://www.instagram.com/ks.software_/","https://wa.me/917385522051"]}
+    </script>
+    <link rel="me" href="https://www.instagram.com/ks.software_/">
 </head>
 <body>
 
@@ -257,6 +288,7 @@
         <div class="quick-contact">
             <a href="tel:+917385522051" class="quick-btn btn-call">📞 +91 73855 22051</a>
             <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="quick-btn btn-whatsapp">💬 WhatsApp Us</a>
+            <a href="https://www.instagram.com/ks.software_/" target="_blank" rel="noopener noreferrer me" class="quick-btn btn-insta">📸 Instagram</a>
             <a href="mailto:mrdeveloper1397@gmail.com" class="quick-btn btn-email">✉️ Email Us</a>
         </div>
     </div>
@@ -266,43 +298,52 @@
 <section class="contact-sec">
     <div class="container">
         <div class="contact-grid">
-            <!-- Info Cards -->
-            <div class="contact-info">
-                <div class="info-card featured">
-                    <div class="info-icon">📍</div>
-                    <h3 class="info-title">Visit Our Office</h3>
-                    <p class="info-text">Begumpet, Hyderabad<br>Telangana, India<br><br><strong style="color:var(--blue-el);">Office Hours:</strong><br>Monday – Saturday: 9:00 AM – 6:00 PM<br>Sunday: Closed</p>
+            <!-- Office Card — map + business info -->
+            <div class="office-card">
+                <div class="office-map">
+                    <span class="office-map-tag">📍 Head Office</span>
+                    <iframe src="https://www.google.com/maps?q=17.4418555,78.4585972&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="KS Software Head Office — Begumpet, Hyderabad Map" allowfullscreen></iframe>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">📞</div>
-                    <h3 class="info-title">Call Us Directly</h3>
-                    <p class="info-text"><a href="tel:+917385522051">+91 73855 22051</a><br>Available Mon–Sat: 9 AM – 6 PM<br>Get instant quotes and consultations</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">✉️</div>
-                    <h3 class="info-title">Email Us</h3>
-                    <p class="info-text"><a href="mailto:mrdeveloper1397@gmail.com">mrdeveloper1397@gmail.com</a><br>Response within 24 hours<br>We reply to all inquiries</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">💬</div>
-                    <h3 class="info-title">WhatsApp Chat</h3>
-                    <p class="info-text"><a href="https://wa.me/917385522051" target="_blank">Chat on WhatsApp</a><br>Instant messaging available<br>Share files & requirements easily</p>
-                </div>
-                <div class="business-hours">
-                    <h3 class="hours-title">⏰ Business Hours</h3>
-                    <div class="hours-list">
-                        <div class="hours-item today"><span class="day">Monday – Friday</span><span class="time">9:00 AM – 6:00 PM</span></div>
-                        <div class="hours-item"><span class="day">Saturday</span><span class="time">10:00 AM – 4:00 PM</span></div>
-                        <div class="hours-item"><span class="day">Sunday</span><span class="time">Closed</span></div>
+                <div class="office-body">
+                    <h3 class="office-name">KS Software</h3>
+                    <p class="office-sub">Computer Software Store · Begumpet, Hyderabad</p>
+                    <div class="office-rows">
+                        <div class="office-row"><span class="office-ico">📍</span> Begumpet, Hyderabad, Telangana 500016, India</div>
+                        <div class="office-row"><span class="office-ico">🕒</span> Mon – Sat: 9:00 AM – 6:00 PM · Sunday: Closed</div>
+                        <div class="office-row"><span class="office-ico">📞</span> <a href="tel:+917385522051">+91 73855 22051</a></div>
+                        <div class="office-row"><span class="office-ico">✉️</span> <a href="mailto:mrdeveloper1397@gmail.com">mrdeveloper1397@gmail.com</a></div>
                     </div>
+                    <div class="office-actions">
+                        <a href="https://maps.app.goo.gl/FBnKE89HaiUKrLJNA" target="_blank" rel="noopener noreferrer" class="quick-btn btn-call">🧭 Directions</a>
+                        <a href="https://wa.me/917385522051?text=Hi%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="quick-btn btn-whatsapp">💬 WhatsApp</a>
+                    </div>
+                </div>
+                <div class="branch-strip">
+                    <div class="branch-hd">
+                        <span class="branch-ico">🏬</span>
+                        <div class="branch-name">Branch Office — Nanded</div>
+                    </div>
+                    <div class="branch-rows">
+                        <div class="office-row"><span class="office-ico">📍</span> Chaitanya Nagar, Nanded, Maharashtra, India</div>
+                        <div class="office-row"><span class="office-ico">🕒</span> Mon – Sat: 9:00 AM – 6:00 PM · Sunday: Closed</div>
+                        <div class="office-row"><span class="office-ico">📞</span> <a href="tel:+919730027397">+91 97300 27397</a></div>
+                    </div>
+                    <a class="branch-link" href="https://www.google.com/maps/search/?api=1&query=Chaitanya+Nagar%2C+Nanded%2C+Maharashtra" target="_blank" rel="noopener noreferrer">🧭 Get Directions</a>
                 </div>
             </div>
 
-            <!-- Contact Form -->
+            <!-- Contact Form — Web3Forms integrated -->
             <div class="form-wrapper">
-                <h2 class="form-title">Send Us a Message</h2>
+                <h2 class="form-title">📝 Send Us a Message</h2>
                 <p class="form-subtitle">Fill out the form and we'll get back to you within 24 hours</p>
-                <form id="contactForm">
+
+                <form id="contactForm" novalidate>
+                    <!-- Web3Forms hidden fields -->
+                    <input type="hidden" name="access_key" value="4a6a5640-e2a3-4531-a486-997607383b6c">
+                    <input type="hidden" name="subject" value="New Enquiry – KS Software Company Website">
+                    <input type="hidden" name="from_name" value="KS Software Contact Form">
+                    <input type="checkbox" name="botcheck" style="display:none;">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name <span class="required">*</span></label>
@@ -322,14 +363,14 @@
                             <label for="service">Service Required <span class="required">*</span></label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="website">Website Development</option>
-                                <option value="mobile">Mobile App Development</option>
-                                <option value="ecommerce">E-Commerce Solution</option>
-                                <option value="seo">SEO & Digital Marketing</option>
-                                <option value="college">College Project</option>
-                                <option value="portfolio">Portfolio Website</option>
-                                <option value="consulting">IT Consulting</option>
-                                <option value="other">Other Services</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="E-Commerce Solution">E-Commerce Solution</option>
+                                <option value="SEO & Digital Marketing">SEO & Digital Marketing</option>
+                                <option value="College Project">College Project</option>
+                                <option value="Portfolio Website">Portfolio Website</option>
+                                <option value="IT Consulting">IT Consulting</option>
+                                <option value="Other Services">Other Services</option>
                             </select>
                         </div>
                     </div>
@@ -337,18 +378,23 @@
                         <label for="budget">Project Budget (Optional)</label>
                         <select id="budget" name="budget">
                             <option value="">Select budget range</option>
-                            <option value="small">Under ₹50,000</option>
-                            <option value="medium">₹50,000 – ₹1,00,000</option>
-                            <option value="large">₹1,00,000 – ₹2,00,000</option>
-                            <option value="enterprise">₹2,00,000+</option>
+                            <option value="Under ₹50,000">Under ₹50,000</option>
+                            <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                            <option value="₹1,00,000 – ₹2,00,000">₹1,00,000 – ₹2,00,000</option>
+                            <option value="₹2,00,000+">₹2,00,000+</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Project Details <span class="required">*</span></label>
                         <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and any specific features you need..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" id="submitBtn"><span id="btnText">Send Message</span></button>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="spinner" id="spinner"></span>
+                        <span id="btnText">🚀 Send Message</span>
+                    </button>
                 </form>
+
                 <div id="formMessage" class="form-message"></div>
             </div>
         </div>
@@ -377,11 +423,12 @@
     <div class="foot-grid">
         <div>
             <div class="foot-logo">
-                <img src="KS.png" alt="KS Software Logo" width="40" height="40">
+                <img src="KS1.png" alt="KS Software Logo" width="40" height="40">
                 <span class="foot-logo-txt">KS <em>SOFTWARE</em></span>
             </div>
             <p class="foot-tag">Leading software development company in Hyderabad (kssoftware.co.in) with 6+ years of experience in web development, mobile apps & digital transformation.</p>
-            <p style="color:var(--gray-dark);font-size:0.88rem;">📍 Begumpet, Hyderabad, Telangana, India</p>
+            <p style="color:var(--gray-dark);font-size:0.88rem;">📍 Head Office: Begumpet, Hyderabad, Telangana, India</p>
+            <p style="color:var(--gray-dark);font-size:0.88rem;">📍 Branch Office: Chaitanya Nagar, Nanded, Maharashtra, India</p>
         </div>
         <div>
             <h4>Quick Links</h4>
@@ -404,12 +451,20 @@
         <div>
             <h4>Contact</h4>
             <ul>
-                <li><a href="tel:+917385522051">📞 +91 73855 22051</a></li>
+                <li><a href="tel:+917385522051">📞 +91 73855 22051 (Head Office)</a></li>
+                <li><a href="tel:+919730027397">📞 +91 97300 27397 (Branch Office)</a></li>
                 <li><a href="mailto:mrdeveloper1397@gmail.com">✉️ mrdeveloper1397@gmail.com</a></li>
                 <li><a href="https://wa.me/917385522051" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
+                <li><a href="https://www.instagram.com/ks.software_/" target="_blank" rel="noopener noreferrer me">📸 Instagram @ks.software_</a></li>
                 <li><a href="https://kssoftware.co.in" target="_blank">🌐 kssoftware.co.in</a></li>
             </ul>
         </div>
+    </div>
+    <div class="visitor-bar">
+        <span class="v-dot"></span><span class="v-icon">👁</span>
+        <span class="v-label">Total Page Visitors</span>
+        <span class="v-count" id="visitorCount">000000</span>
+        <span class="v-label">— Thank you for visiting!</span>
     </div>
     <div class="foot-bot">
         <p>&copy; 2026 KS Software Company – kssoftware.co.in | All rights reserved. | Web Development Hyderabad | Mobile App Development | SEO Services Hyderabad</p>
@@ -448,13 +503,37 @@
 </div>
 
 <script>
+    // VISITOR COUNTER
+    // counterapi.dev/v1 was permanently shut down (Aug 2026) — switched to Abacus,
+    // a free no-signup counting API. Same namespace/key on every page = one shared
+    // site-wide total. OFFSET reflects the 1500+ visits already recorded before switch.
+    (function () {
+        var el = document.getElementById('visitorCount');
+        fetch('https://abacus.jasoncameron.dev/hit/kssoftware-co-in/visits')
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                var OFFSET = 1500; var count = (d.value || 1) + OFFSET;
+                el.textContent = count.toString().padStart(6, '0');
+            })
+            .catch(function () {
+                var stored = parseInt(localStorage.getItem('ks_v_fallback') || '1500', 10) + 1;
+                localStorage.setItem('ks_v_fallback', stored);
+                el.textContent = stored.toString().padStart(6, '0');
+            });
+    })();
+</script><script>
+    // ── NAV & SCROLL ──
     var nb = document.getElementById('navbar'), st = document.getElementById('scrollTop');
     window.addEventListener('scroll', function () { nb.classList.toggle('scrolled', scrollY > 50); st.classList.toggle('vis', scrollY > 300); });
     st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── MOBILE MENU ──
     var mb = document.getElementById('mobBtn'), nu = document.getElementById('navUl');
     mb.addEventListener('click', function () { var e = mb.getAttribute('aria-expanded') === 'true'; mb.setAttribute('aria-expanded', !e); mb.classList.toggle('active'); nu.classList.toggle('active'); });
     document.addEventListener('click', function (e) { if (!mb.contains(e.target) && !nu.contains(e.target)) { mb.classList.remove('active'); nu.classList.remove('active'); } });
     nu.querySelectorAll('.nav-a').forEach(l => l.addEventListener('click', () => { mb.classList.remove('active'); nu.classList.remove('active'); }));
+
+    // ── WHATSAPP ──
     var waBtn = document.getElementById('waBtn'), waPop = document.getElementById('waPop'), waX = document.getElementById('waX'), waN = document.getElementById('waN');
     waBtn.addEventListener('click', function (e) { e.stopPropagation(); waPop.classList.toggle('active'); if (waN) waN.style.display = 'none'; });
     waX.addEventListener('click', function (e) { e.stopPropagation(); waPop.classList.remove('active'); });
@@ -462,28 +541,96 @@
     setTimeout(function () { if (!sessionStorage.getItem('ws_contact')) { waPop.classList.add('active'); sessionStorage.setItem('ws_contact', '1'); setTimeout(() => waPop.classList.remove('active'), 8000); } }, 3000);
     function sendWA(m) { window.open('https://wa.me/917385522051?text=' + encodeURIComponent(m || "Hi, I'm interested in your services at kssoftware.co.in!"), '_blank'); }
 
-    // Contact form
-    var contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var name = document.getElementById('name').value;
-            var service = document.getElementById('service').value;
-            var message = document.getElementById('message').value;
-            var text = 'New enquiry from ' + name + (service ? ' | Service: ' + service : '') + (message ? ' | Message: ' + message : '');
-            var formMessage = document.getElementById('formMessage');
-            formMessage.className = 'form-message success';
-            formMessage.textContent = '✅ Thank you! Redirecting you to WhatsApp...';
-            setTimeout(function () { window.open('https://wa.me/917385522051?text=' + encodeURIComponent(text), '_blank'); }, 1000);
-        });
-    }
+    // ── EMAIL VALIDATION ──
     var emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('blur', function () {
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            this.style.borderColor = (this.value && !emailRegex.test(this.value)) ? 'rgba(66,165,245,0.6)' : '';
+            this.style.borderColor = (this.value && !emailRegex.test(this.value)) ? 'rgba(244,67,54,0.6)' : '';
         });
     }
+
+    // ── WEB3FORMS SUBMISSION ──
+    var contactForm = document.getElementById('contactForm');
+    var submitBtn   = document.getElementById('submitBtn');
+    var btnText     = document.getElementById('btnText');
+    var spinner     = document.getElementById('spinner');
+    var formMessage = document.getElementById('formMessage');
+
+    // Show success or error message
+    function showMessage(type, text) {
+        formMessage.className = 'form-message ' + type;
+        formMessage.innerHTML = text;
+        formMessage.style.display = 'flex';
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Reset button back to normal state
+    function resetBtn() {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        btnText.textContent = '🚀 Send Message';
+    }
+
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Client-side validation
+        var name    = document.getElementById('name').value.trim();
+        var email   = document.getElementById('email').value.trim();
+        var phone   = document.getElementById('phone').value.trim();
+        var service = document.getElementById('service').value;
+        var message = document.getElementById('message').value.trim();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name || !email || !phone || !service || !message) {
+            showMessage('error', '⚠️ Please fill in all required fields.');
+            return;
+        }
+        if (!emailRegex.test(email)) {
+            showMessage('error', '⚠️ Please enter a valid email address.');
+            return;
+        }
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        btnText.textContent = 'Sending...';
+        formMessage.style.display = 'none';
+        formMessage.className = 'form-message';
+
+        try {
+            var formData = new FormData(contactForm);
+            var response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            });
+            var result = await response.json();
+
+            if (result.success) {
+                showMessage('success', '✅ Message sent successfully! We\'ll get back to you within 24 hours.');
+                contactForm.reset();
+                resetBtn();
+
+                // Also open WhatsApp with enquiry details
+                var waText = 'New enquiry from ' + name
+                    + ' | Phone: ' + phone
+                    + ' | Service: ' + service
+                    + ' | Email: ' + email
+                    + (message ? ' | Message: ' + message : '');
+                setTimeout(function () {
+                    window.open('https://wa.me/917385522051?text=' + encodeURIComponent(waText), '_blank');
+                }, 1500);
+            } else {
+                showMessage('error', '❌ ' + (result.message || 'Something went wrong. Please try again or WhatsApp us directly.'));
+                resetBtn();
+            }
+        } catch (err) {
+            showMessage('error', '❌ Network error. Please check your connection and try again, or <a href="https://wa.me/917385522051" target="_blank" style="color:var(--blue-el)">WhatsApp us directly</a>.');
+            resetBtn();
+        }
+    });
 </script>
 </body>
 </html>
